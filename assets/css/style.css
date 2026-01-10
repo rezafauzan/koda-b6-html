@@ -93,7 +93,7 @@ section#login .section-body .container .side-image {
 }
 section#login .section-body .container .form-container {
   position: absolute;
-  top: 345.5px;
+  top: 185px;
   left: 530px;
 }
 section#login .section-body .container .form-container .form-header img {
@@ -140,4 +140,44 @@ section#login .section-body .container .form-container .form-body form .input-wi
 section#login .section-body .container .form-container .form-body form .input-wicon img.see-password {
   left: unset;
   right: 13px;
+}
+section#login .section-body .container .form-container .form-body form .navigator-text {
+  margin: 13px 0;
+}
+section#login .section-body .container .form-container .form-body form .navigator-text a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+section#login .section-body .container .form-container .form-body form .navigator-text span {
+  display: block;
+  margin-bottom: 13px;
+}
+section#login .section-body .container .form-container .form-body form .navigator-text#forgot {
+  text-align: right;
+}
+section#login .section-body .container .form-container .form-body form .navigator-text#register {
+  text-align: center;
+}
+section#login .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button {
+  max-width: 383px;
+  width: 46%;
+  height: 55px;
+  margin-right: 13px;
+  line-height: 55px;
+  display: inline;
+  position: relative;
+  text-align: center;
+}
+section#login .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button img {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 16px;
+  left: 70px;
+}
+section#login .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button:nth-child(1) {
+  left: 1px;
+}
+section#login .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button:nth-child(2) {
+  right: 1px;
 }
