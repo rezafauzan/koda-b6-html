@@ -19,7 +19,75 @@ img {
   width: 100%;
 }
 
+header nav {
+  background: rgba(11, 9, 9, 0.1294117647);
+  width: 100%;
+  position: relative;
+}
+header nav ul {
+  padding: 14px 130px;
+  display: inline-block;
+  position: absolute;
+}
+header nav ul li {
+  display: inline-block;
+}
+header nav ul li a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+header nav ul li a:hover {
+  color: #FF8906;
+}
+header nav ul li a.active {
+  border-bottom: 1px solid #FF8906;
+}
+header nav ul li button {
+  background: transparent;
+  color: #FFFFFF;
+  width: 24px;
+  border: 0;
+  cursor: pointer;
+}
+header nav ul.left-navigation {
+  left: 0;
+}
+header nav ul.left-navigation li {
+  margin-right: 60px;
+}
+header nav ul.right-navigation {
+  right: 0;
+}
+header nav ul.right-navigation li {
+  margin-right: 22px;
+}
+header nav ul.right-navigation li .member-sign-in {
+  color: #FFFFFF;
+  padding: 12px 18px;
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+}
+header nav ul.right-navigation li .member-sign-up {
+  color: #000000;
+  background: var(--color-accent);
+  padding: 12px 18px;
+  border-radius: 5px;
+}
+header nav ul.right-navigation li .member-sign-in:hover {
+  color: #FFFFFF;
+  padding: 12px 18px;
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+}
+header nav ul.right-navigation li .member-sign-up:hover {
+  color: #000000;
+  background: var(--color-accent);
+  padding: 12px 18px;
+  border-radius: 5px;
+}
+
 /* Specifict Component Styles */
+/* Auth Section */
 section#forgot-password .section-body .container {
   position: relative;
 }
@@ -284,3 +352,5 @@ section#register .section-body .container .form-container .form-body form .navig
 section#register .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button:nth-child(2) {
   right: 1px;
 }
+
+/* Landing-Page Section */
