@@ -21,17 +21,23 @@
                     <div class="form-container">
                         <div class="form-header">
                             <img src="/assets/img/brand.svg" alt="Brand">
-                            <span>Login</span>
+                            <span>Register</span>
                             <span>Fill out the form correctly</span>
                         </div>
                         <div class="form-body">
                             <form action="">
+                                <label for="fullname">Fullname</label>
+                                <div class="input-wicon">
+                                    <img src="/assets/img/Profile.svg" alt="user_icon">
+                                    <input type="text" name="fullname" id="fullname" placeholder="Enter your full name">
+                                </div>
+
                                 <label for="email">Email</label>
                                 <div class="input-wicon">
                                     <img src="/assets/img/mail.svg" alt="mail_icon">
                                     <input type="email" name="email" id="email" placeholder="Email address">
                                 </div>
-                                
+
                                 <label for="password">Password</label>
                                 <div class="input-wicon">
                                     <img src="/assets/img/Password.svg" alt="password_icon">
@@ -39,16 +45,23 @@
                                     <img src="/assets/img/EyeSlash.svg" alt="see_password_icon" class="see-password">
                                 </div>
 
-                                <div class="navigator-text" id="forgot">
-                                    <a href="forgot.html">Lupa password?</a>
+                                <label for="confirm_password">Confirm Password</label>
+                                <div class="input-wicon">
+                                    <img src="/assets/img/Password.svg" alt="password_icon">
+                                    <input type="password" name="confirm_password" id="confirm_password"
+                                        placeholder="Confirm your password">
+                                    <img src="/assets/img/EyeSlash.svg" alt="see_password_icon" class="see-password">
                                 </div>
-                                <button type="submit">Login</button>
+
+                                <button type="submit">Register</button>
                                 <div class="navigator-text" id="register">
-                                    <span>Not Have An Account? <a href="register.html">Register</a></span>
+                                    <span>Have An Account? <a href="login.html">Login</a></span>
                                     <span>or</span>
                                     <div class="social-auth-container">
-                                        <button><img src="/assets/img/bx_bxl-facebook-circle.svg" alt="icon_facebook">Facebook</button>
-                                        <button><img src="/assets/img/flat-color-icons_google.svg" alt="icon_google">Google</button>
+                                        <button><img src="/assets/img/bx_bxl-facebook-circle.svg"
+                                                alt="icon_facebook">Facebook</button>
+                                        <button><img src="/assets/img/flat-color-icons_google.svg"
+                                                alt="icon_google">Google</button>
                                     </div>
                                 </div>
                             </form>
