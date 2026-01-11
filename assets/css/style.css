@@ -19,6 +19,10 @@ img {
   width: 100%;
 }
 
+.text-accent {
+  color: var(--color-primary);
+}
+
 header nav {
   background: rgba(11, 9, 9, 0.1294117647);
   width: 100%;
@@ -88,6 +92,13 @@ header nav ul.right-navigation li .member-sign-up:hover {
   background: var(--color-accent);
   padding: 12px 18px;
   border-radius: 5px;
+}
+
+section .section-body {
+  min-height: 1024px;
+}
+section .section-body .container {
+  font-size: 0;
 }
 
 /* Specifict Component Styles */
@@ -359,30 +370,35 @@ section#register .section-body .container .form-container .form-body form .navig
 
 /* Landing-Page Section */
 section#hero .section-body {
-  height: 1024px;
-  position: relative;
+  min-height: 1024px;
 }
-section#hero .section-body .copytext-container {
+section#hero .section-body .container {
+  font-size: 0;
+}
+section#hero .section-body .container .copytext-container {
   background: linear-gradient(168.18deg, #777C82 -114.74%, #0B0909 91.35%);
   color: #FFFFFF;
   height: 1024px;
-  width: 730px;
-  position: absolute;
+  max-width: 730px;
+  width: 50%;
+  font-size: 16px;
+  display: inline-block;
 }
-section#hero .section-body .copytext-container .copytext {
-  width: 518px;
+section#hero .section-body .container .copytext-container .copytext {
+  max-width: 518px;
+  width: 100%;
   height: 457px;
   position: absolute;
   top: 283px;
   left: 90px;
 }
-section#hero .section-body .copytext-container .copytext .copytext-headline {
+section#hero .section-body .container .copytext-container .copytext .copytext-headline {
   color: #FFFFFF;
   font-size: 48px;
   font-weight: 500;
   margin: 25px 0;
 }
-section#hero .section-body .copytext-container .copytext .cta-button {
+section#hero .section-body .container .copytext-container .copytext .cta-button {
   background: var(--color-accent);
   color: #000000;
   width: 143px;
@@ -395,39 +411,40 @@ section#hero .section-body .copytext-container .copytext .cta-button {
   text-decoration: none;
   cursor: pointer;
 }
-section#hero .section-body .copytext-container .copytext .copytext-data div {
+section#hero .section-body .container .copytext-container .copytext .copytext-data div {
   color: #FFFFFF;
   width: 146px;
   margin: 0 8px;
   border-right: 1px solid #FFFFFF;
   display: inline-block;
 }
-section#hero .section-body .copytext-container .copytext .copytext-data div:nth-child(3) {
+section#hero .section-body .container .copytext-container .copytext .copytext-data div:nth-child(3) {
   border-right: 0;
 }
-section#hero .section-body .copytext-container .copytext .copytext-data span {
+section#hero .section-body .container .copytext-container .copytext .copytext-data span {
   width: 100%;
   color: var(--color-accent);
   font-size: 48px;
   display: block;
 }
-section#hero .section-body .hero-image {
-  background: url(/assets/img/hero.jpg);
+section#hero .section-body .container .hero-image {
+  background: url(../img/hero.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0 0;
   height: 1024px;
-  width: 712px;
-  position: absolute;
-  right: 0;
+  max-width: 712px;
+  width: 50%;
+  font-size: 16px;
+  display: inline-block;
 }
-section#hero .section-body .chat-float {
-  position: absolute;
-  right: 1em;
-  bottom: 1em;
+section#hero .section-body .container .chat-float {
+  position: fixed;
+  right: 130px;
+  bottom: 80px;
   z-index: 2;
 }
-section#hero .section-body .chat-float #chat {
+section#hero .section-body .container .chat-float #chat {
   background: var(--color-accent);
   width: 80px;
   height: 80px;
@@ -435,7 +452,42 @@ section#hero .section-body .chat-float #chat {
   border-radius: 50%;
   cursor: pointer;
 }
-section#hero .section-body .chat-float img {
+section#hero .section-body .container .chat-float img {
   width: 46px;
   height: 46px;
+}
+
+section#feature .section-body {
+  min-height: unset;
+}
+section#feature .section-body .feature {
+  width: 50%;
+  margin-top: 54px;
+  display: inline-block;
+  vertical-align: top;
+}
+section#feature .section-body .feature h2 {
+  font-size: 48px;
+  margin-bottom: 25px;
+}
+section#feature .section-body .feature p {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+section#feature .section-body .feature ul {
+  font-size: 16px;
+  list-style: url("../img/checklist.svg");
+  padding-left: 40px;
+  margin-bottom: 25px;
+}
+section#feature .section-body .feature ul li {
+  margin-bottom: 25px;
+}
+section#feature .section-body .side-image {
+  background: url("../img/feature.jpg");
+  max-width: 711px;
+  width: 50%;
+  height: 574px;
+  display: inline-block;
+  background-position: -274px -140px;
 }
