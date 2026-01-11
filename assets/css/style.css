@@ -19,7 +19,90 @@ img {
   width: 100%;
 }
 
+.text-accent {
+  color: var(--color-primary);
+}
+
+header nav {
+  background: rgba(11, 9, 9, 0.1294117647);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+header nav ul {
+  padding: 14px 130px;
+  display: inline-block;
+  position: absolute;
+}
+header nav ul li {
+  display: inline-block;
+}
+header nav ul li a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+header nav ul li a:hover {
+  color: #FF8906;
+}
+header nav ul li a.active {
+  border-bottom: 1px solid #FF8906;
+}
+header nav ul li button {
+  background: transparent;
+  color: #FFFFFF;
+  width: 24px;
+  border: 0;
+  cursor: pointer;
+}
+header nav ul.left-navigation {
+  left: 0;
+}
+header nav ul.left-navigation li {
+  margin-right: 60px;
+}
+header nav ul.right-navigation {
+  right: 0;
+}
+header nav ul.right-navigation li {
+  margin-right: 22px;
+}
+header nav ul.right-navigation li .member-sign-in {
+  color: #FFFFFF;
+  padding: 12px 18px;
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+}
+header nav ul.right-navigation li .member-sign-up {
+  color: #000000;
+  background: var(--color-accent);
+  padding: 12px 18px;
+  border-radius: 5px;
+}
+header nav ul.right-navigation li .member-sign-in:hover {
+  color: #FFFFFF;
+  padding: 12px 18px;
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+}
+header nav ul.right-navigation li .member-sign-up:hover {
+  color: #000000;
+  background: var(--color-accent);
+  padding: 12px 18px;
+  border-radius: 5px;
+}
+
+section .section-body {
+  min-height: 1024px;
+}
+section .section-body .container {
+  font-size: 0;
+}
+
 /* Specifict Component Styles */
+/* Auth Section */
 section#forgot-password .section-body .container {
   position: relative;
 }
@@ -77,4 +160,334 @@ section#forgot-password .section-body .container .form-container .form-body form
   position: absolute;
   top: 28px;
   left: 13px;
+}
+
+section#login .section-body .container {
+  position: relative;
+}
+section#login .section-body .container .side-image {
+  width: 460px;
+  height: 1024px;
+  background: url("/assets/img/login.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: -106px;
+  position: absolute;
+}
+section#login .section-body .container .form-container {
+  position: absolute;
+  top: 185px;
+  left: 530px;
+}
+section#login .section-body .container .form-container .form-header img {
+  margin-bottom: 51px;
+  display: block;
+}
+section#login .section-body .container .form-container .form-header span {
+  margin-bottom: 25px;
+  display: block;
+}
+section#login .section-body .container .form-container .form-header span:nth-child(2) {
+  color: var(--color-primary);
+  font-size: 22px;
+}
+section#login .section-body .container .form-container .form-body {
+  width: 700px;
+}
+section#login .section-body .container .form-container .form-body form label {
+  font-weight: 600;
+}
+section#login .section-body .container .form-container .form-body form input {
+  width: 100%;
+  height: 31px;
+  margin: 13px 0;
+  padding: 26px 36px;
+  border-radius: 6px;
+}
+section#login .section-body .container .form-container .form-body form button[type=submit] {
+  background: var(--color-accent);
+  width: 100%;
+  margin: 13px 0;
+  padding: 26px;
+  border: 0;
+  border-radius: 6px;
+}
+section#login .section-body .container .form-container .form-body form .input-wicon {
+  position: relative;
+}
+section#login .section-body .container .form-container .form-body form .input-wicon img {
+  position: absolute;
+  top: 28px;
+  left: 13px;
+}
+section#login .section-body .container .form-container .form-body form .input-wicon img.see-password {
+  left: unset;
+  right: 13px;
+}
+section#login .section-body .container .form-container .form-body form .navigator-text {
+  margin: 13px 0;
+}
+section#login .section-body .container .form-container .form-body form .navigator-text a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+section#login .section-body .container .form-container .form-body form .navigator-text span {
+  display: block;
+  margin-bottom: 13px;
+}
+section#login .section-body .container .form-container .form-body form .navigator-text#forgot {
+  text-align: right;
+}
+section#login .section-body .container .form-container .form-body form .navigator-text#register {
+  text-align: center;
+}
+section#login .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button {
+  max-width: 383px;
+  width: 46%;
+  height: 55px;
+  margin-right: 13px;
+  line-height: 55px;
+  display: inline;
+  position: relative;
+  text-align: center;
+}
+section#login .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button img {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 16px;
+  left: 70px;
+}
+section#login .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button:nth-child(1) {
+  left: 1px;
+}
+section#login .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button:nth-child(2) {
+  right: 1px;
+}
+
+section#register .section-body .container {
+  position: relative;
+}
+section#register .section-body .container .side-image {
+  width: 460px;
+  height: 1024px;
+  background: url("/assets/img/register.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: -106px;
+  position: absolute;
+}
+section#register .section-body .container .form-container {
+  position: absolute;
+  top: 185px;
+  left: 530px;
+}
+section#register .section-body .container .form-container .form-header img {
+  margin-bottom: 51px;
+  display: block;
+}
+section#register .section-body .container .form-container .form-header span {
+  margin-bottom: 25px;
+  display: block;
+}
+section#register .section-body .container .form-container .form-header span:nth-child(2) {
+  color: var(--color-primary);
+  font-size: 22px;
+}
+section#register .section-body .container .form-container .form-body {
+  width: 700px;
+}
+section#register .section-body .container .form-container .form-body form label {
+  font-weight: 600;
+}
+section#register .section-body .container .form-container .form-body form input {
+  width: 100%;
+  height: 31px;
+  margin: 13px 0;
+  padding: 26px 36px;
+  border-radius: 6px;
+}
+section#register .section-body .container .form-container .form-body form button[type=submit] {
+  background: var(--color-accent);
+  width: 100%;
+  margin: 13px 0;
+  padding: 26px;
+  border: 0;
+  border-radius: 6px;
+}
+section#register .section-body .container .form-container .form-body form .input-wicon {
+  position: relative;
+}
+section#register .section-body .container .form-container .form-body form .input-wicon img {
+  position: absolute;
+  top: 28px;
+  left: 13px;
+}
+section#register .section-body .container .form-container .form-body form .input-wicon img.see-password {
+  left: unset;
+  right: 13px;
+}
+section#register .section-body .container .form-container .form-body form .navigator-text {
+  margin: 13px 0;
+}
+section#register .section-body .container .form-container .form-body form .navigator-text a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+section#register .section-body .container .form-container .form-body form .navigator-text span {
+  display: block;
+  margin-bottom: 13px;
+}
+section#register .section-body .container .form-container .form-body form .navigator-text#forgot {
+  text-align: right;
+}
+section#register .section-body .container .form-container .form-body form .navigator-text#register {
+  text-align: center;
+}
+section#register .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button {
+  max-width: 383px;
+  width: 46%;
+  height: 55px;
+  margin-right: 13px;
+  line-height: 55px;
+  display: inline;
+  position: relative;
+  text-align: center;
+}
+section#register .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button img {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 16px;
+  left: 70px;
+}
+section#register .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button:nth-child(1) {
+  left: 1px;
+}
+section#register .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button:nth-child(2) {
+  right: 1px;
+}
+
+/* Landing-Page Section */
+section#hero .section-body {
+  min-height: 1024px;
+}
+section#hero .section-body .container {
+  font-size: 0;
+}
+section#hero .section-body .container .copytext-container {
+  background: linear-gradient(168.18deg, #777C82 -114.74%, #0B0909 91.35%);
+  color: #FFFFFF;
+  height: 1024px;
+  max-width: 730px;
+  width: 50%;
+  font-size: 16px;
+  display: inline-block;
+}
+section#hero .section-body .container .copytext-container .copytext {
+  max-width: 518px;
+  width: 100%;
+  height: 457px;
+  position: absolute;
+  top: 283px;
+  left: 90px;
+}
+section#hero .section-body .container .copytext-container .copytext .copytext-headline {
+  color: #FFFFFF;
+  font-size: 48px;
+  font-weight: 500;
+  margin: 25px 0;
+}
+section#hero .section-body .container .copytext-container .copytext .cta-button {
+  background: var(--color-accent);
+  color: #000000;
+  width: 143px;
+  height: 50px;
+  margin: 25px 0;
+  border-radius: 6px;
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  cursor: pointer;
+}
+section#hero .section-body .container .copytext-container .copytext .copytext-data div {
+  color: #FFFFFF;
+  width: 146px;
+  margin: 0 8px;
+  border-right: 1px solid #FFFFFF;
+  display: inline-block;
+}
+section#hero .section-body .container .copytext-container .copytext .copytext-data div:nth-child(3) {
+  border-right: 0;
+}
+section#hero .section-body .container .copytext-container .copytext .copytext-data span {
+  width: 100%;
+  color: var(--color-accent);
+  font-size: 48px;
+  display: block;
+}
+section#hero .section-body .container .hero-image {
+  background: url(../img/hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  height: 1024px;
+  max-width: 712px;
+  width: 50%;
+  font-size: 16px;
+  display: inline-block;
+}
+section#hero .section-body .container .chat-float {
+  position: fixed;
+  right: 130px;
+  bottom: 80px;
+  z-index: 2;
+}
+section#hero .section-body .container .chat-float #chat {
+  background: var(--color-accent);
+  width: 80px;
+  height: 80px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+section#hero .section-body .container .chat-float img {
+  width: 46px;
+  height: 46px;
+}
+
+section#feature .section-body {
+  min-height: unset;
+}
+section#feature .section-body .feature {
+  width: 50%;
+  margin-top: 54px;
+  display: inline-block;
+  vertical-align: top;
+}
+section#feature .section-body .feature h2 {
+  font-size: 48px;
+  margin-bottom: 25px;
+}
+section#feature .section-body .feature p {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+section#feature .section-body .feature ul {
+  font-size: 16px;
+  list-style: url("../img/checklist.svg");
+  padding-left: 40px;
+  margin-bottom: 25px;
+}
+section#feature .section-body .feature ul li {
+  margin-bottom: 25px;
+}
+section#feature .section-body .side-image {
+  background: url("../img/feature.jpg");
+  max-width: 711px;
+  width: 50%;
+  height: 574px;
+  display: inline-block;
+  background-position: -274px -140px;
 }
