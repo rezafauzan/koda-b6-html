@@ -22,7 +22,11 @@ img {
 header nav {
   background: rgba(11, 9, 9, 0.1294117647);
   width: 100%;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
 header nav ul {
   padding: 14px 130px;
@@ -354,3 +358,84 @@ section#register .section-body .container .form-container .form-body form .navig
 }
 
 /* Landing-Page Section */
+section#hero .section-body {
+  height: 1024px;
+  position: relative;
+}
+section#hero .section-body .copytext-container {
+  background: linear-gradient(168.18deg, #777C82 -114.74%, #0B0909 91.35%);
+  color: #FFFFFF;
+  height: 1024px;
+  width: 730px;
+  position: absolute;
+}
+section#hero .section-body .copytext-container .copytext {
+  width: 518px;
+  height: 457px;
+  position: absolute;
+  top: 283px;
+  left: 90px;
+}
+section#hero .section-body .copytext-container .copytext .copytext-headline {
+  color: #FFFFFF;
+  font-size: 48px;
+  font-weight: 500;
+  margin: 25px 0;
+}
+section#hero .section-body .copytext-container .copytext .cta-button {
+  background: var(--color-accent);
+  color: #000000;
+  width: 143px;
+  height: 50px;
+  margin: 25px 0;
+  border-radius: 6px;
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  cursor: pointer;
+}
+section#hero .section-body .copytext-container .copytext .copytext-data div {
+  color: #FFFFFF;
+  width: 146px;
+  margin: 0 8px;
+  border-right: 1px solid #FFFFFF;
+  display: inline-block;
+}
+section#hero .section-body .copytext-container .copytext .copytext-data div:nth-child(3) {
+  border-right: 0;
+}
+section#hero .section-body .copytext-container .copytext .copytext-data span {
+  width: 100%;
+  color: var(--color-accent);
+  font-size: 48px;
+  display: block;
+}
+section#hero .section-body .hero-image {
+  background: url(/assets/img/hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  height: 1024px;
+  width: 712px;
+  position: absolute;
+  right: 0;
+}
+section#hero .section-body .chat-float {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  z-index: 2;
+}
+section#hero .section-body .chat-float #chat {
+  background: var(--color-accent);
+  width: 80px;
+  height: 80px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+section#hero .section-body .chat-float img {
+  width: 46px;
+  height: 46px;
+}
