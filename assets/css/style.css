@@ -491,3 +491,61 @@ section#feature .section-body .side-image {
   display: inline-block;
   background-position: -274px -140px;
 }
+
+section#favorite-product {
+  margin-top: 81px;
+}
+section#favorite-product .section-header {
+  margin-bottom: 60px;
+  text-align: center;
+}
+section#favorite-product .section-header h2 {
+  font-size: 48px;
+}
+section#favorite-product .section-header hr {
+  background: var(--color-accent);
+  width: 68px;
+  height: 7px;
+  margin: 25px auto;
+  border: 0;
+}
+section#favorite-product .section-header p {
+  font-weight: 400px;
+}
+
+section#favorite-product .section-body .product-container{
+  font-size: 0;
+  text-align: center;
+}
+
+section#favorite-product .section-body .product-container .card{
+  width: 22%;
+  margin: 0 1em;
+  font-size: 16px;
+  text-align: start;
+  display: inline-block;
+}
+
+section#favorite-product .section-body .product-container .card .action{
+  width: 100%;
+  height: 35px;
+}
+
+section#favorite-product .section-body .product-container .card button{
+  background: var(--color-accent);
+  width: 177px;
+  height: 35px;
+  margin-right: 7px;  
+  border: 0;
+  border-radius: 6px;
+  vertical-align: middle;
+}
+
+section#favorite-product .section-body .product-container .card button.cart{
+  background: transparent;
+  width: 58px;
+  height: 35px;
+  border: 1px solid var(--color-accent);
+  vertical-align: middle;
+}
+
