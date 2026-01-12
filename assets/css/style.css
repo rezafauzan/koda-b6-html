@@ -553,8 +553,13 @@ section#favorite-product .section-body .product-container .card button.cart{
   vertical-align: middle;
 }
 
+
 section#map{
   margin-top: 81px;
+}
+
+section#map .section-body{
+  min-height: unset;
 }
 
 section#map .section-header {
@@ -571,6 +576,7 @@ section#map .section-header hr {
   margin: 25px auto;
   border: 0;
 }
+
 section#map .section-header p {
   font-weight: 400px;
 }
@@ -578,3 +584,100 @@ section#map .section-header p {
 section#map .section-body {
   text-align: center;
 }
+
+section#testimoni .section-body{
+  min-height: unset;
+}
+
+section#testimoni .section-body .container{
+  background: linear-gradient(168.18deg, #777C82 -114.74%, #0B0909 91.35%);
+  padding: 76px 0;
+  padding-left: 100px;
+}
+
+section#testimoni .section-body .container{
+  background: linear-gradient(168.18deg, #777C82 -114.74%, #0B0909 91.35%);
+  padding: 76px 0;
+  padding-left: 100px;
+}
+
+section#testimoni .section-body .container .testimoni-picture{
+  width: 50%;
+  display: inline-block;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+section#testimoni .section-body .container .testimoni-text{
+  color: #FFFFFF;
+  width: 50%;
+  display: inline-block;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+section#testimoni .section-body .container .testimoni-text>span{
+  display: block;
+  margin-bottom: 25px;
+}
+
+section#testimoni .section-body .container .testimoni-text span.tester{
+  font-size: 48px;
+  padding-left: 25px;
+  border-left: 1px solid var(--color-accent);
+}
+
+section#testimoni .section-body .container .testimoni-text span.tester-proffesion{
+  color: var(--color-accent);
+}
+
+section#testimoni .section-body .container .testimoni-text .rating{
+  margin: 25px 0;
+}
+
+section#testimoni .section-body .container .testimoni-text .rating *{
+  display: inline-block;
+  margin-right: 1em;
+}
+
+section#testimoni .section-body .container .testimoni-text button{
+  background: #FFFFFF;
+  width: 47px;
+  height: 47px;
+  border: 0;
+  border-radius: 50%;
+}
+
+section#testimoni .section-body .container .testimoni-text button.next{
+  background: var(--color-accent);
+  width: 47px;
+  height: 47px;
+  border: 0;
+  border-radius: 50%;
+}
+
+section#testimoni .section-body .container .testimoni-text .testimoni-indicator span{
+  background: #FFFFFF;
+  width: 8px;
+  height: 8px;
+  margin-top: 25px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+section#testimoni .section-body .container .testimoni-text .testimoni-indicator span{
+  background: #FFFFFF;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+section#testimoni .section-body .container .testimoni-text .testimoni-indicator span.active{
+  background: var(--color-accent);
+  width: 25px;
+  border-radius: 6px;
+}
+
+
+
