@@ -14,6 +14,18 @@ img {
   max-width: 100%;
 }
 
+span{
+  font-size: 16px;
+}
+
+p{
+  font-size: 16px;
+}
+
+label{
+  font-size: 16px;
+}
+
 /* Reusable Class */
 .container {
   width: 100%;
@@ -226,17 +238,21 @@ section#login .section-body .container .form-container .form-body form .input-wi
 }
 section#login .section-body .container .form-container .form-body form .navigator-text {
   margin: 13px 0;
+  font-size: 16px;
 }
 section#login .section-body .container .form-container .form-body form .navigator-text a {
   color: var(--color-accent);
   text-decoration: none;
+  font-size: 16px;
 }
 section#login .section-body .container .form-container .form-body form .navigator-text span {
   display: block;
   margin-bottom: 13px;
+  font-size: 16px;
 }
 section#login .section-body .container .form-container .form-body form .navigator-text#forgot {
   text-align: right;
+  font-size: 16px;
 }
 section#login .section-body .container .form-container .form-body form .navigator-text#register {
   text-align: center;
@@ -583,6 +599,10 @@ section#map .section-header p {
 
 section#map .section-body {
   text-align: center;
+}
+
+section#testimoni{
+  margin-bottom: 71px;
 }
 
 section#testimoni .section-body{
