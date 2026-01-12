@@ -513,6 +513,10 @@ section#favorite-product .section-header p {
   font-weight: 400px;
 }
 
+section#favorite-product .section-body{
+  min-height: unset;
+}
+
 section#favorite-product .section-body .product-container{
   font-size: 0;
   text-align: center;
@@ -549,3 +553,28 @@ section#favorite-product .section-body .product-container .card button.cart{
   vertical-align: middle;
 }
 
+section#map{
+  margin-top: 81px;
+}
+
+section#map .section-header {
+  margin-bottom: 60px;
+  text-align: center;
+}
+section#map .section-header h2 {
+  font-size: 48px;
+}
+section#map .section-header hr {
+  background: var(--color-accent);
+  width: 68px;
+  height: 7px;
+  margin: 25px auto;
+  border: 0;
+}
+section#map .section-header p {
+  font-weight: 400px;
+}
+
+section#map .section-body {
+  text-align: center;
+}
