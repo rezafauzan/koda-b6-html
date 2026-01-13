@@ -1,6 +1,10 @@
 :root {
-  --color-primary: #8E6447;
-  --color-accent: #FF8906;
+  --color-black: #0B0909;
+  --color-white: white;
+  --color-primary: #FF8906;
+  --color-accent: #8E6447;
+  --color-secondary: #AAAAAA;
+  --color-coupon: #88B788;
 }
 
 /* Reset */
@@ -14,23 +18,98 @@ img {
   max-width: 100%;
 }
 
-p {
-  font-size: 16px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-label {
-  font-size: 16px;
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-/* Reusable Class */
+button {
+  cursor: pointer;
+}
+
+/* reusable class */
 .container {
   width: 100%;
 }
 
 .text-accent {
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
+.baris {
+  width: 100%;
+  display: flex;
+}
+
+.flash-sale-label {
+  background: red;
+  color: var(--color-white);
+  min-width: 100px;
+  min-height: 40px;
+  padding: 10px;
+  border-radius: 24px;
+}
+
+.text-besar {
+  font-size: 22px;
+}
+
+.text-sangatbesar {
+  font-size: 48px;
+}
+
+/* Dark navbar */
+header nav.dark {
+  background: var(--color-black);
+  padding: 26px 133px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav.dark ul {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+header nav.dark ul li a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+header nav.dark ul li a:hover {
+  color: var(--color-white);
+}
+header nav.dark ul li a.active {
+  color: var(--color-white);
+  border-bottom: 1px solid var(--color-primary);
+}
+header nav.dark .right-navigation button {
+  background: transparent;
+  border: 0;
+}
+header nav.dark .right-navigation .member-sign-in {
+  color: var(--color-white);
+  width: 82px;
+  height: 48px;
+  padding: 1rem;
+  border: 1px solid var(--color-white);
+  border-radius: 5px;
+}
+header nav.dark .right-navigation .member-sign-up {
+  background: var(--color-primary);
+  color: var(--color-black);
+  width: 82px;
+  height: 48px;
+  padding: 1rem;
+  border: 0;
+  border-radius: 5px;
+}
+
+/* Transparent navbar */
 header nav {
   background: rgba(11, 9, 9, 0.1294117647);
   width: 100%;
@@ -40,30 +119,24 @@ header nav {
   right: 0;
   z-index: 1;
 }
-
 header nav ul {
   padding: 14px 130px;
   display: inline-block;
   position: absolute;
 }
-
 header nav ul li {
   display: inline-block;
 }
-
 header nav ul li a {
   color: #FFFFFF;
   text-decoration: none;
 }
-
 header nav ul li a:hover {
   color: #FF8906;
 }
-
 header nav ul li a.active {
   border-bottom: 1px solid #FF8906;
 }
-
 header nav ul li button {
   background: transparent;
   color: #FFFFFF;
@@ -71,44 +144,36 @@ header nav ul li button {
   border: 0;
   cursor: pointer;
 }
-
 header nav ul.left-navigation {
   left: 0;
 }
-
 header nav ul.left-navigation li {
   margin-right: 60px;
 }
-
 header nav ul.right-navigation {
   right: 0;
 }
-
 header nav ul.right-navigation li {
   margin-right: 22px;
 }
-
 header nav ul.right-navigation li .member-sign-in {
   color: #FFFFFF;
   padding: 12px 18px;
   border: 1px solid #FFFFFF;
   border-radius: 5px;
 }
-
 header nav ul.right-navigation li .member-sign-up {
   color: #000000;
   background: var(--color-accent);
   padding: 12px 18px;
   border-radius: 5px;
 }
-
 header nav ul.right-navigation li .member-sign-in:hover {
   color: #FFFFFF;
   padding: 12px 18px;
   border: 1px solid #FFFFFF;
   border-radius: 5px;
 }
-
 header nav ul.right-navigation li .member-sign-up:hover {
   color: #000000;
   background: var(--color-accent);
@@ -116,59 +181,43 @@ header nav ul.right-navigation li .member-sign-up:hover {
   border-radius: 5px;
 }
 
-section .section-body {
-  min-height: 1024px;
-}
-
-section .section-body .container {
-  font-size: 0;
-}
-
-/* Specifict Component Styles */
-/* Auth Section */
+/* Specifict Pages Styles */
+/* Auth */
 section#forgot-password .section-body .container {
   position: relative;
 }
-
 section#forgot-password .section-body .container .side-image {
   width: 460px;
   height: 1024px;
-  background: url("/assets/img/forgot.jpg");
+  background: url("../img/forgot.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: -880px;
   position: absolute;
 }
-
 section#forgot-password .section-body .container .form-container {
   position: absolute;
   top: 345.5px;
   left: 530px;
 }
-
 section#forgot-password .section-body .container .form-container .form-header img {
   margin-bottom: 51px;
   display: block;
 }
-
 section#forgot-password .section-body .container .form-container .form-header span {
   margin-bottom: 25px;
   display: block;
 }
-
 section#forgot-password .section-body .container .form-container .form-header span:nth-child(2) {
-  color: var(--color-primary);
+  color: var(--color-accent);
   font-size: 22px;
 }
-
 section#forgot-password .section-body .container .form-container .form-body {
   width: 700px;
 }
-
 section#forgot-password .section-body .container .form-container .form-body form label {
   font-weight: 600;
 }
-
 section#forgot-password .section-body .container .form-container .form-body form input {
   width: 100%;
   height: 31px;
@@ -176,21 +225,17 @@ section#forgot-password .section-body .container .form-container .form-body form
   padding: 26px 36px;
   border-radius: 6px;
 }
-
 section#forgot-password .section-body .container .form-container .form-body form button[type=submit] {
-  background: var(--color-accent);
+  background: var(--color-primary);
   width: 100%;
   margin: 13px 0;
   padding: 26px;
   border: 0;
   border-radius: 6px;
-  cursor: pointer;
 }
-
 section#forgot-password .section-body .container .form-container .form-body form .input-wicon {
   position: relative;
 }
-
 section#forgot-password .section-body .container .form-container .form-body form .input-wicon img {
   position: absolute;
   top: 28px;
@@ -200,46 +245,38 @@ section#forgot-password .section-body .container .form-container .form-body form
 section#login .section-body .container {
   position: relative;
 }
-
 section#login .section-body .container .side-image {
   width: 460px;
   height: 1024px;
-  background: url("/assets/img/login.jpg");
+  background: url("../img/login.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: -106px;
   position: absolute;
 }
-
 section#login .section-body .container .form-container {
   position: absolute;
   top: 185px;
   left: 530px;
 }
-
 section#login .section-body .container .form-container .form-header img {
   margin-bottom: 51px;
   display: block;
 }
-
 section#login .section-body .container .form-container .form-header span {
   margin-bottom: 25px;
   display: block;
 }
-
 section#login .section-body .container .form-container .form-header span:nth-child(2) {
-  color: var(--color-primary);
+  color: var(--color-accent);
   font-size: 22px;
 }
-
 section#login .section-body .container .form-container .form-body {
   width: 700px;
 }
-
 section#login .section-body .container .form-container .form-body form label {
   font-weight: 600;
 }
-
 section#login .section-body .container .form-container .form-body form input {
   width: 100%;
   height: 31px;
@@ -247,59 +284,43 @@ section#login .section-body .container .form-container .form-body form input {
   padding: 26px 36px;
   border-radius: 6px;
 }
-
 section#login .section-body .container .form-container .form-body form button[type=submit] {
-  background: var(--color-accent);
+  background: var(--color-primary);
   width: 100%;
   margin: 13px 0;
   padding: 26px;
   border: 0;
   border-radius: 6px;
-  cursor: pointer;
-
 }
-
 section#login .section-body .container .form-container .form-body form .input-wicon {
   position: relative;
 }
-
 section#login .section-body .container .form-container .form-body form .input-wicon img {
   position: absolute;
   top: 28px;
   left: 13px;
 }
-
 section#login .section-body .container .form-container .form-body form .input-wicon img.see-password {
   left: unset;
   right: 13px;
 }
-
 section#login .section-body .container .form-container .form-body form .navigator-text {
   margin: 13px 0;
-  font-size: 16px;
 }
-
 section#login .section-body .container .form-container .form-body form .navigator-text a {
-  color: var(--color-accent);
+  color: var(--color-primary);
   text-decoration: none;
-  font-size: 16px;
 }
-
 section#login .section-body .container .form-container .form-body form .navigator-text span {
   display: block;
   margin-bottom: 13px;
-  font-size: 16px;
 }
-
 section#login .section-body .container .form-container .form-body form .navigator-text#forgot {
   text-align: right;
-  font-size: 16px;
 }
-
 section#login .section-body .container .form-container .form-body form .navigator-text#register {
   text-align: center;
 }
-
 section#login .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button {
   max-width: 383px;
   width: 46%;
@@ -309,9 +330,7 @@ section#login .section-body .container .form-container .form-body form .navigato
   display: inline;
   position: relative;
   text-align: center;
-  cursor: pointer;
 }
-
 section#login .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button img {
   width: 24px;
   height: 24px;
@@ -319,11 +338,9 @@ section#login .section-body .container .form-container .form-body form .navigato
   top: 16px;
   left: 70px;
 }
-
 section#login .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button:nth-child(1) {
   left: 1px;
 }
-
 section#login .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button:nth-child(2) {
   right: 1px;
 }
@@ -331,46 +348,38 @@ section#login .section-body .container .form-container .form-body form .navigato
 section#register .section-body .container {
   position: relative;
 }
-
 section#register .section-body .container .side-image {
   width: 460px;
   height: 1024px;
-  background: url("/assets/img/register.jpg");
+  background: url("../img/register.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: -106px;
   position: absolute;
 }
-
 section#register .section-body .container .form-container {
   position: absolute;
   top: 185px;
   left: 530px;
 }
-
 section#register .section-body .container .form-container .form-header img {
   margin-bottom: 51px;
   display: block;
 }
-
 section#register .section-body .container .form-container .form-header span {
   margin-bottom: 25px;
   display: block;
 }
-
 section#register .section-body .container .form-container .form-header span:nth-child(2) {
-  color: var(--color-primary);
+  color: var(--color-accent);
   font-size: 22px;
 }
-
 section#register .section-body .container .form-container .form-body {
   width: 700px;
 }
-
 section#register .section-body .container .form-container .form-body form label {
   font-weight: 600;
 }
-
 section#register .section-body .container .form-container .form-body form input {
   width: 100%;
   height: 31px;
@@ -378,54 +387,43 @@ section#register .section-body .container .form-container .form-body form input 
   padding: 26px 36px;
   border-radius: 6px;
 }
-
 section#register .section-body .container .form-container .form-body form button[type=submit] {
-  background: var(--color-accent);
+  background: var(--color-primary);
   width: 100%;
   margin: 13px 0;
   padding: 26px;
   border: 0;
   border-radius: 6px;
-  cursor: pointer;
 }
-
 section#register .section-body .container .form-container .form-body form .input-wicon {
   position: relative;
 }
-
 section#register .section-body .container .form-container .form-body form .input-wicon img {
   position: absolute;
   top: 28px;
   left: 13px;
 }
-
 section#register .section-body .container .form-container .form-body form .input-wicon img.see-password {
   left: unset;
   right: 13px;
 }
-
 section#register .section-body .container .form-container .form-body form .navigator-text {
   margin: 13px 0;
 }
-
 section#register .section-body .container .form-container .form-body form .navigator-text a {
-  color: var(--color-accent);
+  color: var(--color-primary);
   text-decoration: none;
 }
-
 section#register .section-body .container .form-container .form-body form .navigator-text span {
   display: block;
   margin-bottom: 13px;
 }
-
 section#register .section-body .container .form-container .form-body form .navigator-text#forgot {
   text-align: right;
 }
-
 section#register .section-body .container .form-container .form-body form .navigator-text#register {
   text-align: center;
 }
-
 section#register .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button {
   max-width: 383px;
   width: 46%;
@@ -435,9 +433,7 @@ section#register .section-body .container .form-container .form-body form .navig
   display: inline;
   position: relative;
   text-align: center;
-  cursor: pointer;
 }
-
 section#register .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button img {
   width: 24px;
   height: 24px;
@@ -445,25 +441,21 @@ section#register .section-body .container .form-container .form-body form .navig
   top: 16px;
   left: 70px;
 }
-
 section#register .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button:nth-child(1) {
   left: 1px;
 }
-
 section#register .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button:nth-child(2) {
   right: 1px;
 }
 
 /* Landing-Page Section */
-section#hero .section-body {
+body#home section#hero .section-body {
   min-height: 1024px;
 }
-
-section#hero .section-body .container {
+body#home section#hero .section-body .container {
   font-size: 0;
 }
-
-section#hero .section-body .container .copytext-container {
+body#home section#hero .section-body .container .copytext-container {
   background: linear-gradient(168.18deg, #777C82 -114.74%, #0B0909 91.35%);
   color: #FFFFFF;
   height: 1024px;
@@ -472,8 +464,7 @@ section#hero .section-body .container .copytext-container {
   font-size: 16px;
   display: inline-block;
 }
-
-section#hero .section-body .container .copytext-container .copytext {
+body#home section#hero .section-body .container .copytext-container .copytext {
   max-width: 518px;
   width: 100%;
   height: 457px;
@@ -481,15 +472,13 @@ section#hero .section-body .container .copytext-container .copytext {
   top: 283px;
   left: 90px;
 }
-
-section#hero .section-body .container .copytext-container .copytext .copytext-headline {
+body#home section#hero .section-body .container .copytext-container .copytext .copytext-headline {
   color: #FFFFFF;
   font-size: 48px;
   font-weight: 500;
   margin: 25px 0;
 }
-
-section#hero .section-body .container .copytext-container .copytext .cta-button {
+body#home section#hero .section-body .container .copytext-container .copytext .cta-button {
   background: var(--color-accent);
   color: #000000;
   width: 143px;
@@ -502,27 +491,23 @@ section#hero .section-body .container .copytext-container .copytext .cta-button 
   text-decoration: none;
   cursor: pointer;
 }
-
-section#hero .section-body .container .copytext-container .copytext .copytext-data div {
+body#home section#hero .section-body .container .copytext-container .copytext .copytext-data div {
   color: #FFFFFF;
   width: 146px;
   margin: 0 8px;
   border-right: 1px solid #FFFFFF;
   display: inline-block;
 }
-
-section#hero .section-body .container .copytext-container .copytext .copytext-data div:nth-child(3) {
+body#home section#hero .section-body .container .copytext-container .copytext .copytext-data div:nth-child(3) {
   border-right: 0;
 }
-
-section#hero .section-body .container .copytext-container .copytext .copytext-data span {
+body#home section#hero .section-body .container .copytext-container .copytext .copytext-data span {
   width: 100%;
   color: var(--color-accent);
   font-size: 48px;
   display: block;
 }
-
-section#hero .section-body .container .hero-image {
+body#home section#hero .section-body .container .hero-image {
   background: url(../img/hero.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -533,15 +518,13 @@ section#hero .section-body .container .hero-image {
   font-size: 16px;
   display: inline-block;
 }
-
-section#hero .section-body .container .chat-float {
+body#home section#hero .section-body .container .chat-float {
   position: fixed;
   right: 130px;
   bottom: 80px;
   z-index: 2;
 }
-
-section#hero .section-body .container .chat-float #chat {
+body#home section#hero .section-body .container .chat-float #chat {
   background: var(--color-accent);
   width: 80px;
   height: 80px;
@@ -549,45 +532,37 @@ section#hero .section-body .container .chat-float #chat {
   border-radius: 50%;
   cursor: pointer;
 }
-
-section#hero .section-body .container .chat-float img {
+body#home section#hero .section-body .container .chat-float img {
   width: 46px;
   height: 46px;
 }
-
-section#feature .section-body {
+body#home section#feature .section-body {
   min-height: unset;
 }
-
-section#feature .section-body .feature {
+body#home section#feature .section-body .feature {
   width: 50%;
   margin-top: 54px;
   display: inline-block;
   vertical-align: top;
 }
-
-section#feature .section-body .feature h2 {
+body#home section#feature .section-body .feature h2 {
   font-size: 48px;
   margin-bottom: 25px;
 }
-
-section#feature .section-body .feature p {
+body#home section#feature .section-body .feature p {
   font-size: 16px;
   margin-bottom: 25px;
 }
-
-section#feature .section-body .feature ul {
+body#home section#feature .section-body .feature ul {
   font-size: 16px;
   list-style: url("../img/checklist.svg");
   padding-left: 40px;
   margin-bottom: 25px;
 }
-
-section#feature .section-body .feature ul li {
+body#home section#feature .section-body .feature ul li {
   margin-bottom: 25px;
 }
-
-section#feature .section-body .side-image {
+body#home section#feature .section-body .side-image {
   background: url("../img/feature.jpg");
   max-width: 711px;
   width: 50%;
@@ -595,244 +570,648 @@ section#feature .section-body .side-image {
   display: inline-block;
   background-position: -274px -140px;
 }
-
-section#favorite-product {
+body#home section#favorite-product {
   margin-top: 81px;
 }
-
-section#favorite-product .section-header {
+body#home section#favorite-product .section-header {
   margin-bottom: 60px;
   text-align: center;
 }
-
-section#favorite-product .section-header h2 {
+body#home section#favorite-product .section-header h2 {
   font-size: 48px;
 }
-
-section#favorite-product .section-header hr {
+body#home section#favorite-product .section-header hr {
   background: var(--color-accent);
   width: 68px;
   height: 7px;
   margin: 25px auto;
   border: 0;
 }
-
-section#favorite-product .section-header p {
+body#home section#favorite-product .section-header p {
   font-weight: 400px;
 }
-
-section#favorite-product .section-body {
-  min-height: unset;
+/* product-hero */
+/* product-promo */
+body#product main section#promo .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+body#product main section#promo .section-header .carousel-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+body#product main section#promo .section-header .carousel-navigation .prev {
+  width: 47px;
+  height: 47px;
+  background: var(--color-secondary);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+body#product main section#promo .section-header .carousel-navigation .next {
+  width: 47px;
+  height: 47px;
+  background: var(--color-primary);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+body#product main section#promo .section-body .coupon-container {
+  margin: 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  overflow-x: auto;
+}
+body#product main section#promo .section-body .coupon-container .coupon-card {
+  background: var(--color-coupon);
+  aspect-ratio: 16/9;
+  padding: 0.7rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex: 0 0 400px;
+}
+body#product main section#promo .section-body .coupon-container .coupon-card a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+body#product main section#promo .section-body .coupon-container .coupon-card a:hover {
+  color: var(--color-accent);
+}
+body#product main section#promo .section-body .coupon-container .coupon-card img {
+  width: 96px;
+}
+body#product main section#promo .section-body .coupon-container .coupon-card.yellow {
+  background: #F5C361;
 }
 
-section#favorite-product .section-body .product-container {
-  font-size: 0;
-  text-align: center;
+/* product-our-product */
+body#product main section#our-product .section-body .container {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
-
-section#favorite-product .section-body .product-container .card {
-  width: 22%;
-  margin: 0 1em;
-  font-size: 16px;
-  text-align: start;
-  display: inline-block;
+body#product main section#our-product .section-body .container aside {
+  background: var(--color-black);
+  color: var(--color-white);
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1rem;
+  border-radius: 10px;
+  flex: 1;
+  position: sticky;
 }
-
-section#favorite-product .section-body .product-container .card .action {
+body#product main section#our-product .section-body .container aside form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+body#product main section#our-product .section-body .container aside form input#search {
+  width: 100%;
+}
+body#product main section#our-product .section-body .container aside form .baris:first-child {
+  justify-content: space-between;
+}
+body#product main section#our-product .section-body .container aside form .label-header {
+  align-self: self-start;
+}
+body#product main section#our-product .section-body .container aside form #category-filter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+body#product main section#our-product .section-body .container aside form #category-filter .baris label {
+  margin-left: 1rem;
+}
+body#product main section#our-product .section-body .container aside form #sort-by-filter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+body#product main section#our-product .section-body .container aside form #sort-by-filter .baris label {
+  margin-left: 1rem;
+}
+body#product main section#our-product .section-body .container aside form #range-price {
+  position: relative;
+}
+body#product main section#our-product .section-body .container aside form #range-price input {
+  accent-color: var(--color-primary);
+}
+body#product main section#our-product .section-body .container aside form #range-price #price-range-min {
+  position: absolute;
+}
+body#product main section#our-product .section-body .container aside form button[type=reset] {
+  background: transparent;
+  color: var(--color-white);
+  border: 0;
+  cursor: pointer;
+}
+body#product main section#our-product .section-body .container aside form button[type=submit] {
+  background: var(--color-primary);
+  width: 100%;
+  height: 48px;
+  padding: 1rem;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+body#product main section#our-product .section-body .container aside form input[type=text] {
+  padding: 1rem;
+  border: 0;
+  border-radius: 10px;
+}
+body#product main section#our-product .section-body .container aside form input[type=checkbox] {
+  accent-color: var(--color-primary);
+  width: 25px;
+  height: 25px;
+  border-radius: 10px;
+}
+body#product main section#our-product .section-body .container .product-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  flex: 2;
+  gap: 1rem;
+}
+body#product main section#our-product .section-body .container .product-container .product-card {
+  background: #f5f5f5;
+  max-width: 600px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 -10px 2rem rgba(0, 0, 0, 0.1);
+}
+body#product main section#our-product .section-body .container .product-container .product-card .card-header {
+  position: relative;
+}
+body#product main section#our-product .section-body .container .product-container .product-card .card-header img {
+  width: 100%;
+  height: 260px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body#product main section#our-product .section-body .container .product-container .product-card .card-header .flash-sale-label {
+  background: red;
+  color: var(--color-white);
+  width: 100px;
+  height: 40px;
+  padding: 10px;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  border-radius: 24px;
+}
+body#product main section#our-product .section-body .container .product-container .product-card .card-body {
+  background: white;
+  width: 80%;
+  margin-top: -40px;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 -10px 2rem rgba(0, 0, 0, 0.1);
+}
+body#product main section#our-product .section-body .container .product-container .product-card .card-body .price-bar {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+body#product main section#our-product .section-body .container .product-container .product-card .card-body .price-bar .price {
+  color: var(--color-primary);
+  font-size: 22px;
+}
+body#product main section#our-product .section-body .container .product-container .product-card .card-body .price-bar .slashed {
+  color: red;
+  font-size: 10px;
+  text-decoration: line-through;
+}
+body#product main section#our-product .section-body .container .product-container .product-card .card-body .action {
   width: 100%;
   height: 35px;
 }
-
-section#favorite-product .section-body .product-container .card button {
-  background: var(--color-accent);
+body#product main section#our-product .section-body .container .product-container .product-card .card-body .action button {
+  background: var(--color-primary);
   width: 177px;
   height: 35px;
   margin-right: 7px;
   border: 0;
   border-radius: 6px;
   vertical-align: middle;
-  cursor: pointer;
 }
-
-section#favorite-product .section-body .product-container .card button.cart {
+body#product main section#our-product .section-body .container .product-container .product-card .card-body .action button.cart {
   background: transparent;
   width: 58px;
   height: 35px;
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--color-primary);
   vertical-align: middle;
 }
 
-
-section#map {
-  margin-top: 81px;
+/* Product Detail */
+body#product section#product-detail {
+  padding: 90px 100px;
 }
-
-section#map .section-body {
-  min-height: unset;
+body#product section#product-detail .section-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
-
-section#map .section-header {
-  margin-bottom: 60px;
-  text-align: center;
+body#product section#product-detail .section-body .product-container {
+  display: flex;
+  gap: 1rem;
 }
-
-section#map .section-header h2 {
-  font-size: 48px;
+body#product section#product-detail .section-body .product-container .product-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "active-image active-image active-image" "active-image active-image active-image" "image2 image3 image4" "image2 image3 image4";
+  gap: 1rem;
 }
-
-section#map .section-header hr {
-  background: var(--color-accent);
-  width: 68px;
-  height: 7px;
-  margin: 25px auto;
-  border: 0;
+body#product section#product-detail .section-body .product-container .product-gallery .active-image {
+  width: 100%;
+  grid-area: active-image;
 }
-
-section#map .section-header p {
-  font-weight: 400px;
+body#product section#product-detail .section-body .product-container .product-gallery .product-image-2 {
+  grid-area: image2;
 }
-
-section#map .section-body {
-  text-align: center;
+body#product section#product-detail .section-body .product-container .product-gallery .product-image-3 {
+  grid-area: image3;
 }
-
-section#testimoni {
-  margin-bottom: 71px;
+body#product section#product-detail .section-body .product-container .product-gallery .product-image-4 {
+  grid-area: image4;
 }
-
-section#testimoni .section-body {
-  min-height: unset;
+body#product section#product-detail .section-body .product-container .product-detail {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
 }
-
-section#testimoni .section-body .container {
-  background: linear-gradient(168.18deg, #777C82 -114.74%, #0B0909 91.35%);
-  padding: 76px 0;
-  padding-left: 100px;
+body#product section#product-detail .section-body .product-container .product-detail .flash-sale-label {
+  background: red;
+  color: var(--color-white);
+  width: 100px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 24px;
 }
-
-section#testimoni .section-body .container {
-  background: linear-gradient(168.18deg, #777C82 -114.74%, #0B0909 91.35%);
-  padding: 76px 0;
-  padding-left: 100px;
+body#product section#product-detail .section-body .product-container .product-detail .price-bar {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
 }
-
-section#testimoni .section-body .container .testimoni-picture {
-  width: 50%;
-  display: inline-block;
-  font-size: 16px;
-  vertical-align: middle;
+body#product section#product-detail .section-body .product-container .product-detail .price-bar .price {
+  color: var(--color-primary);
+  font-size: 22px;
 }
-
-section#testimoni .section-body .container .testimoni-text {
-  color: #FFFFFF;
-  width: 50%;
-  display: inline-block;
-  font-size: 16px;
-  vertical-align: middle;
+body#product section#product-detail .section-body .product-container .product-detail .price-bar .slashed {
+  color: red;
+  font-size: 10px;
+  text-decoration: line-through;
 }
-
-section#testimoni .section-body .container .testimoni-text>span {
-  display: block;
+body#product section#product-detail .section-body .product-container .product-detail .recommendation {
+  gap: 1rem;
+}
+body#product section#product-detail .section-body .product-container .product-detail .quantity {
+  width: 100px;
   margin-bottom: 25px;
+  display: flex;
+  align-items: center;
 }
-
-section#testimoni .section-body .container .testimoni-text span.tester {
-  font-size: 48px;
-  padding-left: 25px;
-  border-left: 1px solid var(--color-accent);
+body#product section#product-detail .section-body .product-container .product-detail .quantity input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  flex: 1;
 }
-
-section#testimoni .section-body .container .testimoni-text span.tester-proffesion {
-  color: var(--color-accent);
-}
-
-section#testimoni .section-body .container .testimoni-text .rating {
-  margin: 25px 0;
-}
-
-section#testimoni .section-body .container .testimoni-text .rating * {
-  display: inline-block;
-  margin-right: 1em;
-}
-
-section#testimoni .section-body .container .testimoni-text button {
-  background: #FFFFFF;
-  width: 47px;
-  height: 47px;
-  border: 0;
-  border-radius: 50%;
+body#product section#product-detail .section-body .product-container .product-detail .quantity button {
+  width: 40px;
+  height: 40px;
+  flex: 1;
   cursor: pointer;
 }
+body#product section#product-detail .section-body .product-container .product-detail .quantity button.increment {
+  background: var(--color-primary);
+  width: 40px;
+  height: 40px;
+  flex: 1;
+  border: 0;
+  vertical-align: middle;
+}
+body#product section#product-detail .section-body .product-container .product-detail .quantity button.decrement {
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  flex: 1;
+  border: 1px solid var(--color-primary);
+  vertical-align: middle;
+}
+body#product section#product-detail .section-body .product-container .product-detail .choosesize {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+body#product section#product-detail .section-body .product-container .product-detail .choosesize div {
+  padding: 1rem;
+  flex: 1;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+body#product section#product-detail .section-body .product-container .product-detail .choosesize div:hover {
+  border: 1px solid var(--color-primary);
+}
+body#product section#product-detail .section-body .product-container .product-detail .choosesize div.active {
+  border: 1px solid var(--color-primary);
+}
+body#product section#product-detail .section-body .product-container .product-detail .hotice {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+body#product section#product-detail .section-body .product-container .product-detail .hotice div {
+  padding: 1rem;
+  flex: 1;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+body#product section#product-detail .section-body .product-container .product-detail .hotice div:hover {
+  border: 1px solid var(--color-primary);
+}
+body#product section#product-detail .section-body .product-container .product-detail .hotice div.active {
+  border: 1px solid var(--color-primary);
+}
+body#product section#product-detail .section-body .product-container .product-detail .action {
+  width: 100%;
+  height: 35px;
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+body#product section#product-detail .section-body .product-container .product-detail .action button {
+  background: var(--color-primary);
+  width: 177px;
+  height: 35px;
+  margin-right: 7px;
+  border: 0;
+  border-radius: 6px;
+  vertical-align: middle;
+  flex: 2;
+  cursor: pointer;
+}
+body#product section#product-detail .section-body .product-container .product-detail .action button.cart {
+  background: transparent;
+  width: 58px;
+  height: 35px;
+  border: 1px solid var(--color-primary);
+  vertical-align: middle;
+  flex: 1;
+}
 
-section#testimoni .section-body .container .testimoni-text button.next {
-  background: var(--color-accent);
-  width: 47px;
-  height: 47px;
+/* Other Product */
+body#product section#other-product {
+  padding: 25px 100px;
+}
+body#product section#other-product .section-body {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+body#product section#other-product .section-body .product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+body#product section#other-product .section-body .product-container .product-card {
+  background: #f5f5f5;
+  max-width: 600px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 -10px 2rem rgba(0, 0, 0, 0.1);
+}
+body#product section#other-product .section-body .product-container .product-card .card-header {
+  position: relative;
+}
+body#product section#other-product .section-body .product-container .product-card .card-header img {
+  width: 100%;
+  height: 260px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body#product section#other-product .section-body .product-container .product-card .card-header .flash-sale-label {
+  background: red;
+  color: var(--color-white);
+  width: 100px;
+  height: 40px;
+  padding: 10px;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  border-radius: 24px;
+}
+body#product section#other-product .section-body .product-container .product-card .card-body {
+  background: white;
+  width: 80%;
+  margin-top: -40px;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 -10px 2rem rgba(0, 0, 0, 0.1);
+}
+body#product section#other-product .section-body .product-container .product-card .card-body .price-bar {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+body#product section#other-product .section-body .product-container .product-card .card-body .price-bar .price {
+  color: var(--color-primary);
+  font-size: 22px;
+}
+body#product section#other-product .section-body .product-container .product-card .card-body .price-bar .slashed {
+  color: red;
+  font-size: 10px;
+  text-decoration: line-through;
+}
+body#product section#other-product .section-body .product-container .product-card .card-body .action {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  gap: 1rem;
+}
+body#product section#other-product .section-body .product-container .product-card .card-body .action button {
+  background: var(--color-primary);
+  border: 0;
+  border-radius: 6px;
+  vertical-align: middle;
+  flex: 2;
+}
+body#product section#other-product .section-body .product-container .product-card .card-body .action button.cart {
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  vertical-align: middle;
+  flex: 1;
+}
+body#product section#other-product .section-body .other-product-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+body#product section#other-product .section-body .other-product-pagination a {
+  background: var(--color-secondary);
+  color: var(--color-black);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  text-decoration: none;
+}
+body#product section#other-product .section-body .other-product-pagination a:hover {
+  background: var(--color-primary);
+}
+body#product section#other-product .section-body .other-product-pagination a.active {
+  background: var(--color-primary);
+}
+body#product section#other-product .section-body .other-product-pagination a:last-child {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Payment */
+body#payment-page section#payment .section-body .your-order .your-order-header.baris {
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+body#payment-page section#payment .section-body .your-order .order-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+body#payment-page section#payment .section-body .your-order .order-container .order-card {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex: 1;
+}
+body#payment-page section#payment .section-body .your-order .order-container .order-card .card-header {
+  height: 100%;
+}
+body#payment-page section#payment .section-body .your-order .order-container .order-card .card-body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+  position: relative;
+}
+body#payment-page section#payment .section-body .your-order .order-container .order-card .card-body .price-bar {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+body#payment-page section#payment .section-body .your-order .order-container .order-card .card-body .price-bar .price {
+  color: var(--color-primary);
+  font-size: 22px;
+}
+body#payment-page section#payment .section-body .your-order .order-container .order-card .card-body .price-bar .slashed {
+  color: red;
+  font-size: 10px;
+  text-decoration: line-through;
+}
+body#payment-page section#payment .section-body .your-order .order-container .order-card .card-body button.delete {
+  width: 40px;
+  height: 40px;
+  background: transparent;
   border: 0;
   border-radius: 50%;
+  position: absolute;
+  right: -100px;
+  top: 50%;
+  cursor: pointer;
+}
+body#payment-page section#payment .section-body .your-order .order-container .order-card .card-body button.delete img {
+  width: 100%;
+  height: 100%;
 }
 
-section#testimoni .section-body .container .testimoni-text .testimoni-indicator span {
-  background: #FFFFFF;
-  width: 8px;
-  height: 8px;
-  margin-top: 25px;
-  border-radius: 50%;
-  display: inline-block;
+/* Footer */
+footer .container {
+  padding: 50px 100px;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
 }
-
-section#testimoni .section-body .container .testimoni-text .testimoni-indicator span {
-  background: #FFFFFF;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  display: inline-block;
+footer .container .footer-item {
+  flex: 1;
 }
-
-section#testimoni .section-body .container .testimoni-text .testimoni-indicator span.active {
-  background: var(--color-accent);
-  width: 25px;
-  border-radius: 6px;
+footer .container .footer-item ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
 }
-
-footer {
-
-  .footer-item {
-    min-width: 250px;
-    width: 22%;
-    padding: 0 22px;
-    font-size: 16px;
-    display: inline-block;
-    vertical-align: top;
-
-    ul {
-      list-style: none;
-
-      li {
-        margin-bottom: 25px;
-
-        a {
-          color: #4F5665;
-          text-decoration: none;
-        }
-
-        a:hover {
-          color: #000000;
-        }
-      }
-
-      li.copyright {
-        color: #AFB5C0;
-      }
-    }
-
-    ul.social{
-      min-width: 220px;
-      li{
-        display: inline-block;
-        margin-right: 7px;
-      }
-    }
-  }
-
+footer .container .footer-item ul li a {
+  text-decoration: none;
+  color: var(--color-secondary);
+}
+footer .container .footer-item ul li a:hover {
+  color: var(--color-black);
+}
+footer .container .footer-item ul li.copyright {
+  color: var(--color-secondary);
+}
+footer .container .footer-item ul.social {
+  justify-content: start;
 }
