@@ -1,0 +1,60 @@
+:root {
+  --color-black: #0B0909;
+  --color-white: white;
+  --color-primary: #FF8906;
+  --color-secondary: #AAAAAA;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+header nav {
+  background: var(--color-black);
+  padding: 26px 133px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav ul {
+  display: flex;
+  gap: 26px;
+}
+header nav ul li a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+header nav ul li a:hover {
+  color: var(--color-white);
+}
+header nav ul li a.active {
+  color: var(--color-white);
+  border-bottom: 1px solid var(--color-primary);
+}
+header nav .right-navigation button {
+  background: transparent;
+  border: 0;
+}
+header nav .right-navigation .member-sign-in {
+  color: var(--color-white);
+  width: 82px;
+  height: 48px;
+  padding: 1rem;
+  border: 1px solid var(--color-white);
+  border-radius: 5px;
+}
+header nav .right-navigation .member-sign-up {
+  background: var(--color-primary);
+  color: var(--color-black);
+  width: 82px;
+  height: 48px;
+  padding: 1rem;
+  border: 0;
+  border-radius: 5px;
+}
