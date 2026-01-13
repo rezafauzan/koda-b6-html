@@ -2,9 +2,12 @@
   --color-black: #0B0909;
   --color-white: white;
   --color-primary: #FF8906;
+  --color-accent: #8E6447;
   --color-secondary: #AAAAAA;
+  --color-coupon: #88B788;
 }
 
+/* reset */
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +18,19 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
+section {
+  margin-bottom: 48px;
+}
+section .section-header {
+  padding: 0 100px;
+}
+
+/* reusable class */
+.text-accent {
+  color: var(--color-accent);
+}
+
+/* navbar */
 header nav {
   background: var(--color-black);
   padding: 26px 133px;
@@ -59,6 +75,7 @@ header nav .right-navigation .member-sign-up {
   border-radius: 5px;
 }
 
+/* product-hero */
 body#product main section#hero .section-body .container {
   background: url("../img/product-hero.png");
   background-size: cover;
@@ -77,4 +94,66 @@ body#product main section#hero .section-body .container .copytext {
   justify-content: center;
   align-items: center;
   font-size: clamp(1rem, 1vw, 48px);
+}
+
+/* product-promo */
+body#product main section#promo .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+body#product main section#promo .section-header .carousel-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+body#product main section#promo .section-header .carousel-navigation .prev {
+  width: 47px;
+  height: 47px;
+  background: var(--color-secondary);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+body#product main section#promo .section-header .carousel-navigation .next {
+  width: 47px;
+  height: 47px;
+  background: var(--color-primary);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+body#product main section#promo .section-body .coupon-container {
+  margin: 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  overflow-x: auto;
+}
+body#product main section#promo .section-body .coupon-container .coupon-card {
+  background: var(--color-coupon);
+  aspect-ratio: 16/9;
+  padding: 0.7rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex: 0 0 400px;
+}
+body#product main section#promo .section-body .coupon-container .coupon-card a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+body#product main section#promo .section-body .coupon-container .coupon-card a:hover {
+  color: var(--color-accent);
+}
+body#product main section#promo .section-body .coupon-container .coupon-card img {
+  width: 96px;
+}
+body#product main section#promo .section-body .coupon-container .coupon-card.yellow {
+  background: #F5C361;
 }
