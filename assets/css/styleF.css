@@ -326,3 +326,34 @@ body#product main section#our-product .section-body .container .product-containe
   border: 1px solid var(--color-primary);
   vertical-align: middle;
 }
+
+footer .container {
+  padding: 50px 100px;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+footer .container .footer-item {
+  flex: 1;
+}
+footer .container .footer-item ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+}
+footer .container .footer-item ul li a {
+  text-decoration: none;
+  color: var(--color-secondary);
+}
+footer .container .footer-item ul li a:hover {
+  color: var(--color-black);
+}
+footer .container .footer-item ul li.copyright {
+  color: var(--color-secondary);
+}
+footer .container .footer-item ul.social {
+  justify-content: start;
+}
