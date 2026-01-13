@@ -16,6 +16,9 @@ slicing an coffee shop website ui
 ## Product Page
 ![Product Page UI Screenshoot](assets/img/snapshoot/product.png)
 
+## Product Detail Page
+![Product Detail Page UI Screenshoot](assets/img/snapshoot/product-detail.png)
+
 ## How to run it
 - simply just download the source code
 - open index.js in browser
