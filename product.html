@@ -106,6 +106,83 @@
                 </div>
             </div>
         </section>
+
+        <section id="our-product">
+            <div class="section-header">
+                <h2>Our <span class="text-accent">Product</span></h2>
+            </div>
+            <div class="section-body">
+                <div class="container">
+                    <aside>
+                        <form action="">
+                            <div class="row">
+                                <h3>Filter</h3> 
+                                <button type="reset">Reset Filter</button>
+                            </div>
+    
+                            <label for="search" class="label-header">Search</label>
+                            <input type="text" name="search" id="search" placeholder="Search your product !">
+    
+                            <div id="category-filter">
+                                <span class="label-header">Category</span>
+                                <div class="row">
+                                    <input type="checkbox" name="category" id="favorite-product">
+                                    <label for="favorite-product">Favorite Product</label>
+                                </div>
+                                <div class="row">
+                                    <input type="checkbox" name="category" id="coffee" checked>
+                                    <label for="coffee">Coffee</label>
+                                </div>
+                                <div class="row">
+                                    <input type="checkbox" name="category" id="non-coffee">
+                                    <label for="non-coffee">Non Coffee</label>
+                                </div>
+                                <div class="row">
+                                    <input type="checkbox" name="category" id="foods">
+                                    <label for="foods">Foods</label>
+                                </div>
+                                <div class="row">
+                                    <input type="checkbox" name="category" id="add-on">
+                                    <label for="add-on">Add On</label>
+                                </div>
+                            </div>
+    
+                            <div id="sort-by-filter">
+                                <span class="label-header">Sort By</span>
+                                <div class="row">
+                                    <input type="checkbox" name="sort-by" id="buy-one-get-one">
+                                    <label for="buy-one-get-one">Buy 1 get 1</label>
+                                </div>
+                                <div class="row">
+                                    <input type="checkbox" name="sort-by" id="flash-sale" checked>
+                                    <label for="flash-sale">Flash Sale</label>
+                                </div>
+                                <div class="row">
+                                    <input type="checkbox" name="sort-by" id="birthday-package">
+                                    <label for="birthday-package">Birthday Package</label>
+                                </div>
+                                <div class="row">
+                                    <input type="checkbox" name="category" id="cheap">
+                                    <label for="cheap">Cheap</label>
+                                </div>
+                            </div>
+    
+                            <div id="range-price">
+                                <label for="price-range">Price Range</label>
+                                <input type="range" name="price-range" id="price-range-min" min="0" max="100000" step="1000" value="0">
+                                <input type="range" name="price-range" id="price-range-max" min="0" max="100000" step="1000" value="100000">
+                            </div>
+    
+                            <button type="submit">Apply Filter</button>
+                        </form>
+                    </aside>
+
+                    <div class="product-container">
+
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 
