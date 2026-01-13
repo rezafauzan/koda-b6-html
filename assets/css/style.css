@@ -188,6 +188,7 @@ section#forgot-password .section-body .container .form-container .form-body form
   padding: 26px;
   border: 0;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 section#forgot-password .section-body .container .form-container .form-body form .input-wicon {
@@ -258,6 +259,8 @@ section#login .section-body .container .form-container .form-body form button[ty
   padding: 26px;
   border: 0;
   border-radius: 6px;
+  cursor: pointer;
+
 }
 
 section#login .section-body .container .form-container .form-body form .input-wicon {
@@ -310,6 +313,7 @@ section#login .section-body .container .form-container .form-body form .navigato
   display: inline;
   position: relative;
   text-align: center;
+  cursor: pointer;
 }
 
 section#login .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button img {
@@ -386,6 +390,7 @@ section#register .section-body .container .form-container .form-body form button
   padding: 26px;
   border: 0;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 section#register .section-body .container .form-container .form-body form .input-wicon {
@@ -434,6 +439,7 @@ section#register .section-body .container .form-container .form-body form .navig
   display: inline;
   position: relative;
   text-align: center;
+  cursor: pointer;
 }
 
 section#register .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button img {
