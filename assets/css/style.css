@@ -261,9 +261,6 @@ header nav ul.right-navigation li .member-sign-up:hover {
   border-radius: 10px;
 }
 
-section {
-  margin-bottom: 25px;
-}
 section .section-header {
   text-align: center;
 }
@@ -343,6 +340,7 @@ section#forgot-password .section-body .container .form-container .form-body form
 }
 
 section#login .section-body .container {
+  min-height: 100vh;
   position: relative;
 }
 section#login .section-body .container .side-image {
@@ -352,7 +350,6 @@ section#login .section-body .container .side-image {
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: -106px;
-  position: absolute;
 }
 section#login .section-body .container .form-container {
   position: absolute;
