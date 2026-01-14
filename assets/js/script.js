@@ -39,7 +39,7 @@ function elementCreator(element, attribute = [['', '']], content, parrent) {
 
 function populateFavoriteProduct(products = []){
     products.forEach(
-        product => {
+        (product, index) => {
             const card = elementCreator('div', [['class', 'card body-overlay']], '', favoriteProductContainer)
             const cardHeader = elementCreator('div', [['class', 'card-header']], '', card)
             const cardHeaderImg = elementCreator('img', [['src', 'assets/img/product2.png'], ['alt', product.name]], '', cardHeader)
@@ -48,7 +48,7 @@ function populateFavoriteProduct(products = []){
             const cardBodyDesc = elementCreator('p', [], product.desc, cardBody)
             const cardBodyPrice = elementCreator('span', [], product.price, cardBody)
             const cardBodyActionContainer = elementCreator('div', [['class', 'action']], '', cardBody)
-            const cardBodyActionBuy = elementCreator('button', [['class', 'button-primary']], 'Buy', cardBodyActionContainer)
+            const cardBodyActionBuy = elementCreator('a', [['href',`detail-product.html?id=${index}`],['class', 'button-primary']], 'Buy', cardBodyActionContainer)
             const cardBodyActionCart = elementCreator('button', [['class', 'cart button-border-primary']], '', cardBodyActionContainer)
             const cardBodyActionCartIcon = elementCreator('img', [['src', 'assets/img/ShoppingCart-yellow.svg'], ['alt', 'cart_icon']], '', cardBodyActionCart)
         }    
@@ -56,6 +56,3 @@ function populateFavoriteProduct(products = []){
 }    
 
 populateFavoriteProduct(products)
-
-
-
