@@ -1354,6 +1354,9 @@ body#payment-page section#payment .section-body .your-order .order-container .or
 }
 
 /* Footer */
+footer {
+  background: #F8F8F8;
+}
 footer .container {
   padding: 50px 100px;
   display: flex;
