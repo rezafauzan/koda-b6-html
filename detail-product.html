@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styleF.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body id="product">
@@ -45,15 +45,15 @@
     <main>
         <section id="product-detail">
             <div class="section-body">
-                <div class="product-container">
-                    <div class="product-gallery">
-                        <img src="assets/img/product2.png" alt="Product 2" class="product-image-1 active-image">
+                <div class="product-container" id="product-detail-container">
+                    <div class="product-gallery" id="product-gallery">
+                        <!-- <img src="assets/img/product2.png" alt="Product 2" class="product-image-1 active-image">
                         <img src="assets/img/product2.2.png" alt="Product 2" class="product-image-2">
                         <img src="assets/img/product2.3.png" alt="Product 2" class="product-image-3">
-                        <img src="assets/img/product2.4.png" alt="Product 2" class="product-image-4">
+                        <img src="assets/img/product2.4.png" alt="Product 2" class="product-image-4"> -->
                     </div>
 
-                    <div class="product-detail">
+                    <div class="product-detail" id="product-detail">
                         <span class="flash-sale-label">Flash Sale</span>
                         <h3 class="text-sangatbesar">Hazelnut Latte</h3>
                         <div class="price-bar">
@@ -289,6 +289,63 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const products = [
+            {
+                "name": "Hazzelnut Latte",
+                "image": ['assets/img/image27.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png'],
+                "desc": 'You can explore the menu that we provide with fun and have their own taste and make your day better.',
+                "price": 22000
+            },
+            {
+                "name": "Kopi Liong",
+                "image": ['assets/img/image22.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png'],
+                "desc": 'You can explore the menu that we provide with fun and have their own taste and make your day better.',
+                "price": 10000
+            },
+            {
+                "name": "Kopi kirr",
+                "image": ['assets/img/image30.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png'],
+                "desc": 'You can explore the menu that we provide with fun and have their own taste and make your day better.',
+                "price": 80000
+            },
+            {
+                "name": "Kopiru Rariru",
+                "image": ['assets/img/product2.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png'],
+                "desc": 'You can explore the menu that we provide with fun and have their own taste and make your day better.',
+                "price": 5000
+            }
+        ]
+
+        const productDetailContainer = document.getElementById("product-detail-container")
+        const galleryContainer = document.getElementById('product-gallery')
+
+        function elementCreator(element, attribute = [['', '']], content, parrent) {
+            const e = document.createElement(element)
+            attribute.forEach(
+                attr => e.setAttribute(attr[0], attr[1])
+            )
+            e.textContent = content
+
+            return parrent.appendChild(e)
+        }
+
+        function populateProductDetail(product = {}) {
+            product.image.forEach(
+                (link, index) => {
+                    if(index === 0){
+                        elementCreator('img', [['src', link], ['alt', product.name], ['class', 'active-image product-image-' + (index + 1)]], '', galleryContainer)
+                    }else{
+                        elementCreator('img', [['src', link], ['alt', product.name], ['class', 'product-image-' + (index + 1)]], '', galleryContainer)
+                    }
+                }
+            )
+        }
+        
+        const idProduct = new URLSearchParams(window.location.search).get('id')
+        populateProductDetail(products[idProduct])
+    </script>
 </body>
 
 </html>
