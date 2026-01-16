@@ -33,7 +33,6 @@ function validateLogin(email, password, alertElement) {
         if (document.getElementById('alert-message') !== null) {
             elementor('span', [['id', 'alert-message']], alertData.login_email_empty, alertElement)
         }
-        console.log(alertData)
         alertElement.classList.add('alert-fatal')
         alertElement.classList.add('show')
     } else if (email.includes('@') !== true) {
@@ -56,5 +55,17 @@ function validateLogin(email, password, alertElement) {
         alertElement.classList.add('show')
     } else if (email === 'koda@email.com' && password === '1234') {
         window.location.href = 'index.html'
+    }
+}
+
+function toggleShowPassword(iconSelector, inputId) {
+    const inputPassword = document.getElementById(inputId)
+    const icon = document.querySelector(iconSelector)
+    if (inputPassword.getAttribute('type') === 'password') {
+        inputPassword.setAttribute('type', 'text')
+        icon.setAttribute('src', 'assets/img/eye-svgrepo-com.svg')
+    } else {
+        inputPassword.setAttribute('type', 'password')
+        icon.setAttribute('src', 'assets/img/EyeSlash.svg')
     }
 }

@@ -37,7 +37,9 @@
                                 <div class="input-wicon">
                                     <img src="assets/img/Password.svg" alt="password_icon">
                                     <input type="password" name="password" id="password" placeholder="Password">
-                                    <img src="assets/img/EyeSlash.svg" alt="see_password_icon" class="see-password">
+                                    <button type="button" id="show-password">
+                                        <img src="assets/img/EyeSlash.svg" alt="see_password_icon">
+                                    </button>
                                 </div>
 
                                 <div class="navigator-text" id="forgot">
@@ -51,9 +53,9 @@
                                             class="link-primary">Register</a></span>
                                     <span>or</span>
                                     <div class="social-auth-container">
-                                        <button><img src="assets/img/bx_bxl-facebook-circle.svg"
+                                        <button type="button"><img src="assets/img/bx_bxl-facebook-circle.svg"
                                                 alt="icon_facebook">Facebook</button>
-                                        <button><img src="assets/img/flat-color-icons_google.svg"
+                                        <button type="button"><img src="assets/img/flat-color-icons_google.svg"
                                                 alt="icon_google">Google</button>
                                     </div>
                                 </div>
@@ -80,6 +82,13 @@
                 const password = data.get('password')
                 const alert = document.getElementById('alert')
                 validateLogin(email, password, alert)
+            }
+        )
+
+        const seePasswordButton = document.getElementById('show-password')
+        seePasswordButton.addEventListener('click',
+            () => {
+                toggleShowPassword('#show-password img', 'password')
             }
         )
     </script>
