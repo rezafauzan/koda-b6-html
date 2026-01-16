@@ -1,4 +1,6 @@
 {
+    "login_email_empty": "Email tidak boleh kosong",
     "login_email_wrong": "Email yang anda masukan tidak terdaftar",
+    "login_email_not_valid": "Email yang anda masukan tidak valid",
     "login_password_wrong": "Password yang anda masukan tidak cocok"
 }
