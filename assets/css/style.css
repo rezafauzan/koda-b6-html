@@ -218,6 +218,7 @@ header nav ul.right-navigation li .member-sign-up:hover {
 .card.body-overlay .card-body {
   background: var(--color-white);
   width: 80%;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -315,6 +316,9 @@ form {
   width: 100%;
   border: 0;
   outline: 0;
+}
+.input-wicon img {
+  max-width: 10px;
 }
 
 /* Alerte */
@@ -440,6 +444,10 @@ body#auth section .section-body .form-container .form-body form button[type=subm
 body#auth section .section-body .form-container .form-body form button[type=submit]:hover {
   background: var(--color-primary-active);
   width: 100%;
+}
+body#auth section .section-body .form-container .form-body form button#show-password {
+  background: transparent;
+  border: 0;
 }
 body#auth section .section-body .form-container .form-body form .navigator-text {
   margin: 13px 0;
