@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body id="auth">
     <header>
 
     </header>
@@ -21,8 +21,9 @@
                     <div class="form-container">
                         <div class="form-header">
                             <img src="assets/img/brand.svg" alt="Brand">
-                            <span>Register</span>
+                            <span class="text-besar text-accent">Register</span>
                             <span>Fill out the form correctly</span>
+                            <div id="alert"></div>
                         </div>
                         <div class="form-body">
                             <form action="">
@@ -53,9 +54,10 @@
                                     <img src="assets/img/EyeSlash.svg" alt="see_password_icon" class="see-password">
                                 </div>
 
-                                <button type="submit">Register</button>
+                                <button type="submit" class="button button-primary">Register</button>
+
                                 <div class="navigator-text" id="register">
-                                    <span>Have An Account? <a href="login.html">Login</a></span>
+                                    <span>Have An Account? <a href="login.html" class="link-primary">Login</a></span>
                                     <span>or</span>
                                     <div class="social-auth-container">
                                         <button><img src="assets/img/bx_bxl-facebook-circle.svg"

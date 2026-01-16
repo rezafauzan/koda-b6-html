@@ -319,6 +319,10 @@ form {
 
 /* Alerte */
 #alert {
+  display: none;
+}
+
+#alert.show {
   min-height: 4rem;
   padding: 1rem;
   border-radius: 6px;
@@ -393,10 +397,10 @@ section#forgot-password .section-body .container .form-container .form-body form
   left: 13px;
 }
 
-section#login .section-body .container {
+body#auth section .section-body .container {
   display: flex;
 }
-section#login .section-body .container .side-image {
+body#auth section .section-body .container .side-image {
   width: 460px;
   height: 1024px;
   background: url("../img/login.jpg");
@@ -405,7 +409,7 @@ section#login .section-body .container .side-image {
   background-position-x: -106px;
   flex: 1;
 }
-section#login .section-body .container .form-container {
+body#auth section .section-body .form-container {
   width: 100%;
   margin: 5rem;
   display: flex;
@@ -415,42 +419,42 @@ section#login .section-body .container .form-container {
   gap: 1rem;
   flex: 2;
 }
-section#login .section-body .container .form-container .form-header {
+body#auth section .section-body .form-container .form-header {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-section#login .section-body .container .form-container .form-header img {
+body#auth section .section-body .form-container .form-header img {
   width: 220px;
 }
-section#login .section-body .container .form-container .form-body {
+body#auth section .section-body .form-container .form-body {
   width: 100%;
 }
-section#login .section-body .container .form-container .form-body form label {
+body#auth section .section-body .form-container .form-body form label {
   font-weight: 600;
 }
-section#login .section-body .container .form-container .form-body form button[type=submit] {
+body#auth section .section-body .form-container .form-body form button[type=submit] {
   width: 100%;
 }
-section#login .section-body .container .form-container .form-body form button[type=submit]:hover {
+body#auth section .section-body .form-container .form-body form button[type=submit]:hover {
   background: var(--color-primary-active);
   width: 100%;
 }
-section#login .section-body .container .form-container .form-body form .navigator-text {
+body#auth section .section-body .form-container .form-body form .navigator-text {
   margin: 13px 0;
 }
-section#login .section-body .container .form-container .form-body form .navigator-text span {
+body#auth section .section-body .form-container .form-body form .navigator-text span {
   display: block;
   margin-bottom: 13px;
 }
-section#login .section-body .container .form-container .form-body form .navigator-text#forgot {
+body#auth section .section-body .form-container .form-body form .navigator-text#forgot {
   text-align: right;
 }
-section#login .section-body .container .form-container .form-body form .navigator-text#register {
+body#auth section .section-body .form-container .form-body form .navigator-text#register {
   text-align: center;
 }
-section#login .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button {
+body#auth section .section-body .form-container .form-body form .navigator-text#register .social-auth-container button {
   max-width: 383px;
   width: 46%;
   height: 55px;
@@ -460,121 +464,22 @@ section#login .section-body .container .form-container .form-body form .navigato
   position: relative;
   text-align: center;
 }
-section#login .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button img {
+body#auth section .section-body .form-container .form-body form .navigator-text#register .social-auth-container button img {
   width: 24px;
   height: 24px;
   position: absolute;
   top: 16px;
   left: 70px;
 }
-section#login .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button:nth-child(1) {
+body#auth section .section-body .form-container .form-body form .navigator-text#register .social-auth-container button:nth-child(1) {
   left: 1px;
 }
-section#login .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button:nth-child(2) {
+body#auth section .section-body .form-container .form-body form .navigator-text#register .social-auth-container button:nth-child(2) {
   right: 1px;
 }
 
-section#register .section-body .container {
-  position: relative;
-}
-section#register .section-body .container .side-image {
-  width: 460px;
-  height: 1024px;
+body#auth section#register .section-body .container .side-image {
   background: url("../img/register.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-x: -106px;
-  position: absolute;
-}
-section#register .section-body .container .form-container {
-  position: absolute;
-  top: 185px;
-  left: 530px;
-}
-section#register .section-body .container .form-container .form-header img {
-  margin-bottom: 51px;
-  display: block;
-}
-section#register .section-body .container .form-container .form-header span {
-  margin-bottom: 25px;
-  display: block;
-}
-section#register .section-body .container .form-container .form-header span:nth-child(2) {
-  color: var(--color-accent);
-  font-size: 22px;
-}
-section#register .section-body .container .form-container .form-body {
-  width: 700px;
-}
-section#register .section-body .container .form-container .form-body form label {
-  font-weight: 600;
-}
-section#register .section-body .container .form-container .form-body form input {
-  width: 100%;
-  height: 31px;
-  margin: 13px 0;
-  padding: 26px 36px;
-  border-radius: 6px;
-}
-section#register .section-body .container .form-container .form-body form button[type=submit] {
-  background: var(--color-primary);
-  width: 100%;
-  margin: 13px 0;
-  padding: 26px;
-  border: 0;
-  border-radius: 6px;
-}
-section#register .section-body .container .form-container .form-body form .input-wicon {
-  position: relative;
-}
-section#register .section-body .container .form-container .form-body form .input-wicon img {
-  position: absolute;
-  top: 28px;
-  left: 13px;
-}
-section#register .section-body .container .form-container .form-body form .input-wicon img.see-password {
-  left: unset;
-  right: 13px;
-}
-section#register .section-body .container .form-container .form-body form .navigator-text {
-  margin: 13px 0;
-}
-section#register .section-body .container .form-container .form-body form .navigator-text a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-section#register .section-body .container .form-container .form-body form .navigator-text span {
-  display: block;
-  margin-bottom: 13px;
-}
-section#register .section-body .container .form-container .form-body form .navigator-text#forgot {
-  text-align: right;
-}
-section#register .section-body .container .form-container .form-body form .navigator-text#register {
-  text-align: center;
-}
-section#register .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button {
-  max-width: 383px;
-  width: 46%;
-  height: 55px;
-  margin-right: 13px;
-  line-height: 55px;
-  display: inline;
-  position: relative;
-  text-align: center;
-}
-section#register .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button img {
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  top: 16px;
-  left: 70px;
-}
-section#register .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button:nth-child(1) {
-  left: 1px;
-}
-section#register .section-body .container .form-container .form-body form .navigator-text#register .social-auth-container button:nth-child(2) {
-  right: 1px;
 }
 
 /* Landing-Page Section */

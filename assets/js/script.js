@@ -24,25 +24,34 @@ async function ambilData(resource) {
 }
 
 let alertData = {}
-ambilData("https://raw.githubusercontent.com/rezafauzan/koda-b6-html/refs/heads/feat/login-logic/assets/data/alert-message.json").then(
+ambilData("https://raw.githubusercontent.com/rezafauzan/koda-b6-html/refs/heads/main/assets/data/alert-message.json").then(
     data => { alertData = data }
 )
 
 function validateLogin(email, password, alertElement) {
     if (email.length < 1) {
-        elementor('span', [['id', 'alert-message']], alertData.login_email_empty, alertElement)
+        if (document.getElementById('alert-message') !== null) {
+            elementor('span', [['id', 'alert-message']], alertData.login_email_empty, alertElement)
+        }
+        console.log(alertData)
         alertElement.classList.add('alert-fatal')
         alertElement.classList.add('show')
     } else if (email.includes('@') !== true) {
-        elementor('span', [['id', 'alert-message']], alertData.login_email_not_valid, alertElement)
+        if (document.getElementById('alert-message') !== null) {
+            elementor('span', [['id', 'alert-message']], alertData.login_email_not_valid, alertElement)
+        }
         alertElement.classList.add('alert-fatal')
         alertElement.classList.add('show')
     } else if (email !== 'koda@email.com') {
-        elementor('span', [['id', 'alert-message']], alertData.login_email_wrong, alertElement)
+        if (document.getElementById('alert-message') !== null) {
+            elementor('span', [['id', 'alert-message']], alertData.login_email_wrong, alertElement)
+        }
         alertElement.classList.add('alert-fatal')
         alertElement.classList.add('show')
     } else if (password !== '1234') {
-        elementor('span', [['id', 'alert-message']], alertData.login_password_wrong, alertElement)
+        if (document.getElementById('alert-message') !== null) {
+            elementor('span', [['id', 'alert-message']], alertData.login_password_wrong, alertElement)
+        }
         alertElement.classList.add('alert-fatal')
         alertElement.classList.add('show')
     } else if (email === 'koda@email.com' && password === '1234') {
