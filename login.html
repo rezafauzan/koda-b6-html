@@ -24,7 +24,7 @@
                             <span class="text-besar text-accent">Login</span>
                             <span>Fill out the form correctly</span>
                             <div id="alert" class="alert-fatal">
-                                <span id="alert-message">alert cuyy</span>
+                                <span id="alert-message"></span>
                             </div>
                         </div>
                         <div class="form-body">
@@ -34,7 +34,7 @@
                                     <img src="assets/img/mail.svg" alt="mail_icon">
                                     <input type="email" name="email" id="email" placeholder="Email address">
                                 </div>
-                                
+
                                 <label for="password">Password</label>
                                 <div class="input-wicon">
                                     <img src="assets/img/Password.svg" alt="password_icon">
@@ -49,11 +49,14 @@
                                 <button type="submit" class="button button-primary">Login</button>
 
                                 <div class="navigator-text" id="register">
-                                    <span>Not Have An Account? <a href="register.html" class="link-primary">Register</a></span>
+                                    <span>Not Have An Account? <a href="register.html"
+                                            class="link-primary">Register</a></span>
                                     <span>or</span>
                                     <div class="social-auth-container">
-                                        <button><img src="assets/img/bx_bxl-facebook-circle.svg" alt="icon_facebook">Facebook</button>
-                                        <button><img src="assets/img/flat-color-icons_google.svg" alt="icon_google">Google</button>
+                                        <button><img src="assets/img/bx_bxl-facebook-circle.svg"
+                                                alt="icon_facebook">Facebook</button>
+                                        <button><img src="assets/img/flat-color-icons_google.svg"
+                                                alt="icon_google">Google</button>
                                     </div>
                                 </div>
                             </form>
@@ -68,21 +71,31 @@
 
     </footer>
 
+    <script src="assets/js/script.js"></script>
     <script>
-
+        const alertData = ambilData("assets/data/alert-message.json")
 
         const loginForm = document.getElementById('login-form')
-        loginForm.addEventListener('submit', 
+        loginForm.addEventListener('submit',
             e => {
                 e.preventDefault()
                 const data = new FormData(e.target)
                 const email = data.get('email')
                 const password = data.get('password')
                 if (email === 'koda@email.com' && password === '1234') {
-                    alert("ok")
                     window.location.href = 'index.html'
-                }else{
-                    alert("tidak ok")
+                }
+
+                if (email !== 'koda@email.com') {
+                    const alert = document.getElementById('alert')
+                    const alertMessage = document.getElementById('alert-message')
+                    alertMessage.textContent = alertData.login_email_wrong
+                    alert.classList.add('show')
+
+                    if (password !== '1234') {
+                        alertMessage.textContent = alertData.login_password_wrong
+                        alert.classList.add('show')
+                    }
                 }
             }
         )
