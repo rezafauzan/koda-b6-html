@@ -23,9 +23,7 @@
                             <img src="assets/img/brand.svg" alt="Brand">
                             <span class="text-besar text-accent">Login</span>
                             <span>Fill out the form correctly</span>
-                            <div id="alert" class="alert-fatal">
-                                <span id="alert-message"></span>
-                            </div>
+                            <div id="alert"></div>
                         </div>
                         <div class="form-body">
                             <form action="" id="login-form">
@@ -73,12 +71,7 @@
 
     <script src="assets/js/script.js"></script>
     <script>
-
         const loginForm = document.getElementById('login-form')
-        let alertData = {}
-        ambilData("https://raw.githubusercontent.com/rezafauzan/koda-b6-html/refs/heads/feat/login-logic/assets/data/alert-message.json").then(
-            data => { alertData = data }
-        )
         loginForm.addEventListener('submit',
             e => {
                 e.preventDefault()
@@ -87,23 +80,7 @@
                 const email = data.get('email')
                 const password = data.get('password')
                 const alert = document.getElementById('alert')
-                const alertMessage = document.getElementById('alert-message')
-
-                if (email.length < 1) {
-                    alertMessage.textContent = alertData.login_email_empty
-                    alert.classList.add('show')
-                } else if (email.includes('@') !== true) {
-                    alertMessage.textContent = alertData.login_email_not_valid
-                    alert.classList.add('show')
-                } else if (email !== 'koda@email.com') {
-                    alertMessage.textContent = alertData.login_email_wrong
-                    alert.classList.add('show')
-                } else if (password !== '1234') {
-                    alertMessage.textContent = alertData.login_password_wrong
-                    alert.classList.add('show')
-                } else if (email === 'koda@email.com' && password === '1234') {
-                    window.location.href = 'index.html'
-                }
+                validateLogin(email, password, alert)
             }
         )
     </script>
