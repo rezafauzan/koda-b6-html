@@ -21,11 +21,14 @@
                     <div class="form-container">
                         <div class="form-header">
                             <img src="assets/img/brand.svg" alt="Brand">
-                            <span>Login</span>
+                            <span class="text-besar text-accent">Login</span>
                             <span>Fill out the form correctly</span>
+                            <div id="alert" class="alert-fatal">
+                                <span id="alert-message">alert cuyy</span>
+                            </div>
                         </div>
                         <div class="form-body">
-                            <form action="">
+                            <form action="" id="login-form">
                                 <label for="email">Email</label>
                                 <div class="input-wicon">
                                     <img src="assets/img/mail.svg" alt="mail_icon">
@@ -40,11 +43,13 @@
                                 </div>
 
                                 <div class="navigator-text" id="forgot">
-                                    <a href="forgot.html">Lupa password?</a>
+                                    <a href="forgot.html" class="link-primary">Lupa password?</a>
                                 </div>
-                                <button type="submit">Login</button>
+
+                                <button type="submit" class="button button-primary">Login</button>
+
                                 <div class="navigator-text" id="register">
-                                    <span>Not Have An Account? <a href="register.html">Register</a></span>
+                                    <span>Not Have An Account? <a href="register.html" class="link-primary">Register</a></span>
                                     <span>or</span>
                                     <div class="social-auth-container">
                                         <button><img src="assets/img/bx_bxl-facebook-circle.svg" alt="icon_facebook">Facebook</button>
@@ -62,6 +67,26 @@
     <footer>
 
     </footer>
+
+    <script>
+
+
+        const loginForm = document.getElementById('login-form')
+        loginForm.addEventListener('submit', 
+            e => {
+                e.preventDefault()
+                const data = new FormData(e.target)
+                const email = data.get('email')
+                const password = data.get('password')
+                if (email === 'koda@email.com' && password === '1234') {
+                    alert("ok")
+                    window.location.href = 'index.html'
+                }else{
+                    alert("tidak ok")
+                }
+            }
+        )
+    </script>
 </body>
 
 </html>
