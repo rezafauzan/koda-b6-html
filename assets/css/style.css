@@ -229,6 +229,7 @@ a.link-primary:hover {
   padding: 1rem;
   border: 0;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 .button-primary {
@@ -255,6 +256,33 @@ a.link-primary:hover {
 
 .button-icon {
   background: transparent;
+}
+
+.button-radio {
+  background: transparent;
+  border: 1px solid var(--color-black);
+  position: relative;
+  text-align: center;
+}
+.button-radio input[type=radio] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  cursor: pointer;
+}
+
+.button-radio:hover {
+  border: 1px solid var(--color-primary);
+}
+
+.button-radio.active {
+  border: 1px solid var(--color-primary);
 }
 
 .button-border-primary {
@@ -1244,11 +1272,15 @@ body#payment-page section#payment .section-header {
   margin: 70px 0;
 }
 body#payment-page section#payment .section-body .container {
-  display: flex;
+  padding: 25px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "your-order total" "payment-form kosong";
   gap: 25px;
 }
 body#payment-page section#payment .section-body .container .your-order {
-  flex: 2;
+  grid-area: your-order;
 }
 body#payment-page section#payment .section-body .container .your-order .your-order-header {
   display: flex;
@@ -1298,7 +1330,39 @@ body#payment-page section#payment .section-body .container .your-order .order-co
   width: 100%;
   height: 100%;
 }
-body#payment-page section#payment .section-body .total {
+body#payment-page section#payment .section-body .container .total {
+  grid-area: total;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+body#payment-page section#payment .section-body .container .total .baris {
+  justify-content: space-between;
+}
+body#payment-page section#payment .section-body .container .total .payment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+body#payment-page section#payment .section-body .container .total .payment-info .payment-method {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+}
+body#payment-page section#payment .section-body .container .payment-form {
+  grid-area: payment-form;
+}
+body#payment-page section#payment .section-body .container .payment-form .delivery {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 25px;
+}
+body#payment-page section#payment .section-body .container .payment-form .delivery .button.button-radio {
   flex: 1;
 }
 
