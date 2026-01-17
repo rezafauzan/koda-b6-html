@@ -398,11 +398,14 @@ section#forgot-password .section-body .container .form-container .form-body {
 section#forgot-password .section-body .container .form-container .form-body form label {
   font-weight: 600;
 }
-section#forgot-password .section-body .container .form-container .form-body form input {
+section#forgot-password .section-body .container .form-container .form-body form .input-wicon {
+  padding: 0 1rem;
+}
+section#forgot-password .section-body .container .form-container .form-body form .input-wicon input {
   width: 100%;
   height: 31px;
   margin: 13px 0;
-  padding: 26px 36px;
+  padding: 0;
   border-radius: 6px;
 }
 section#forgot-password .section-body .container .form-container .form-body form button[type=submit] {
@@ -412,14 +415,6 @@ section#forgot-password .section-body .container .form-container .form-body form
   padding: 26px;
   border: 0;
   border-radius: 6px;
-}
-section#forgot-password .section-body .container .form-container .form-body form .input-wicon {
-  position: relative;
-}
-section#forgot-password .section-body .container .form-container .form-body form .input-wicon img {
-  position: absolute;
-  top: 28px;
-  left: 13px;
 }
 
 body#auth section .section-body .container {
