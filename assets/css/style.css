@@ -5,6 +5,7 @@
   --color-primary-active: #ffa010;
   --color-accent: #8E6447;
   --color-secondary: #AAAAAA;
+  --color-secondary-shade: #E8E8E84D;
   --color-coupon: #88B788;
 }
 
@@ -50,10 +51,13 @@ button {
 .flash-sale-label {
   background: red;
   color: var(--color-white);
-  min-width: 100px;
-  min-height: 40px;
-  padding: 10px;
+  padding: 4px 8px;
   border-radius: 24px;
+  font-size: 11px;
+}
+
+.text-medium {
+  font-size: 18px;
 }
 
 .text-besar {
@@ -64,35 +68,44 @@ button {
   font-size: 48px;
 }
 
-/* Dark navbar */
-header nav.dark {
-  background: var(--color-black);
-  padding: 26px 133px;
+/* Per navbar an duniawi */
+header nav {
+  background: rgba(10, 9, 9, 0.1);
+  padding: 16px 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
-header nav.dark ul {
+header nav ul {
   display: flex;
   align-items: center;
   gap: 26px;
+  list-style: none;
 }
-header nav.dark ul li a {
+header nav ul li a {
   color: var(--color-secondary);
   text-decoration: none;
 }
-header nav.dark ul li a:hover {
-  color: var(--color-white);
-}
-header nav.dark ul li a.active {
+header nav ul li a:hover {
   color: var(--color-white);
   border-bottom: 1px solid var(--color-primary);
 }
-header nav.dark .right-navigation button {
+header nav ul li a.active {
+  color: var(--color-white);
+  border-bottom: 1px solid var(--color-primary);
+}
+header nav ul li .brand a:hover {
+  border: 0;
+}
+header nav .right-navigation button {
   background: transparent;
   border: 0;
 }
-header nav.dark .right-navigation .member-sign-in {
+header nav .right-navigation .member-sign-in {
   color: var(--color-white);
   width: 82px;
   height: 48px;
@@ -100,7 +113,7 @@ header nav.dark .right-navigation .member-sign-in {
   border: 1px solid var(--color-white);
   border-radius: 5px;
 }
-header nav.dark .right-navigation .member-sign-up {
+header nav .right-navigation .member-sign-up {
   background: var(--color-primary);
   color: var(--color-black);
   width: 82px;
@@ -110,76 +123,15 @@ header nav.dark .right-navigation .member-sign-up {
   border-radius: 5px;
 }
 
-/* Transparent navbar */
-header nav {
-  background: rgba(11, 9, 9, 0.1294117647);
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
+/* Dark navbar */
+header nav.dark {
+  background: var(--color-black);
 }
-header nav ul {
-  padding: 14px 130px;
-  display: inline-block;
-  position: absolute;
-}
-header nav ul li {
-  display: inline-block;
-}
-header nav ul li a {
-  color: #FFFFFF;
-  text-decoration: none;
-}
-header nav ul li a:hover {
-  color: var(--color-primary);
-}
-header nav ul li a.active {
-  border-bottom: 1px solid var(--color-primary);
-}
-header nav ul li button {
-  background: transparent;
-  color: #FFFFFF;
-  width: 24px;
-  border: 0;
-  cursor: pointer;
-}
-header nav ul.left-navigation {
-  left: 0;
-}
-header nav ul.left-navigation li {
-  margin-right: 60px;
-}
-header nav ul.right-navigation {
-  right: 0;
-}
-header nav ul.right-navigation li {
-  margin-right: 22px;
-}
-header nav ul.right-navigation li .member-sign-in {
-  color: #FFFFFF;
-  padding: 12px 18px;
-  border: 1px solid #FFFFFF;
-  border-radius: 5px;
-}
-header nav ul.right-navigation li .member-sign-up {
-  color: #000000;
-  background: var(--color-primary);
-  padding: 12px 18px;
-  border-radius: 5px;
-}
-header nav ul.right-navigation li .member-sign-in:hover {
-  color: #FFFFFF;
-  padding: 12px 18px;
-  border: 1px solid #FFFFFF;
-  border-radius: 5px;
-}
-header nav ul.right-navigation li .member-sign-up:hover {
-  color: #000000;
-  background: var(--color-primary);
-  padding: 12px 18px;
-  border-radius: 5px;
+
+/* Navbar With Position Relative */
+header nav.rel {
+  background: var(--color-black);
+  position: relative;
 }
 
 /* Card */
@@ -188,18 +140,29 @@ header nav ul.right-navigation li .member-sign-up:hover {
   overflow: hidden;
 }
 .card .card-header {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
   gap: 0;
 }
+.card .card-header img {
+  height: 100%;
+}
 .card .card-body {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
   gap: 1rem;
+}
+
+.card.horizontal {
+  display: flex;
 }
 
 .card.body-overlay {
@@ -218,6 +181,7 @@ header nav ul.right-navigation li .member-sign-up:hover {
 .card.body-overlay .card-body {
   background: var(--color-white);
   width: 80%;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -228,6 +192,18 @@ header nav ul.right-navigation li .member-sign-up:hover {
   bottom: -40px;
   transform: translateX(-50%);
   box-shadow: 4px 4px 16px;
+}
+
+/* Per Produk an */
+.price {
+  color: var(--color-primary);
+  font-size: 22px;
+}
+
+.slashed {
+  color: red;
+  font-size: 10px;
+  text-decoration: line-through;
 }
 
 /* Per anchor an duniawi */
@@ -267,6 +243,20 @@ a.link-primary:hover {
   background: var(--color-accent);
 }
 
+.button-border-white {
+  background: transparent;
+  border: 1px solid var(--color-white);
+}
+
+.button-border-black {
+  background: transparent;
+  border: 1px solid var(--color-black);
+}
+
+.button-icon {
+  background: transparent;
+}
+
 .button-border-primary {
   background: transparent;
   border: 1px solid var(--color-primary);
@@ -277,8 +267,13 @@ a.link-primary:hover {
   border: 1px solid var(--color-accent);
 }
 
+/* Per section an duniawi */
 section .section-header {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
 }
 section .section-header h2 {
   font-size: 48px;
@@ -287,11 +282,10 @@ section .section-header hr {
   background: var(--color-primary);
   width: 68px;
   height: 7px;
-  margin: 25px auto;
   border: 0;
 }
 section .section-header p {
-  font-weight: 400px;
+  font-weight: 400;
 }
 
 /* per form an */
@@ -315,6 +309,9 @@ form {
   width: 100%;
   border: 0;
   outline: 0;
+}
+.input-wicon img {
+  max-width: 10px;
 }
 
 /* Alerte */
@@ -440,6 +437,10 @@ body#auth section .section-body .form-container .form-body form button[type=subm
 body#auth section .section-body .form-container .form-body form button[type=submit]:hover {
   background: var(--color-primary-active);
   width: 100%;
+}
+body#auth section .section-body .form-container .form-body form button#show-password {
+  background: transparent;
+  border: 0;
 }
 body#auth section .section-body .form-container .form-body form .navigator-text {
   margin: 13px 0;
@@ -1238,63 +1239,67 @@ body#product section#other-product .section-body .other-product-pagination a:las
 }
 
 /* Payment */
-body#payment-page section#payment .section-body .your-order .your-order-header.baris {
+body#payment-page section#payment .section-header {
+  align-items: start;
+  margin: 70px 0;
+}
+body#payment-page section#payment .section-body .container {
+  display: flex;
+  gap: 25px;
+}
+body#payment-page section#payment .section-body .container .your-order {
+  flex: 2;
+}
+body#payment-page section#payment .section-body .container .your-order .your-order-header {
+  display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
 }
-body#payment-page section#payment .section-body .your-order .order-container {
+body#payment-page section#payment .section-body .container .your-order .order-container .card {
+  padding: 12px;
   display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-body#payment-page section#payment .section-body .your-order .order-container .order-card {
-  height: 400px;
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  flex: 1;
-}
-body#payment-page section#payment .section-body .your-order .order-container .order-card .card-header {
-  height: 100%;
-}
-body#payment-page section#payment .section-body .your-order .order-container .order-card .card-body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  gap: 1rem;
+  gap: 16px;
+  border-radius: 12px;
   position: relative;
-}
-body#payment-page section#payment .section-body .your-order .order-container .order-card .card-body .price-bar {
-  display: flex;
-  justify-content: start;
   align-items: center;
-  gap: 1rem;
 }
-body#payment-page section#payment .section-body .your-order .order-container .order-card .card-body .price-bar .price {
-  color: var(--color-primary);
-  font-size: 22px;
+body#payment-page section#payment .section-body .container .your-order .order-container .card-header {
+  width: 160px;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
 }
-body#payment-page section#payment .section-body .your-order .order-container .order-card .card-body .price-bar .slashed {
-  color: red;
-  font-size: 10px;
-  text-decoration: line-through;
-}
-body#payment-page section#payment .section-body .your-order .order-container .order-card .card-body button.delete {
-  width: 40px;
-  height: 40px;
-  background: transparent;
-  border: 0;
-  border-radius: 50%;
-  position: absolute;
-  right: -100px;
-  top: 50%;
-  cursor: pointer;
-}
-body#payment-page section#payment .section-body .your-order .order-container .order-card .card-body button.delete img {
+body#payment-page section#payment .section-body .container .your-order .order-container .card-header img {
   width: 100%;
   height: 100%;
+}
+body#payment-page section#payment .section-body .container .your-order .order-container .card-body {
+  gap: 6px;
+}
+body#payment-page section#payment .section-body .container .your-order .order-container .product-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+body#payment-page section#payment .section-body .container .your-order .order-container .variant {
+  font-size: 14px;
+  color: var(--color-secondary);
+}
+body#payment-page section#payment .section-body .container .your-order .order-container button.delete {
+  background: transparent;
+  width: 36px;
+  height: 36px;
+  border: none;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+body#payment-page section#payment .section-body .container .your-order .order-container button.delete img {
+  width: 100%;
+  height: 100%;
+}
+body#payment-page section#payment .section-body .total {
+  flex: 1;
 }
 
 /* Footer */
@@ -1330,4 +1335,47 @@ footer .container .footer-item ul li.copyright {
 }
 footer .container .footer-item ul.social {
   justify-content: start;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav .brand {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  nav.show {
+    flex-direction: column;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+  }
+  nav .search {
+    display: none;
+  }
+  nav .hamburger {
+    display: block;
+  }
+  nav.show ul {
+    display: flex;
+  }
+  .hero-minicopy {
+    display: none;
+  }
+  section#product .section-body .product-container {
+    flex-direction: column;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  nav {
+    flex-direction: row;
+  }
+  nav ul {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  section#product .section-body .product-container {
+    flex-direction: column;
+  }
 }
