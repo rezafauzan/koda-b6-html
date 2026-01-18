@@ -20,12 +20,6 @@ img {
   max-width: 100%;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
@@ -726,8 +720,31 @@ body#home section#testimoni .section-body .container .testimoni-text .testimoni-
   border-radius: 6px;
 }
 
-/* product-hero */
-/* product-promo */
+/* product.html */
+body#product main {
+  /* product-hero */
+  /* product-promo */
+  /* product-our-product */
+}
+body#product main section#hero .section-body .container {
+  background: url("../img/product-hero.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 305px;
+  position: relative;
+}
+body#product main section#hero .section-body .container .copytext {
+  color: var(--color-white);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem, 1vw, 48px);
+}
 body#product main section#promo .section-header {
   display: flex;
   justify-content: space-between;
@@ -788,8 +805,6 @@ body#product main section#promo .section-body .coupon-container .coupon-card img
 body#product main section#promo .section-body .coupon-container .coupon-card.yellow {
   background: #F5C361;
 }
-
-/* product-our-product */
 body#product main section#our-product .section-body .container {
   margin: 1rem;
   display: flex;
