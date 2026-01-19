@@ -5,6 +5,7 @@
     "register_password_min_8": "Password minimal 8 karakter",
     "register_confirm_password_not_match": "Konfirmasi Password tidak cocok",
     "register_success": "Registrasi berhasil silahkan login",
-    "login_email_wrong": "Email yang anda masukan tidak terdaftar",
-    "login_password_wrong": "Password yang anda masukan tidak cocok"
+    "login_email_not_registered": "Email yang anda masukan tidak terdaftar",
+    "login_fail": "Email atau password salah!",
+    "users_empty": "Belum ada pengguna terdaftar silahkan registrasi terlebih dahulu"
 }
