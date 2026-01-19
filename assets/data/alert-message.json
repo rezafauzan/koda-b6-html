@@ -1,6 +1,9 @@
 {
-    "login_email_empty": "Email tidak boleh kosong",
+    "email_empty": "Email tidak boleh kosong",
+    "email_not_valid": "Email yang anda masukan tidak valid",
+    "register_fullname_min_4": "Nama minimal 4 karakter",
+    "register_password_min_8": "Password minimal 8 karakter",
+    "register_confirm_password_not_match": "Konfirmasi Password tidak cocok",
     "login_email_wrong": "Email yang anda masukan tidak terdaftar",
-    "login_email_not_valid": "Email yang anda masukan tidak valid",
     "login_password_wrong": "Password yang anda masukan tidak cocok"
 }
