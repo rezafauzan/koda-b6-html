@@ -24,7 +24,7 @@ async function ambilData(resource) {
 }
 
 let alertData = {}
-ambilData("https://raw.githubusercontent.com/rezafauzan/koda-b6-html/refs/heads/main/assets/data/alert-message.json").then(
+ambilData("https://raw.githubusercontent.com/rezafauzan/koda-b6-html/refs/heads/feat/auth-localstorage/assets/data/alert-message.json").then(
     data => { alertData = data }
 )
 
@@ -55,6 +55,46 @@ function validateLogin(email, password, alertElement) {
         alertElement.classList.add('show')
     } else if (email === 'koda@email.com' && password === '1234') {
         window.location.href = 'index.html'
+    }
+}
+
+function registerValidation(formData) {
+    let error = 0
+    if (formData.fullname.length < 4) {
+        if (!$('#alert-message-fullname')[0]) {
+            $('#fullname').parent().after(`<div id="alert" class="show alert-fatal"><span id="alert-message-fullname">${alertData.register_fullname_min_4}</span></div>`)
+            error = 1
+        }
+    }
+    if (formData.email.length < 1) {
+        if (!$('#alert-message-email')[0]) {
+            $('#email').parent().after(`<div id="alert" class="show alert-fatal"><span id="alert-message-email">${alertData.email_empty}</span></div>`)
+            error = 1
+        }
+    }
+    if (!formData.email.includes('@')) {
+        if (!$('#alert-message-email')[0]) {
+            $('#email').parent().after(`<div id="alert" class="show alert-fatal"><span id="alert-message-email">${alertData.email_not_valid}</span></div>`)
+            error = 1
+        }
+    }
+    if (formData.password.length < 8) {
+        if (!$('#alert-message-password')[0]) {
+            $('#password').parent().after(`<div id="alert" class="show alert-fatal"><span id="alert-message-password">${alertData.register_password_min_8}</span></div>`)
+            error = 1
+        }
+    }
+    if (formData.confirm_password !== formData.password) {
+        if (!$('#alert-message-confirm-password')[0]) {
+            $('#confirm_password').parent().after(`<div id="alert" class="show alert-fatal"><span id="alert-message-confirm-password">${alertData.register_confirm_password_not_match}</span></div>`)
+            error = 1
+        }
+    }
+    if (error < 1) {
+        window.localStorage.setItem('users', JSON.stringify(formData))
+        if (!$('#alert-message-success')[0]) {
+            $('#form-register').before(`<div id="alert" class="show alert-success"><span id="alert-message-register-success">${alertData.register_success}</span></div>`)
+        }
     }
 }
 

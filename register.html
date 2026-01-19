@@ -89,57 +89,24 @@
                 toggleShowPassword('#show-password img', 'password')
             }
         )
-        
+
         $('#show-confirm-password').on('click',
             () => {
                 toggleShowPassword('#show-confirm-password img', 'confirm_password')
             }
         )
-        
+
         let users = []
         if (window.localStorage.getItem('users')) {
             users = JSON.parse(window.localStorage.getItem('users'))
         }
-        
+
         const formRegister = $('#form-register')
         formRegister.on('submit',
             e => {
                 e.preventDefault()
                 const formData = Object.fromEntries(new FormData(formRegister[0]).entries())
-                let error = 0
-                if (formData.fullname.length < 4) {
-                    if (!$('#alert-message-fullname')[0]) {
-                        $('#fullname').parent().after(`<div id="alert" class="show alert-fatal"><span id="alert-message-fullname">${alertData.register_fullname_min_4}</span></div>`)
-                        error = 1
-                    }
-                }
-                if (formData.email.length < 1) {
-                    if (!$('#alert-message-email')[0]) {
-                        $('#email').parent().after(`<div id="alert" class="show alert-fatal"><span id="alert-message-email">${alertData.email_empty}</span></div>`)
-                        error = 1
-                    }
-                }
-                if (!formData.email.includes('@')) {
-                    if (!$('#alert-message-email')[0]) {
-                        $('#email').parent().after(`<div id="alert" class="show alert-fatal"><span id="alert-message-email">${alertData.email_not_valid}</span></div>`)
-                        error = 1
-                    }
-                }
-                if (formData.password.length < 8) {
-                    if (!$('#alert-message-password')[0]) {
-                        $('#password').parent().after(`<div id="alert" class="show alert-fatal"><span id="alert-message-password">${alertData.register_password_min_8}</span></div>`)
-                        error = 1
-                    }
-                }
-                if (formData.confirm_password !== formData.password) {
-                    if (!$('#alert-message-confirm-password')[0]) {
-                        $('#confirm_password').parent().after(`<div id="alert" class="show alert-fatal"><span id="alert-message-confirm-password">${alertData.register_confirm_password_not_match}</span></div>`)
-                        error = 1
-                    }
-                } 
-                if(error < 1) {
-                    window.localStorage.setItem('users', JSON.stringify(formData))
-                }
+                registerValidation(formData)
             }
         )
     </script>

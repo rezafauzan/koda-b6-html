@@ -368,6 +368,11 @@ form {
   color: rgb(255, 100, 100);
 }
 
+#alert.alert-success {
+  background: rgb(220, 255, 220);
+  color: rgb(100, 255, 100);
+}
+
 /* per carousel an duniawi */
 .carousel-navigation {
   display: flex;
