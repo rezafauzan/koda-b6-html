@@ -4,6 +4,7 @@
     "register_fullname_min_4": "Nama minimal 4 karakter",
     "register_password_min_8": "Password minimal 8 karakter",
     "register_confirm_password_not_match": "Konfirmasi Password tidak cocok",
+    "register_user_exist": "Pengguna dengan email ini sudah terdaftar",
     "register_success": "Registrasi berhasil silahkan login",
     "login_email_not_registered": "Email yang anda masukan tidak terdaftar",
     "login_fail": "Email atau password salah!",
