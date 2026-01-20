@@ -478,16 +478,16 @@ body#auth section .section-body .form-container .form-body form .navigator-text#
   right: 1px;
 }
 
-section#forgot-password .section-body .container .side-image {
-  background: url("../img/forgot.jpg");
-}
-
 body#auth section#login .section-body .container .side-image {
   background: url("../img/login.jpg");
 }
 
 body#auth section#register .section-body .container .side-image {
   background: url("../img/register.jpg");
+}
+
+body#auth section#forgot-password .section-body .container .side-image {
+  background: url("../img/forgot.jpg");
 }
 
 body#home section#hero {

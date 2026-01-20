@@ -8,5 +8,7 @@
     "register_success": "Registrasi berhasil silahkan login",
     "login_email_not_registered": "Email yang anda masukan tidak terdaftar",
     "login_fail": "Email atau password salah!",
-    "users_empty": "Belum ada pengguna terdaftar silahkan registrasi terlebih dahulu"
+    "users_empty": "Belum ada pengguna terdaftar silahkan registrasi terlebih dahulu",
+    "forgot_user_not_exist": "Email yang anda masukan tidak terdaftar",
+    "forgot_user_exist": "Link reset password dikirim ke emailmu"
 }
