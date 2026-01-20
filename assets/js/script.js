@@ -29,6 +29,10 @@ ambilData("https://raw.githubusercontent.com/rezafauzan/koda-b6-html/refs/heads/
 )
 
 function validateLogin(email, password, alertElement) {
+    if (document.getElementById('alert-message') !== null) {
+        document.querySelector('#alert #alert-message').remove()
+        alertElement.classList.remove('show')
+    }
     let users = []
     if (window.localStorage.getItem('users') !== null) {
         users = JSON.parse(window.localStorage.getItem('users'))
@@ -37,10 +41,6 @@ function validateLogin(email, password, alertElement) {
     if (users.length > 0) {
         let error = 0
         if (email.length < 1) {
-            if (document.getElementById('alert-message') !== null) {
-                document.querySelector('#alert #alert-message').remove()
-                alertElement.classList.remove('show')
-            }
             if (document.getElementById('alert-message') === null) {
                 elementor('span', [['id', 'alert-message']], alertData.email_empty, alertElement)
             }
@@ -48,10 +48,6 @@ function validateLogin(email, password, alertElement) {
             alertElement.classList.add('show')
             error = 1;
         } else if (email.includes('@') !== true) {
-            if (document.getElementById('alert-message') !== null) {
-                document.querySelector('#alert #alert-message').remove()
-                alertElement.classList.remove('show')
-            }
             if (document.getElementById('alert-message') === null) {
                 elementor('span', [['id', 'alert-message']], alertData.email_not_valid, alertElement)
             }
@@ -102,6 +98,10 @@ function validateLogin(email, password, alertElement) {
 }
 
 function registerValidation(formData) {
+    if ($('#alert-message-register-success')[0] !== null) {
+        $('#alert-message-register-success').parent().remove()
+        $('#alert').removeClass('show')
+    }
     let error = 0
 
     let users = []
@@ -158,8 +158,8 @@ function registerValidation(formData) {
         error = 1
     } else {
         $('#alert-message-user-exist').parent().remove()
-        error = 0
     }
+    console.log(error)
     if (error < 1) {
         const user = {
             "fullname": formData.fullname,
