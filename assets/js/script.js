@@ -32,14 +32,14 @@ function validateLogin(email, password, alertElement) {
     const users = window.localStorage.getItem('users')
     if (users) {
         if (email.length < 1) {
-            if (document.getElementById('alert-message') !== null) {
+            if (document.getElementById('alert-message') === null) {
                 elementor('span', [['id', 'alert-message']], alertData.login_email_empty, alertElement)
             }
             alertElement.classList.add('alert-fatal')
             alertElement.classList.add('show')
         } else {
             if (email.includes('@') !== true) {
-                if (document.getElementById('alert-message') !== null) {
+                if (document.getElementById('alert-message') === null) {
                     elementor('span', [['id', 'alert-message']], alertData.login_email_not_valid, alertElement)
                 }
                 alertElement.classList.add('alert-fatal')
@@ -51,14 +51,14 @@ function validateLogin(email, password, alertElement) {
                             if (email === pengguna.email && password === pengguna.password) {
                                 window.location.href = 'index.html'
                             } else {
-                                if (document.getElementById('alert-message') !== null) {
+                                if (document.getElementById('alert-message') === null) {
                                     elementor('span', [['id', 'alert-message']], alertData.login_fail, alertElement)
                                 }
                                 alertElement.classList.add('alert-fatal')
                                 alertElement.classList.add('show')
                             }
                         } else {
-                            if (document.getElementById('alert-message') !== null) {
+                            if (document.getElementById('alert-message') === null) {
                                 elementor('span', [['id', 'alert-message']], alertData.login_email_not_registered, alertElement)
                             }
                             alertElement.classList.add('alert-fatal')
@@ -69,8 +69,9 @@ function validateLogin(email, password, alertElement) {
             }
         }
     } else {
-        if (document.getElementById('alert-message') !== null) {
+        if (document.getElementById('alert-message') === null) {
             elementor('span', [['id', 'alert-message']], alertData.users_empty, alertElement)
+            console.log("kosong")
         }
         alertElement.classList.add('alert-fatal')
         alertElement.classList.add('show')
