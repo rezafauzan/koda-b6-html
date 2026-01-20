@@ -83,10 +83,9 @@ function validateLogin(email, password, alertElement) {
 function registerValidation(formData) {
     let error = 0
 
+    let users = []
     if (window.localStorage.getItem('users') !== null) {
-        const users = window.localStorage.getItem('users')
-    } else {
-        const users = []
+        users = JSON.parse(window.localStorage.getItem('users'))
     }
 
     if (formData.fullname.length < 4) {
@@ -136,7 +135,8 @@ function registerValidation(formData) {
             "email": formData.email,
             "password": btoa(formData.password),
         }
-        window.localStorage.setItem('users', JSON.stringify(user))
+        users.push(user)
+        window.localStorage.setItem('users', JSON.stringify(users))
         if (!$('#alert-register-success')[0]) {
             $('#form-register').before(`<div id="alert" class="show alert-success"><span id="alert-register-success">${alertData.register_success}</span></div>`)
         }
