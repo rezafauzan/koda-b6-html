@@ -33,47 +33,63 @@ function validateLogin(email, password, alertElement) {
     if (window.localStorage.getItem('users') !== null) {
         users = window.localStorage.getItem('users')
     }
+
     if (users.length > 0) {
+        let error = 0
         if (email.length < 1) {
             if (document.getElementById('alert-message') === null) {
                 elementor('span', [['id', 'alert-message']], alertData.email_empty, alertElement)
             }
             alertElement.classList.add('alert-fatal')
             alertElement.classList.add('show')
+            error = 1;
+        } else if (email.includes('@') !== true) {
+            if (document.getElementById('alert-message') === null) {
+                elementor('span', [['id', 'alert-message']], alertData.email_not_valid, alertElement)
+            }
+            alertElement.classList.add('alert-fatal')
+            alertElement.classList.add('show')
+            error = 1;
         } else {
-            if (email.includes('@') !== true) {
-                if (document.getElementById('alert-message') === null) {
-                    elementor('span', [['id', 'alert-message']], alertData.email_not_valid, alertElement)
-                }
-                alertElement.classList.add('alert-fatal')
-                alertElement.classList.add('show')
-            } else {
-                const user = users.find(pengguna => pengguna.email === email)
-                if (user) {
-                    if (email === user.email && password === atob(user.password)) {
-                        window.location.href = 'index.html'
-                    } else {
-                        if (document.getElementById('alert-message') === null) {
-                            elementor('span', [['id', 'alert-message']], alertData.login_fail, alertElement)
-                        }
-                        alertElement.classList.add('alert-fatal')
-                        alertElement.classList.add('show')
-                    }
+            if (document.getElementById('alert-message') !== null) {
+                document.querySelector('#alert #alert-message').remove()
+                alertElement.classList.remove('show')
+            }
+            error = 0
+        }
+
+        if (error < 1) {
+            console.log(users)
+            const user = users.find(pengguna => pengguna.email === email)
+            console.log(user)
+            if (user) {
+                if (email === user.email && password === atob(user.password)) {
+                    window.location.href = 'index.html'
                 } else {
                     if (document.getElementById('alert-message') === null) {
-                        elementor('span', [['id', 'alert-message']], alertData.login_email_not_registered, alertElement)
+                        elementor('span', [['id', 'alert-message']], alertData.login_fail, alertElement)
                     }
                     alertElement.classList.add('alert-fatal')
                     alertElement.classList.add('show')
                 }
+            } else {
+                if (document.getElementById('alert-message') === null) {
+                    elementor('span', [['id', 'alert-message']], alertData.login_email_not_registered, alertElement)
+                }
+                alertElement.classList.add('alert-fatal')
+                alertElement.classList.add('show')
             }
         }
     } else {
         if (document.getElementById('alert-message') === null) {
             elementor('span', [['id', 'alert-message']], alertData.users_empty, alertElement)
+            alertElement.classList.add('alert-fatal')
+            alertElement.classList.add('show')
+            error = 1;
+        } else {
+            document.querySelector('#alert #alert-message').remove()
+            error = 0
         }
-        alertElement.classList.add('alert-fatal')
-        alertElement.classList.add('show')
     }
 }
 
