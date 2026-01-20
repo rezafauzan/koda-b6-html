@@ -48,27 +48,24 @@ function validateLogin(email, password, alertElement) {
                 alertElement.classList.add('alert-fatal')
                 alertElement.classList.add('show')
             } else {
-                users.forEach(
-                    user => {
-                        if (user.find(pengguna => pengguna.email === email)) {
-                            if (email === pengguna.email && password === atob(pengguna.password)) {
-                                window.location.href = 'index.html'
-                            } else {
-                                if (document.getElementById('alert-message') === null) {
-                                    elementor('span', [['id', 'alert-message']], alertData.login_fail, alertElement)
-                                }
-                                alertElement.classList.add('alert-fatal')
-                                alertElement.classList.add('show')
-                            }
-                        } else {
-                            if (document.getElementById('alert-message') === null) {
-                                elementor('span', [['id', 'alert-message']], alertData.login_email_not_registered, alertElement)
-                            }
-                            alertElement.classList.add('alert-fatal')
-                            alertElement.classList.add('show')
+                const user = users.find(pengguna => pengguna.email === email)
+                if (user) {
+                    if (email === user.email && password === atob(user.password)) {
+                        window.location.href = 'index.html'
+                    } else {
+                        if (document.getElementById('alert-message') === null) {
+                            elementor('span', [['id', 'alert-message']], alertData.login_fail, alertElement)
                         }
+                        alertElement.classList.add('alert-fatal')
+                        alertElement.classList.add('show')
                     }
-                )
+                } else {
+                    if (document.getElementById('alert-message') === null) {
+                        elementor('span', [['id', 'alert-message']], alertData.login_email_not_registered, alertElement)
+                    }
+                    alertElement.classList.add('alert-fatal')
+                    alertElement.classList.add('show')
+                }
             }
         }
     } else {
@@ -129,6 +126,16 @@ function registerValidation(formData) {
     } else {
         $('#alert-message-confirm-password').parent().remove()
     }
+    const user = users.find(pengguna => pengguna.email === formData.email)
+    if (user) {
+        if (!$('#alert-message-user-exist')[0]) {
+            $('#form-register').before(`<div id="alert" class="show alert-fatal"><span id="alert-message-user-exist">${alertData.register_user_exist}</span></div>`)
+        }
+        error = 1
+    } else {
+        $('#alert-message-user-exist').parent().remove()
+        error = 0
+    }
     if (error < 1) {
         const user = {
             "fullname": formData.fullname,
@@ -137,8 +144,10 @@ function registerValidation(formData) {
         }
         users.push(user)
         window.localStorage.setItem('users', JSON.stringify(users))
-        if (!$('#alert-register-success')[0]) {
-            $('#form-register').before(`<div id="alert" class="show alert-success"><span id="alert-register-success">${alertData.register_success}</span></div>`)
+        if (!$('#alert-message-register-success')[0]) {
+            $('#form-register').before(`<div id="alert" class="show alert-success"><span id="alert-message-register-success">${alertData.register_success}</span></div>`)
+        } else {
+            $('#alert-message-register-success').parent().remove()
         }
     }
 }
