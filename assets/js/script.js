@@ -81,39 +81,55 @@ function validateLogin(email, password, alertElement) {
 function registerValidation(formData) {
     let error = 0
     if (formData.fullname.length < 4) {
+        console.log(formData.fullname.length)
         if (!$('#alert-message-fullname')[0]) {
             $('#fullname').parent().after(`<div id="alert" class="show alert-fatal"><span id="alert-message-fullname">${alertData.register_fullname_min_4}</span></div>`)
-            error = 1
         }
+        error = 1
+    } else {
+        $('#alert-message-fullname').parent().remove()
     }
     if (formData.email.length < 1) {
         if (!$('#alert-message-email')[0]) {
             $('#email').parent().after(`<div id="alert" class="show alert-fatal"><span id="alert-message-email">${alertData.email_empty}</span></div>`)
-            error = 1
         }
+        error = 1
+    } else {
+        $('#alert-message-email').parent().remove()
     }
     if (!formData.email.includes('@')) {
         if (!$('#alert-message-email')[0]) {
             $('#email').parent().after(`<div id="alert" class="show alert-fatal"><span id="alert-message-email">${alertData.email_not_valid}</span></div>`)
-            error = 1
         }
+        error = 1
+    } else {
+        $('#alert-message-email').parent().remove()
     }
     if (formData.password.length < 8) {
         if (!$('#alert-message-password')[0]) {
             $('#password').parent().after(`<div id="alert" class="show alert-fatal"><span id="alert-message-password">${alertData.register_password_min_8}</span></div>`)
-            error = 1
         }
+        error = 1
+    } else {
+        $('#alert-message-password').parent().remove()
     }
     if (formData.confirm_password !== formData.password) {
         if (!$('#alert-message-confirm-password')[0]) {
             $('#confirm_password').parent().after(`<div id="alert" class="show alert-fatal"><span id="alert-message-confirm-password">${alertData.register_confirm_password_not_match}</span></div>`)
-            error = 1
         }
+        error = 1
+    } else {
+        $('#alert-message-confirm-password').parent().remove()
     }
     if (error < 1) {
-        window.localStorage.setItem('users', JSON.stringify(formData))
-        if (!$('#alert-message-success')[0]) {
-            $('#form-register').before(`<div id="alert" class="show alert-success"><span id="alert-message-register-success">${alertData.register_success}</span></div>`)
+        const user = {
+            "fullname": formData.fullname,
+            "email": formData.email,
+            "password": btoa(formData.password),
+        }
+        window.localStorage.setItem('users', JSON.stringify(user))
+        if (!$('#alert-register-success')[0]) {
+            $('#form-register').before(`<div id="alert" class="show alert-success"><span id="alert-register-success">${alertData.register_success}</span></div>`)
         }
     }
 }
