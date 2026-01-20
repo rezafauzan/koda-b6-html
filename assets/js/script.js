@@ -24,7 +24,7 @@ async function ambilData(resource) {
 }
 
 let alertData = {}
-ambilData("https://raw.githubusercontent.com/rezafauzan/koda-b6-html/refs/heads/feat/auth-localstorage/assets/data/alert-message.json").then(
+ambilData("https://raw.githubusercontent.com/rezafauzan/koda-b6-html/refs/heads/main/assets/data/alert-message.json").then(
     data => { alertData = data }
 )
 
