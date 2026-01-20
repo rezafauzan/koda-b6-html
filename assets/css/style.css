@@ -441,6 +441,10 @@ body#auth section .section-body .form-container .form-body form button[type=subm
   background: var(--color-primary-active);
   width: 100%;
 }
+body#auth section .section-body .form-container .form-body form button#show-password {
+  background: transparent;
+  border: 0;
+}
 body#auth section .section-body .form-container .form-body form .navigator-text {
   margin: 13px 0;
 }

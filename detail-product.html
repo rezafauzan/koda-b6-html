@@ -290,61 +290,40 @@
         </div>
     </footer>
 
+    <script src="assets/js/script.js"></script>
     <script>
-        const products = [
-            {
-                "name": "Hazzelnut Latte",
-                "image": ['assets/img/image27.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png'],
-                "desc": 'You can explore the menu that we provide with fun and have their own taste and make your day better.',
-                "price": 22000
-            },
-            {
-                "name": "Kopi Liong",
-                "image": ['assets/img/image22.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png'],
-                "desc": 'You can explore the menu that we provide with fun and have their own taste and make your day better.',
-                "price": 10000
-            },
-            {
-                "name": "Kopi kirr",
-                "image": ['assets/img/image30.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png'],
-                "desc": 'You can explore the menu that we provide with fun and have their own taste and make your day better.',
-                "price": 80000
-            },
-            {
-                "name": "Kopiru Rariru",
-                "image": ['assets/img/product2.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png'],
-                "desc": 'You can explore the menu that we provide with fun and have their own taste and make your day better.',
-                "price": 5000
-            }
-        ]
+        ambilData('https://raw.githubusercontent.com/rezafauzan/koda-b6-html/refs/heads/feat/product/assets/data/product.json').then(
+            products => {
+                const productDetailContainer = document.getElementById("product-detail-container")
+                const galleryContainer = document.getElementById('product-gallery')
 
-        const productDetailContainer = document.getElementById("product-detail-container")
-        const galleryContainer = document.getElementById('product-gallery')
+                function elementCreator(element, attribute = [['', '']], content, parrent) {
+                    const e = document.createElement(element)
+                    attribute.forEach(
+                        attr => e.setAttribute(attr[0], attr[1])
+                    )
+                    e.textContent = content
 
-        function elementCreator(element, attribute = [['', '']], content, parrent) {
-            const e = document.createElement(element)
-            attribute.forEach(
-                attr => e.setAttribute(attr[0], attr[1])
-            )
-            e.textContent = content
-
-            return parrent.appendChild(e)
-        }
-
-        function populateProductDetail(product = {}) {
-            product.image.forEach(
-                (link, index) => {
-                    if(index === 0){
-                        elementCreator('img', [['src', link], ['alt', product.name], ['class', 'active-image product-image-' + (index + 1)]], '', galleryContainer)
-                    }else{
-                        elementCreator('img', [['src', link], ['alt', product.name], ['class', 'product-image-' + (index + 1)]], '', galleryContainer)
-                    }
+                    return parrent.appendChild(e)
                 }
-            )
-        }
-        
-        const idProduct = new URLSearchParams(window.location.search).get('id')
-        populateProductDetail(products[idProduct])
+
+                function populateProductDetail(product = {}) {
+                    product.image.forEach(
+                        (link, index) => {
+                            if (index === 0) {
+                                elementCreator('img', [['src', link], ['alt', product.name], ['class', 'active-image product-image-' + (index + 1)]], '', galleryContainer)
+                            } else {
+                                elementCreator('img', [['src', link], ['alt', product.name], ['class', 'product-image-' + (index + 1)]], '', galleryContainer)
+                            }
+                        }
+                    )
+                }
+
+                const idProduct = new URLSearchParams(window.location.search).get('id')
+                populateProductDetail(products[idProduct])
+            }
+        )
+
     </script>
 </body>
 

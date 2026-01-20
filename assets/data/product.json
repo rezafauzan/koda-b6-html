@@ -1,0 +1,46 @@
+[
+    {
+        "name": "Hazzelnut Latte",
+        "image": [
+            "assets/img/image27.png",
+            "https://placehold.co/1024x1024.png",
+            "https://placehold.co/1024x1024.png",
+            "https://placehold.co/1024x1024.png"
+        ],
+        "desc": "You can explore the menu that we provide with fun and have their own taste and make your day better.",
+        "price": 22000
+    },
+    {
+        "name": "Kopi Liong",
+        "image": [
+            "assets/img/image22.png",
+            "https://placehold.co/1024x1024.png",
+            "https://placehold.co/1024x1024.png",
+            "https://placehold.co/1024x1024.png"
+        ],
+        "desc": "You can explore the menu that we provide with fun and have their own taste and make your day better.",
+        "price": 10000
+    },
+    {
+        "name": "Kopi kirr",
+        "image": [
+            "assets/img/image30.png",
+            "https://placehold.co/1024x1024.png",
+            "https://placehold.co/1024x1024.png",
+            "https://placehold.co/1024x1024.png"
+        ],
+        "desc": "You can explore the menu that we provide with fun and have their own taste and make your day better.",
+        "price": 80000
+    },
+    {
+        "name": "Kopiru Rariru",
+        "image": [
+            "assets/img/product2.png",
+            "https://placehold.co/1024x1024.png",
+            "https://placehold.co/1024x1024.png",
+            "https://placehold.co/1024x1024.png"
+        ],
+        "desc": "You can explore the menu that we provide with fun and have their own taste and make your day better.",
+        "price": 5000
+    }
+]

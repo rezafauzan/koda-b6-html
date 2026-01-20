@@ -23,11 +23,13 @@ async function ambilData(resource) {
     return json
 }
 
+// Fetch Fetch duniawi 
 let alertData = {}
 ambilData("https://raw.githubusercontent.com/rezafauzan/koda-b6-html/refs/heads/main/assets/data/alert-message.json").then(
     data => { alertData = data }
 )
 
+// Section Auth Logic
 function validateLogin(email, password, alertElement) {
     if (document.getElementById('alert-message') !== null) {
         document.querySelector('#alert #alert-message').remove()
@@ -186,4 +188,24 @@ function toggleShowPassword(iconSelector, inputId) {
         inputPassword.setAttribute('type', 'password')
         icon.setAttribute('src', 'assets/img/EyeSlash.svg')
     }
+}
+
+// Section Product Logic
+function populateFavoriteProduct(products = [], containerId) {
+    const favoriteProductContainer = document.getElementById(containerId)
+    products.forEach(
+        (product, index) => {
+            const card = elementor('div', [['class', 'card body-overlay']], '', favoriteProductContainer)
+            const cardHeader = elementor('div', [['class', 'card-header']], '', card)
+            const cardHeaderImg = elementor('img', [['src', product.image[0]], ['alt', product.name]], '', cardHeader)
+            const cardBody = elementor('div', [['class', 'card-body']], '', card)
+            const cardBodyH3 = elementor('h3', [], product.name, cardBody)
+            const cardBodyDesc = elementor('p', [], product.desc, cardBody)
+            const cardBodyPrice = elementor('span', [], product.price, cardBody)
+            const cardBodyActionContainer = elementor('div', [['class', 'action']], '', cardBody)
+            const cardBodyActionBuy = elementor('a', [['href', `detail-product.html?id=${index}`], ['class', 'button button-primary']], 'Buy', cardBodyActionContainer)
+            const cardBodyActionCart = elementor('button', [['class', 'button button-border-primary']], '', cardBodyActionContainer)
+            const cardBodyActionCartIcon = elementor('img', [['src', 'assets/img/ShoppingCart-yellow.svg'], ['alt', 'cart_icon']], '', cardBodyActionCart)
+        }
+    )
 }
