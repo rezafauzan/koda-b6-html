@@ -31,7 +31,7 @@ ambilData("https://raw.githubusercontent.com/rezafauzan/koda-b6-html/refs/heads/
 function validateLogin(email, password, alertElement) {
     let users = []
     if (window.localStorage.getItem('users') !== null) {
-        users = window.localStorage.getItem('users')
+        users = JSON.parse(window.localStorage.getItem('users'))
     }
 
     if (users.length > 0) {
