@@ -19,7 +19,7 @@
                     <a href="/" class="active">Home</a>
                 </li>
                 <li>
-                    <a href="/product.html">Product</a>
+                    <a href="product.html">Product</a>
                 </li>
             </ul>
             <ul class="right-navigation">
@@ -30,10 +30,10 @@
                     <button class="cart-button"><img src="assets/img/ShoppingCart.svg" alt="Cart_Icon"></button>
                 </li>
                 <li>
-                    <a href="/login.html" class="member-sign-in">Sign in</a>
+                    <a href="login.html" class="member-sign-in">Sign in</a>
                 </li>
                 <li>
-                    <a href="/register" class="member-sign-up">Sign up</a>
+                    <a href="register" class="member-sign-up">Sign up</a>
                 </li>
             </ul>
         </nav>
@@ -203,66 +203,6 @@
                 </div>
             </div>
         </section>
-
-        <script>
-            const products = [
-                {
-                    "name": "Hazzelnut Latte",
-                    "image": ['assets/img/image27.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png'],
-                    "desc": 'You can explore the menu that we provide with fun and have their own taste and make your day better.',
-                    "price": 22000
-                },
-                {
-                    "name": "Kopi Liong",
-                    "image": ['assets/img/image22.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png'],
-                    "desc": 'You can explore the menu that we provide with fun and have their own taste and make your day better.',
-                    "price": 10000
-                },
-                {
-                    "name": "Kopi kirr",
-                    "image": ['assets/img/image30.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png'],
-                    "desc": 'You can explore the menu that we provide with fun and have their own taste and make your day better.',
-                    "price": 80000
-                },
-                {
-                    "name": "Kopiru Rariru",
-                    "image": ['assets/img/product2.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png', 'https://placehold.co/1024x1024.png'],
-                    "desc": 'You can explore the menu that we provide with fun and have their own taste and make your day better.',
-                    "price": 5000
-                }
-            ]
-
-            const favoriteProductContainer = document.getElementById("favorite-product-container")
-
-            function elementCreator(element, attribute = [['', '']], content, parrent) {
-                const e = document.createElement(element)
-                attribute.forEach(
-                    attr => e.setAttribute(attr[0], attr[1])
-                )
-                e.textContent = content
-
-                return parrent.appendChild(e)
-            }
-
-            function populateFavoriteProduct(products = []) {
-                products.forEach(
-                    (product, index) => {
-                        const card = elementCreator('div', [['class', 'card body-overlay']], '', favoriteProductContainer)
-                        const cardHeader = elementCreator('div', [['class', 'card-header']], '', card)
-                        const cardHeaderImg = elementCreator('img', [['src', product.image[0]], ['alt', product.name]], '', cardHeader)
-                        const cardBody = elementCreator('div', [['class', 'card-body']], '', card)
-                        const cardBodyH3 = elementCreator('h3', [], product.name, cardBody)
-                        const cardBodyDesc = elementCreator('p', [], product.desc, cardBody)
-                        const cardBodyPrice = elementCreator('span', [], product.price, cardBody)
-                        const cardBodyActionContainer = elementCreator('div', [['class', 'action']], '', cardBody)
-                        const cardBodyActionBuy = elementCreator('a', [['href', `detail-product.html?id=${index}`], ['class', 'button button-primary']], 'Buy', cardBodyActionContainer)
-                        const cardBodyActionCart = elementCreator('button', [['class', 'cart button-border-primary']], '', cardBodyActionContainer)
-                        const cardBodyActionCartIcon = elementCreator('img', [['src', 'assets/img/ShoppingCart-yellow.svg'], ['alt', 'cart_icon']], '', cardBodyActionCart)
-                    }
-                )
-            }
-            populateFavoriteProduct(products)
-        </script>
     </main>
     <footer>
         <div class="container">
@@ -314,6 +254,50 @@
             </div>
         </div>
     </footer>
+    <script src="assets/js/script.js"></script>
+    <script>
+        if (window.localStorage.getItem('isLogin') !== null) {
+            ambilData('https://raw.githubusercontent.com/rezafauzan/koda-b6-html/refs/heads/feat/product/assets/data/product.json').then(
+                products => {
+                    populateFavoriteProduct(products, "favorite-product-container")
+                }
+            )
+
+            const favoriteProductContainer = document.getElementById("favorite-product-container")
+
+            function elementCreator(element, attribute = [['', '']], content, parrent) {
+                const e = document.createElement(element)
+                attribute.forEach(
+                    attr => e.setAttribute(attr[0], attr[1])
+                )
+                e.textContent = content
+
+                return parrent.appendChild(e)
+            }
+
+            function populateFavoriteProduct(products = []) {
+                products.forEach(
+                    (product, index) => {
+                        const card = elementCreator('div', [['class', 'card body-overlay']], '', favoriteProductContainer)
+                        const cardHeader = elementCreator('div', [['class', 'card-header']], '', card)
+                        const cardHeaderImg = elementCreator('img', [['src', product.image[0]], ['alt', product.name]], '', cardHeader)
+                        const cardBody = elementCreator('div', [['class', 'card-body']], '', card)
+                        const cardBodyH3 = elementCreator('h3', [], product.name, cardBody)
+                        const cardBodyDesc = elementCreator('p', [], product.desc, cardBody)
+                        const cardBodyPrice = elementCreator('span', [], product.price, cardBody)
+                        const cardBodyActionContainer = elementCreator('div', [['class', 'action']], '', cardBody)
+                        const cardBodyActionBuy = elementCreator('a', [['href', `detail-product.html?id=${index}`], ['class', 'button button-primary']], 'Buy', cardBodyActionContainer)
+                        const cardBodyActionCart = elementCreator('button', [['class', 'cart button-border-primary']], '', cardBodyActionContainer)
+                        const cardBodyActionCartIcon = elementCreator('img', [['src', 'assets/img/ShoppingCart-yellow.svg'], ['alt', 'cart_icon']], '', cardBodyActionCart)
+                    }
+                )
+            }
+            populateFavoriteProduct(products)
+        } else {
+            window.location.href = 'login.html'
+        }
+
+    </script>
 </body>
 
 </html>
