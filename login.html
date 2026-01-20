@@ -35,7 +35,8 @@
                                 <label for="password">Password</label>
                                 <div class="input-wicon">
                                     <img src="assets/img/Password.svg" alt="password_icon">
-                                    <input type="password" name="password" id="password" placeholder="Password" autocomplete="off">
+                                    <input type="password" name="password" id="password" placeholder="Password"
+                                        autocomplete="off">
                                     <button type="button" id="show-password" class="button-show-password">
                                         <img src="assets/img/EyeSlash.svg" alt="see_password_icon">
                                     </button>
@@ -72,24 +73,28 @@
 
     <script src="assets/js/script.js"></script>
     <script>
-        const loginForm = document.getElementById('login-form')
-        loginForm.addEventListener('submit',
-            e => {
-                e.preventDefault()
-                const data = new FormData(e.target)
-                const email = data.get('email')
-                const password = data.get('password')
-                const alert = document.getElementById('alert')
-                validateLogin(email, password, alert)
-            }
-        )
+        if (window.localStorage.getItem('isLogin') !== null) {
+            window.location.href = 'index.html'
+        } else {
+            const loginForm = document.getElementById('login-form')
+            loginForm.addEventListener('submit',
+                e => {
+                    e.preventDefault()
+                    const data = new FormData(e.target)
+                    const email = data.get('email')
+                    const password = data.get('password')
+                    const alert = document.getElementById('alert')
+                    validateLogin(email, password, alert)
+                }
+            )
 
-        const seePasswordButton = document.getElementById('show-password')
-        seePasswordButton.addEventListener('click',
-            () => {
-                toggleShowPassword('#show-password img', 'password')
-            }
-        )
+            const seePasswordButton = document.getElementById('show-password')
+            seePasswordButton.addEventListener('click',
+                () => {
+                    toggleShowPassword('#show-password img', 'password')
+                }
+            )
+        }
     </script>
 </body>
 

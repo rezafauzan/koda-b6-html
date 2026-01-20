@@ -31,6 +31,10 @@ ambilData("https://raw.githubusercontent.com/rezafauzan/koda-b6-html/refs/heads/
 
 // Section Auth Logic
 function validateLogin(email, password, alertElement) {
+    if (window.localStorage.getItem('isLogin') !== null) {
+        window.localStorage.removeItem('isLogin')
+    }
+    
     if (document.getElementById('alert-message') !== null) {
         document.querySelector('#alert #alert-message').remove()
         alertElement.classList.remove('show')
@@ -70,6 +74,7 @@ function validateLogin(email, password, alertElement) {
             console.log(user)
             if (user) {
                 if (email === user.email && password === atob(user.password)) {
+                    window.localStorage.setItem('isLogin', 'true')
                     window.location.href = 'index.html'
                 } else {
                     if (document.getElementById('alert-message') === null) {
