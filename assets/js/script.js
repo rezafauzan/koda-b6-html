@@ -29,18 +29,21 @@ ambilData("https://raw.githubusercontent.com/rezafauzan/koda-b6-html/refs/heads/
 )
 
 function validateLogin(email, password, alertElement) {
-    const users = window.localStorage.getItem('users')
-    if (users) {
+    let users = []
+    if (window.localStorage.getItem('users') !== null) {
+        users = window.localStorage.getItem('users')
+    }
+    if (users.length > 0) {
         if (email.length < 1) {
             if (document.getElementById('alert-message') === null) {
-                elementor('span', [['id', 'alert-message']], alertData.login_email_empty, alertElement)
+                elementor('span', [['id', 'alert-message']], alertData.email_empty, alertElement)
             }
             alertElement.classList.add('alert-fatal')
             alertElement.classList.add('show')
         } else {
             if (email.includes('@') !== true) {
                 if (document.getElementById('alert-message') === null) {
-                    elementor('span', [['id', 'alert-message']], alertData.login_email_not_valid, alertElement)
+                    elementor('span', [['id', 'alert-message']], alertData.email_not_valid, alertElement)
                 }
                 alertElement.classList.add('alert-fatal')
                 alertElement.classList.add('show')
@@ -48,7 +51,7 @@ function validateLogin(email, password, alertElement) {
                 users.forEach(
                     user => {
                         if (user.find(pengguna => pengguna.email === email)) {
-                            if (email === pengguna.email && password === pengguna.password) {
+                            if (email === pengguna.email && password === atob(pengguna.password)) {
                                 window.location.href = 'index.html'
                             } else {
                                 if (document.getElementById('alert-message') === null) {
@@ -71,7 +74,6 @@ function validateLogin(email, password, alertElement) {
     } else {
         if (document.getElementById('alert-message') === null) {
             elementor('span', [['id', 'alert-message']], alertData.users_empty, alertElement)
-            console.log("kosong")
         }
         alertElement.classList.add('alert-fatal')
         alertElement.classList.add('show')
@@ -80,6 +82,13 @@ function validateLogin(email, password, alertElement) {
 
 function registerValidation(formData) {
     let error = 0
+
+    if (window.localStorage.getItem('users') !== null) {
+        const users = window.localStorage.getItem('users')
+    } else {
+        const users = []
+    }
+
     if (formData.fullname.length < 4) {
         console.log(formData.fullname.length)
         if (!$('#alert-message-fullname')[0]) {
