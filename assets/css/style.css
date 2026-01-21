@@ -729,6 +729,12 @@ body#home section#favorite-product .section-body .product-container .card .card-
 body#home section#favorite-product .section-body .product-container .card .card-body .action button.cart {
   flex: 1;
 }
+body#home section#map .section-body {
+  height: 100vh;
+  background: url("../img/Global.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 body#home section#testimoni .section-body .container {
   background: linear-gradient(168.18deg, #777C82 -114.74%, #0B0909 91.35%);
   padding: 8rem;
