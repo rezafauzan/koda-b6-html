@@ -8,7 +8,11 @@
             "https://placehold.co/1024x1024.png"
         ],
         "desc": "You can explore the menu that we provide with fun and have their own taste and make your day better.",
-        "price": 22000
+        "price": 22000,
+        "discount": 0.4,
+        "rating": 4,
+        "isFlashsale": true,
+        "review": 10
     },
     {
         "name": "Kopi Liong",
@@ -19,7 +23,11 @@
             "https://placehold.co/1024x1024.png"
         ],
         "desc": "You can explore the menu that we provide with fun and have their own taste and make your day better.",
-        "price": 10000
+        "price": 10000,
+        "discount": 0.4,
+        "rating": 4,
+        "isFlashsale": true,
+        "review": 10
     },
     {
         "name": "Kopi kirr",
@@ -30,7 +38,11 @@
             "https://placehold.co/1024x1024.png"
         ],
         "desc": "You can explore the menu that we provide with fun and have their own taste and make your day better.",
-        "price": 80000
+        "price": 80000,
+        "discount": 0.4,
+        "rating": 4,
+        "isFlashsale": true,
+        "review": 10
     },
     {
         "name": "Kopiru Rariru",
@@ -41,6 +53,10 @@
             "https://placehold.co/1024x1024.png"
         ],
         "desc": "You can explore the menu that we provide with fun and have their own taste and make your day better.",
-        "price": 5000
+        "price": 5000,
+        "discount": 0.4,
+        "rating": 4,
+        "isFlashsale": true,
+        "review": 10
     }
 ]
