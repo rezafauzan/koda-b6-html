@@ -178,18 +178,10 @@
                     </div>
                     <div class="testimoni-text">
                         <span class="mini-header">TESTIMONIAL</span>
-                        <span class="tester" id="tester-name">Viezh Robert</span>
-                        <span class="tester-proffesion" id="tester-proffesion">Manager Coffe Shop</span>
-                        <q id="tester-review">Wow... I am very happy to spend my whole day here. the Wi-fi is good, and
-                            the coffee and
-                            meals tho. I like it here!! Very recommended!</q>
+                        <span class="tester" id="tester-name"></span>
+                        <span class="tester-proffesion" id="tester-proffesion"></span>
+                        <q id="tester-review"></q>
                         <div class="rating" id="tester-rating">
-                            <img src="assets/img/star.svg" alt="star_icon">
-                            <img src="assets/img/star.svg" alt="star_icon">
-                            <img src="assets/img/star.svg" alt="star_icon">
-                            <img src="assets/img/star.svg" alt="star_icon">
-                            <img src="assets/img/star.svg" alt="star_icon">
-                            <span>5.0</span>
                         </div>
                         <div class="carousel-navigation">
                             <button id="testimoni-prev" class="prev"><img src="assets/img/arrow.svg"
@@ -197,12 +189,7 @@
                             <button id="testimoni-next" class="next"><img src="assets/img/arrow_next.svg"
                                     alt="next_icon"></button>
                         </div>
-                        <div class="testimoni-indicator">
-                            <span class="active"></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
+                        <div id="testimoni-indicator" class="testimoni-indicator"></div>
                     </div>
 
                 </div>
@@ -310,6 +297,20 @@
         ]
 
         let currentActive = 0
+        $("#tester-picture").attr({ src: "assets/img/" + testimoni[currentActive].picture, alt: `Review From : ${testimoni[currentActive].name}` })
+        $("#tester-name").text(testimoni[currentActive].name)
+        $("#tester-proffesion").text(testimoni[currentActive].proffesion)
+        $("#tester-review").text(testimoni[currentActive].review)
+        $("#tester-rating").html('')
+        for (let i = 0; i < testimoni[currentActive].rating; i++) {
+            $("#tester-rating").append('<img src="assets/img/star.svg" alt="star_icon">')
+        }
+        $("#tester-rating").append(`<span>${testimoni[currentActive].rating}</span>`)
+        $("#testimoni-indicator").html('')
+        for (let i = 0; i < testimoni.length; i++) {
+            $("#testimoni-indicator").append('<span></span>')
+        }
+        $(`#testimoni-indicator span:nth-child(${currentActive + 1})`).addClass('active')
 
         $('#testimoni-prev').on('click',
             () => {
@@ -317,7 +318,7 @@
                     currentActive = testimoni.length
                 }
                 currentActive--
-                $("#tester-picture").attr({ src: "assets/img/" + testimoni[currentActive].picture, alt: `Review From : ${testimoni.name}` })
+                $("#tester-picture").attr({ src: "assets/img/" + testimoni[currentActive].picture, alt: `Review From : ${testimoni[currentActive].name}` })
                 $("#tester-name").text(testimoni[currentActive].name)
                 $("#tester-proffesion").text(testimoni[currentActive].proffesion)
                 $("#tester-review").text(testimoni[currentActive].review)
@@ -326,16 +327,21 @@
                     $("#tester-rating").append('<img src="assets/img/star.svg" alt="star_icon">')
                 }
                 $("#tester-rating").append(`<span>${testimoni[currentActive].rating}</span>`)
+                $("#testimoni-indicator").html('')
+                for (let i = 0; i < testimoni.length; i++) {
+                    $("#testimoni-indicator").append('<span></span>')
+                }
+                $(`#testimoni-indicator span:nth-child(${currentActive + 1})`).addClass('active')
             }
         )
 
         $('#testimoni-next').on('click',
             () => {
-                if (currentActive === testimoni.length - 1) {
+                currentActive++
+                if (currentActive === testimoni.length) {
                     currentActive = 0
                 }
-                currentActive++
-                $("#tester-picture").attr({ src: "assets/img/" + testimoni[currentActive].picture, alt: `Review From : ${testimoni.name}` })
+                $("#tester-picture").attr({ src: "assets/img/" + testimoni[currentActive].picture, alt: `Review From : ${testimoni[currentActive].name}` })
                 $("#tester-name").text(testimoni[currentActive].name)
                 $("#tester-proffesion").text(testimoni[currentActive].proffesion)
                 $("#tester-review").text(testimoni[currentActive].review)
@@ -344,6 +350,11 @@
                     $("#tester-rating").append('<img src="assets/img/star.svg" alt="star_icon">')
                 }
                 $("#tester-rating").append(`<span>${testimoni[currentActive].rating}</span>`)
+                $("#testimoni-indicator").html('')
+                for (let i = 0; i < testimoni.length; i++) {
+                    $("#testimoni-indicator").append('<span></span>')
+                }
+                $(`#testimoni-indicator span:nth-child(${currentActive + 1})`).addClass('active')
             }
         )
     </script>
