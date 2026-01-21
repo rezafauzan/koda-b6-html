@@ -173,16 +173,18 @@
             <div class="section-header"></div>
             <div class="section-body">
                 <div class="container" id="testimoni-container">
-                    <!-- <div class="testimoni-picture">
-                        <img src="assets/img/testimoni1.png" alt="Our Store on Global Map" width="578px">
+                    <div class="testimoni-picture">
+                        <img src="assets/img/testimoni1.png" alt="Our Store on Global Map" id="tester-picture"
+                            width="578px">
                     </div>
                     <div class="testimoni-text">
                         <span class="mini-header">TESTIMONIAL</span>
                         <span class="tester" id="tester-name">Viezh Robert</span>
                         <span class="tester-proffesion" id="tester-proffesion">Manager Coffe Shop</span>
-                        <q>Wow... I am very happy to spend my whole day here. the Wi-fi is good, and the coffee and
+                        <q id="tester-review">Wow... I am very happy to spend my whole day here. the Wi-fi is good, and
+                            the coffee and
                             meals tho. I like it here!! Very recommended!</q>
-                        <div class="rating">
+                        <div class="rating" id="tester-rating">
                             <img src="assets/img/star.svg" alt="star_icon">
                             <img src="assets/img/star.svg" alt="star_icon">
                             <img src="assets/img/star.svg" alt="star_icon">
@@ -190,9 +192,9 @@
                             <img src="assets/img/star.svg" alt="star_icon">
                             <span>5.0</span>
                         </div>
-                        <div>
-                            <button id="testimoni-prev"><img src="assets/img/arrow.svg" alt="prev_icon"></button>
-                            <button id="testimoni-next"><img src="assets/img/arrow_next.svg" alt="next_icon"></button>
+                        <div class="carousel-navigation">
+                            <button id="testimoni-prev" class="prev"><img src="assets/img/arrow.svg" alt="prev_icon"></button>
+                            <button id="testimoni-next" class="next"><img src="assets/img/arrow_next.svg" alt="next_icon"></button>
                         </div>
                         <div class="testimoni-indicator">
                             <span class="active"></span>
@@ -200,7 +202,7 @@
                             <span></span>
                             <span></span>
                         </div>
-                    </div> -->
+                    </div>
 
                 </div>
             </div>
@@ -267,26 +269,6 @@
         } else {
             window.location.href = 'login.html'
         }
-        let currentActive = 0
-        $('#testimoni-navigator #testimoni-prev').on('click',
-            () => {
-                if (currentActive === 0) {
-                    currentActive = testimoni.length
-                } else {
-                    currentActive--
-                }
-            }
-        )
-
-        $('#testimoni-navigator #testimoni-next').on('click',
-            () => {
-                if (currentActive === testimoni.length) {
-                    currentActive = 0
-                } else {
-                    currentActive++
-                }
-            }
-        )
 
         const testimoni = [
             {
@@ -319,29 +301,35 @@
             },
         ]
 
-        const rating = $(`<div class="rating"></div>`)
-        for (i = 0; i < testimoni[currentActive].rating; i++) {
-            rating.append($(`<img src="assets/img/star.svg" alt="star_icon">`))
-        }
+        let currentActive = 0
 
-        const indicator = $(`<div class="testimoni-indicator"></div>`)
-        for (i = 0; i < testimoni[currentActive].length; i++) {
-            indicator.append($(`<span class="active"></span>`))
-        }
+        $('#testimoni-prev').on('click',
+            () => {
+                if (currentActive === 0) {
+                    currentActive = testimoni.length
+                }
+                currentActive--
+                $("#tester-picture").attr({ src: testimoni[currentActive].picture, alt: `Review From : ${testimoni.name}` })
+                $("#tester-name").text(testimoni[currentActive].name)
+                $("#tester-proffesion").text(testimoni[currentActive].proffesion)
+                $("#tester-review").text(testimoni[currentActive].review)
+                $("#tester-rating")
+            }
+        )
 
-        const testimoniText = $(`<div class="testimoni-text"></div>`)
-            .append(`<span class="mini-header">TESTIMONIAL</span>`)
-            .append(`<span class="tester" id="tester-name">${testimoni[currentActive].name}</span>`)
-            .append(`<span class="tester-proffesion" id="tester-proffesion">${testimoni[currentActive].proffesion}</span>`)
-            .append(`<q>${testimoni[currentActive].review}</q>`)
-            .append(rating)
-            .append(`<div id="testimoni-navigator" class="carousel-navigation"><button class="prev" id="testimoni-prev"><img src="assets/img/arrow.svg" alt="prev_icon"></button><button class="next" id="testimoni-next"><img src="assets/img/arrow_next.svg" alt="next_icon"></button></div>`)
-            .append(indicator)
-
-        $('#testimoni-container')
-            .append(`<div class="testimoni-picture"><img src="${testimoni[currentActive].picture}" alt="Review From : ${testimoni.name}" width="578px"></div>`)
-            .append(testimoniText)
-
+        $('#testimoni-next').on('click',
+            () => {
+                if (currentActive === testimoni.length) {
+                    currentActive = 0
+                }
+                currentActive++
+                $("#tester-picture").attr({ src: testimoni[currentActive].picture, alt: `Review From : ${testimoni.name}` })
+                $("#tester-name").text(testimoni[currentActive].name)
+                $("#tester-proffesion").text(testimoni[currentActive].proffesion)
+                $("#tester-review").text(testimoni[currentActive].review)
+                $("#tester-rating")
+            }
+        )
     </script>
 </body>
 
