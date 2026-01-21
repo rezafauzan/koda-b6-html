@@ -441,10 +441,6 @@ body#auth section .section-body .form-container .form-body form button[type=subm
   background: var(--color-primary-active);
   width: 100%;
 }
-body#auth section .section-body .form-container .form-body form button#show-password {
-  background: transparent;
-  border: 0;
-}
 body#auth section .section-body .form-container .form-body form .navigator-text {
   margin: 13px 0;
 }
@@ -684,20 +680,8 @@ body#home section#testimoni .section-body .container .testimoni-text .rating {
   display: flex;
   align-items: center;
 }
-body#home section#testimoni .section-body .container .testimoni-text button {
-  background: #FFFFFF;
-  width: 47px;
-  height: 47px;
-  border: 0;
-  border-radius: 50%;
-  cursor: pointer;
-}
-body#home section#testimoni .section-body .container .testimoni-text button.next {
-  background: var(--color-primary);
-  width: 47px;
-  height: 47px;
-  border: 0;
-  border-radius: 50%;
+body#home section#testimoni .section-body .container .testimoni-text .carousel-navigation {
+  justify-content: start;
 }
 body#home section#testimoni .section-body .container .testimoni-text .testimoni-indicator span {
   background: #FFFFFF;
