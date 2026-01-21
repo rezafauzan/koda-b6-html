@@ -544,6 +544,7 @@ body#home .chat-float .card .card-header .sender {
 body#home .chat-float .card .card-body {
   height: 220px;
   padding: 1rem;
+  overflow-y: auto;
 }
 body#home .chat-float .card .card-body .sender-message {
   width: 100%;
