@@ -11,7 +11,7 @@
 
 <body id="home">
     <div class="chat-float">
-        
+
         <button id="chat"><img src="assets/img/ChatCircleDots.svg" alt="chat_icon"></button>
     </div>
     <header>
@@ -300,6 +300,11 @@
         ]
 
         let currentActive = 0
+        setInterval(
+            ()=>{
+                $('#testimoni-next').click()
+            }, 4000
+        )
         $("#tester-picture").attr({ src: "assets/img/" + testimoni[currentActive].picture, alt: `Review From : ${testimoni[currentActive].name}` })
         $("#tester-name").text(testimoni[currentActive].name)
         $("#tester-proffesion").text(testimoni[currentActive].proffesion)
