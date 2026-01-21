@@ -993,22 +993,16 @@ body#product main section#product-detail .section-body .product-container {
 body#product main section#product-detail .section-body .product-container .product-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-areas: "active-image active-image active-image" "active-image active-image active-image" "image2 image3 image4" "image2 image3 image4";
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "active active active";
   gap: 1rem;
   flex: 1;
 }
 body#product main section#product-detail .section-body .product-container .product-gallery .active-image {
   width: 100%;
-  grid-area: active-image;
-}
-body#product main section#product-detail .section-body .product-container .product-gallery .product-image-2 {
-  grid-area: image2;
-}
-body#product main section#product-detail .section-body .product-container .product-gallery .product-image-3 {
-  grid-area: image3;
-}
-body#product main section#product-detail .section-body .product-container .product-gallery .product-image-4 {
-  grid-area: image4;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-area: active;
 }
 body#product main section#product-detail .section-body .product-container .product-detail {
   height: 100%;

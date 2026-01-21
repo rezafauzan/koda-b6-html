@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body id="product">
@@ -321,6 +322,13 @@
 
                 const idProduct = new URLSearchParams(window.location.search).get('id')
                 populateProductDetail(products[idProduct])
+
+                $(`#product-gallery img`).on('mouseover',
+                    (e) => {
+                        $('#product-gallery img.active-image').removeClass('active-image')
+                        $(e.target).addClass('active-image')
+                    }
+                )
             }
         )
 
