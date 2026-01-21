@@ -174,8 +174,7 @@
             <div class="section-body">
                 <div class="container" id="testimoni-container">
                     <div class="testimoni-picture">
-                        <img src="assets/img/testimoni1.png" alt="Our Store on Global Map" id="tester-picture"
-                            width="578px">
+                        <img src="assets/img/testimoni1.png" alt="Our Store on Global Map" id="tester-picture">
                     </div>
                     <div class="testimoni-text">
                         <span class="mini-header">TESTIMONIAL</span>
@@ -193,8 +192,10 @@
                             <span>5.0</span>
                         </div>
                         <div class="carousel-navigation">
-                            <button id="testimoni-prev" class="prev"><img src="assets/img/arrow.svg" alt="prev_icon"></button>
-                            <button id="testimoni-next" class="next"><img src="assets/img/arrow_next.svg" alt="next_icon"></button>
+                            <button id="testimoni-prev" class="prev"><img src="assets/img/arrow.svg"
+                                    alt="prev_icon"></button>
+                            <button id="testimoni-next" class="next"><img src="assets/img/arrow_next.svg"
+                                    alt="next_icon"></button>
                         </div>
                         <div class="testimoni-indicator">
                             <span class="active"></span>
@@ -272,32 +273,39 @@
 
         const testimoni = [
             {
-                "name": "Mang Ujang",
-                "proffesion": "Kuli Bangungang",
-                "picture": "assets/img/testimoni1.png",
-                "review": "Ngeunah euy tempat na hade, hanjakal mahal",
-                "rating": 4,
+                "name": "Rizky Ananda",
+                "proffesion": "Software Developer",
+                "picture": "pexels-mikhail-nilov-7988087.jpg",
+                "review": "Tempatnya nyaman buat kerja lama, Wi-Fi stabil dan colokan banyak. Kopinya juga enak.",
+                "rating": 5
             },
             {
-                "name": "Ming",
+                "name": "Ayu Lestari",
+                "proffesion": "Mahasiswa",
+                "picture": "pexels-m-rifki-kurniawan-633404448-19403094.jpg",
+                "review": "Suka suasananya yang tenang, cocok buat ngerjain tugas. Harganya masih masuk akal.",
+                "rating": 4
+            },
+            {
+                "name": "Andi Pratama",
                 "proffesion": "Freelancer",
-                "picture": "assets/img/testimoni1.png",
-                "review": "Kopi mantap",
-                "rating": 5,
+                "picture": "pexels-punttim-52608.jpg",
+                "review": "Kopi enak dan konsisten rasanya, cuma kadang agak rame di jam sibuk.",
+                "rating": 4
             },
             {
-                "name": "bujang",
-                "proffesion": "hansip",
-                "picture": "assets/img/testimoni1.png",
-                "review": "kopi mantap, tapi kurang bikin melek",
-                "rating": 2,
+                "name": "Siti Nurhaliza",
+                "proffesion": "Content Creator",
+                "picture": "pexels-firman-fatthul-154779494-27906780.jpg",
+                "review": "Interior bagus buat foto dan bikin konten. Pelayanannya ramah.",
+                "rating": 5
             },
             {
-                "name": "qwe",
-                "proffesion": "qweq",
-                "picture": "assets/img/testimoni1.png",
-                "review": "awokawok",
-                "rating": 1,
+                "name": "Budi Santoso",
+                "proffesion": "Karyawan Swasta",
+                "picture": "pexels-jimmy-nilsson-masth-193596566-13474086.jpg",
+                "review": "Kopinya oke, tapi menurut saya porsinya bisa ditambah sedikit.",
+                "rating": 2
             }
         ]
 
@@ -309,11 +317,15 @@
                     currentActive = testimoni.length
                 }
                 currentActive--
-                $("#tester-picture").attr({ src: testimoni[currentActive].picture, alt: `Review From : ${testimoni.name}` })
+                $("#tester-picture").attr({ src: "assets/img/" + testimoni[currentActive].picture, alt: `Review From : ${testimoni.name}` })
                 $("#tester-name").text(testimoni[currentActive].name)
                 $("#tester-proffesion").text(testimoni[currentActive].proffesion)
                 $("#tester-review").text(testimoni[currentActive].review)
-                $("#tester-rating")
+                $("#tester-rating").html('')
+                for (let i = 0; i < testimoni[currentActive].rating; i++) {
+                    $("#tester-rating").append('<img src="assets/img/star.svg" alt="star_icon">')
+                }
+                $("#tester-rating").append(`<span>${testimoni[currentActive].rating}</span>`)
             }
         )
 
@@ -323,11 +335,15 @@
                     currentActive = 0
                 }
                 currentActive++
-                $("#tester-picture").attr({ src: testimoni[currentActive].picture, alt: `Review From : ${testimoni.name}` })
+                $("#tester-picture").attr({ src: "assets/img/" + testimoni[currentActive].picture, alt: `Review From : ${testimoni.name}` })
                 $("#tester-name").text(testimoni[currentActive].name)
                 $("#tester-proffesion").text(testimoni[currentActive].proffesion)
                 $("#tester-review").text(testimoni[currentActive].review)
-                $("#tester-rating")
+                $("#tester-rating").html('')
+                for (let i = 0; i < testimoni[currentActive].rating; i++) {
+                    $("#tester-rating").append('<img src="assets/img/star.svg" alt="star_icon">')
+                }
+                $("#tester-rating").append(`<span>${testimoni[currentActive].rating}</span>`)
             }
         )
     </script>
