@@ -294,7 +294,11 @@
     </footer>
     <script src="assets/js/script.js"></script>
     <script>
-        $('#chat').on('click',)
+        $('#chat').on('click', 
+            ()=>{
+                $('.chat-float .card').toggleClass('show')
+            }
+        )
         if (window.localStorage.getItem('isLogin') !== null) {
             ambilData('https://raw.githubusercontent.com/rezafauzan/koda-b6-html/refs/heads/feat/product/assets/data/product.json').then(
                 products => {

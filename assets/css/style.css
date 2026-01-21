@@ -519,34 +519,35 @@ body#home .chat-float {
   bottom: 1rem;
   z-index: 2;
 }
-body#home .chat-float .card {
+body#home .chat-float .card.show {
   background: var(--color-white);
   width: 400px;
   border-top: 10px solid var(--color-primary);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  display: block;
 }
-body#home .chat-float .card .card-header {
+body#home .chat-float .card.show .card-header {
   padding: 1rem;
   flex-direction: row;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
-body#home .chat-float .card .card-header .profile-picture {
+body#home .chat-float .card.show .card-header .profile-picture {
   width: 40px;
 }
-body#home .chat-float .card .card-header .sender {
+body#home .chat-float .card.show .card-header .sender {
   margin-left: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
 }
-body#home .chat-float .card .card-body {
+body#home .chat-float .card.show .card-body {
   height: 220px;
   padding: 1rem;
   overflow-y: auto;
 }
-body#home .chat-float .card .card-body .sender-message {
+body#home .chat-float .card.show .card-body .sender-message {
   width: 100%;
   background: var(--color-secondary-shade);
   display: flex;
@@ -554,20 +555,20 @@ body#home .chat-float .card .card-body .sender-message {
   align-items: center;
   gap: 1rem;
 }
-body#home .chat-float .card .card-body .sender-message .profile-picture {
+body#home .chat-float .card.show .card-body .sender-message .profile-picture {
   width: 40px;
 }
-body#home .chat-float .card .card-body .receiver-message {
+body#home .chat-float .card.show .card-body .receiver-message {
   width: 100%;
   background: var(--color-secondary-shade);
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-body#home .chat-float .card .card-body .receiver-message .profile-picture {
+body#home .chat-float .card.show .card-body .receiver-message .profile-picture {
   width: 40px;
 }
-body#home .chat-float .card .card-footer .chat-input {
+body#home .chat-float .card.show .card-footer .chat-input {
   width: 100%;
   padding: 1rem;
   display: flex;
@@ -575,11 +576,14 @@ body#home .chat-float .card .card-footer .chat-input {
   align-items: center;
   gap: 0.4rem;
 }
-body#home .chat-float .card .card-footer .chat-input .input {
+body#home .chat-float .card.show .card-footer .chat-input .input {
   flex: 3;
 }
-body#home .chat-float .card .card-footer .chat-input button.send {
+body#home .chat-float .card.show .card-footer .chat-input button.send {
   flex: 1;
+}
+body#home .chat-float .card {
+  display: none;
 }
 body#home .chat-float #chat {
   background: var(--color-primary);
