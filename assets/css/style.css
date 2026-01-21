@@ -35,6 +35,10 @@ button {
   width: 100%;
 }
 
+.text-primary {
+  color: var(--color-primary);
+}
+
 .text-accent {
   color: var(--color-accent);
 }
@@ -332,6 +336,12 @@ form {
   gap: 1rem;
 }
 
+.input {
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+}
+
 .input-wicon {
   padding: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.4);
@@ -397,6 +407,12 @@ form {
   border: 0;
   border-radius: 50%;
   cursor: pointer;
+}
+
+/* Image */
+.profile-picture {
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 body#auth section .section-body .container {
@@ -493,10 +509,76 @@ body#auth section#forgot-password .section-body .container .side-image {
 }
 
 body#home .chat-float {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  gap: 1rem;
   position: fixed;
-  right: 130px;
-  bottom: 80px;
+  right: 4rem;
+  bottom: 1rem;
   z-index: 2;
+}
+body#home .chat-float .card {
+  background: var(--color-white);
+  width: 400px;
+  border-top: 10px solid var(--color-primary);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+body#home .chat-float .card .card-header {
+  padding: 1rem;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+body#home .chat-float .card .card-header .profile-picture {
+  width: 40px;
+}
+body#home .chat-float .card .card-header .sender {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+body#home .chat-float .card .card-body {
+  height: 220px;
+  padding: 1rem;
+}
+body#home .chat-float .card .card-body .sender-message {
+  width: 100%;
+  background: var(--color-secondary-shade);
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 1rem;
+}
+body#home .chat-float .card .card-body .sender-message .profile-picture {
+  width: 40px;
+}
+body#home .chat-float .card .card-body .receiver-message {
+  width: 100%;
+  background: var(--color-secondary-shade);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+body#home .chat-float .card .card-body .receiver-message .profile-picture {
+  width: 40px;
+}
+body#home .chat-float .card .card-footer .chat-input {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+body#home .chat-float .card .card-footer .chat-input .input {
+  flex: 3;
+}
+body#home .chat-float .card .card-footer .chat-input button.send {
+  flex: 1;
 }
 body#home .chat-float #chat {
   background: var(--color-primary);
@@ -505,10 +587,6 @@ body#home .chat-float #chat {
   border: 0;
   border-radius: 50%;
   cursor: pointer;
-}
-body#home .chat-float img {
-  width: 46px;
-  height: 46px;
 }
 body#home section#hero {
   margin-bottom: 0;
