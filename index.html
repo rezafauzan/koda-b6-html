@@ -298,7 +298,7 @@
                 "picture": "assets/img/testimoni1.png",
                 "review": "awokawok",
                 "rating": 1,
-            },
+            }
         ]
 
         let currentActive = 0
@@ -319,7 +319,7 @@
 
         $('#testimoni-next').on('click',
             () => {
-                if (currentActive === testimoni.length) {
+                if (currentActive === testimoni.length - 1) {
                     currentActive = 0
                 }
                 currentActive++
