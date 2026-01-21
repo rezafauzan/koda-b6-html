@@ -18,6 +18,8 @@
 
 img {
   max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 body {
@@ -490,6 +492,24 @@ body#auth section#forgot-password .section-body .container .side-image {
   background: url("../img/forgot.jpg");
 }
 
+body#home .chat-float {
+  position: fixed;
+  right: 130px;
+  bottom: 80px;
+  z-index: 2;
+}
+body#home .chat-float #chat {
+  background: var(--color-primary);
+  width: 80px;
+  height: 80px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+body#home .chat-float img {
+  width: 46px;
+  height: 46px;
+}
 body#home section#hero {
   margin-bottom: 0;
 }
@@ -558,24 +578,6 @@ body#home section#hero .section-body .container .hero-image {
   width: 50%;
   font-size: 16px;
   display: inline-block;
-}
-body#home section#hero .section-body .container .chat-float {
-  position: fixed;
-  right: 130px;
-  bottom: 80px;
-  z-index: 2;
-}
-body#home section#hero .section-body .container .chat-float #chat {
-  background: var(--color-primary);
-  width: 80px;
-  height: 80px;
-  border: 0;
-  border-radius: 50%;
-  cursor: pointer;
-}
-body#home section#hero .section-body .container .chat-float img {
-  width: 46px;
-  height: 46px;
 }
 body#home section#feature .section-body .container {
   font-size: 0;
@@ -646,20 +648,15 @@ body#home section#favorite-product .section-body .product-container .card .card-
 }
 body#home section#testimoni .section-body .container {
   background: linear-gradient(168.18deg, #777C82 -114.74%, #0B0909 91.35%);
-  padding: 76px 0;
-  padding-left: 100px;
+  padding: 8rem;
   display: flex;
+  gap: 25px;
 }
 body#home section#testimoni .section-body .container .testimoni-picture {
-  width: 50%;
-  display: inline-block;
-  font-size: 16px;
-  vertical-align: middle;
+  width: 400px;
 }
 body#home section#testimoni .section-body .container .testimoni-text {
   color: #FFFFFF;
-  width: 50%;
-  font-size: 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -10,6 +10,10 @@
 </head>
 
 <body id="home">
+    <div class="chat-float">
+        
+        <button id="chat"><img src="assets/img/ChatCircleDots.svg" alt="chat_icon"></button>
+    </div>
     <header>
         <nav>
             <ul class="left-navigation">
@@ -58,9 +62,6 @@
                         </div>
                     </div>
                     <div class="hero-image">
-                    </div>
-                    <div class="chat-float">
-                        <button id="chat"><img src="assets/img/ChatCircleDots.svg" alt="chat_icon"></button>
                     </div>
                 </div>
             </div>
@@ -174,14 +175,15 @@
             <div class="section-body">
                 <div class="container" id="testimoni-container">
                     <div class="testimoni-picture">
-                        <img src="assets/img/testimoni1.png" alt="Our Store on Global Map" id="tester-picture">
+                        <img src="" alt="Loading..." id="tester-picture">
                     </div>
                     <div class="testimoni-text">
-                        <span class="mini-header">TESTIMONIAL</span>
-                        <span class="tester" id="tester-name"></span>
-                        <span class="tester-proffesion" id="tester-proffesion"></span>
-                        <q id="tester-review"></q>
+                        <span class="mini-header">Testimonial</span>
+                        <span class="tester" id="tester-name">Loading...</span>
+                        <span class="tester-proffesion" id="tester-proffesion">Loading...</span>
+                        <q id="tester-review">Loading...</q>
                         <div class="rating" id="tester-rating">
+                            Loading...
                         </div>
                         <div class="carousel-navigation">
                             <button id="testimoni-prev" class="prev"><img src="assets/img/arrow.svg"
@@ -189,7 +191,7 @@
                             <button id="testimoni-next" class="next"><img src="assets/img/arrow_next.svg"
                                     alt="next_icon"></button>
                         </div>
-                        <div id="testimoni-indicator" class="testimoni-indicator"></div>
+                        <div id="testimoni-indicator" class="testimoni-indicator">Loading...</div>
                     </div>
 
                 </div>
@@ -248,6 +250,7 @@
     </footer>
     <script src="assets/js/script.js"></script>
     <script>
+        $('#chat').on('click',)
         if (window.localStorage.getItem('isLogin') !== null) {
             ambilData('https://raw.githubusercontent.com/rezafauzan/koda-b6-html/refs/heads/feat/product/assets/data/product.json').then(
                 products => {
