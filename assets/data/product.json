@@ -11,8 +11,8 @@
         "price": 22000,
         "discount": 0.4,
         "rating": 4,
-        "isFlashsale": true,
-        "review": 10
+        "review": 18,
+        "stock": 10
     },
     {
         "name": "Kopi Liong",
@@ -26,8 +26,8 @@
         "price": 10000,
         "discount": 0.4,
         "rating": 4,
-        "isFlashsale": true,
-        "review": 10
+        "review": 18,
+        "stock": 10
     },
     {
         "name": "Kopi kirr",
@@ -41,8 +41,8 @@
         "price": 80000,
         "discount": 0.4,
         "rating": 4,
-        "isFlashsale": true,
-        "review": 10
+        "review": 18,
+        "stock": 10
     },
     {
         "name": "Kopiru Rariru",
@@ -56,7 +56,7 @@
         "price": 5000,
         "discount": 0.4,
         "rating": 4,
-        "isFlashsale": true,
-        "review": 10
+        "review": 18,
+        "stock": 10
     }
 ]
