@@ -1,5 +1,6 @@
 [
     {
+        "id": 0,
         "name": "Hazzelnut Latte",
         "image": [
             "assets/img/image27.png",
@@ -15,6 +16,7 @@
         "stock": 0
     },
     {
+        "id": 1,
         "name": "Kopi Liong",
         "image": [
             "assets/img/image22.png",
@@ -30,6 +32,7 @@
         "stock": 10
     },
     {
+        "id": 2,
         "name": "Kopi kirr",
         "image": [
             "assets/img/image30.png",
@@ -45,6 +48,7 @@
         "stock": 10
     },
     {
+        "id": 3,
         "name": "Kopiru Rariru",
         "image": [
             "assets/img/product2.png",
