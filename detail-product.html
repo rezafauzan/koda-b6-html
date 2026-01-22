@@ -44,7 +44,7 @@
         </nav>
     </header>
     <main>
-        <section id="product-detail">
+        <section id="detail-product">
             <div class="section-body">
                 <div class="product-container" id="product-detail-container">
                     <div class="product-gallery" id="product-gallery">
@@ -55,49 +55,6 @@
                     </div>
 
                     <div class="product-detail" id="product-detail">
-                        <span class="flash-sale-label">Flash Sale</span>
-                        <h3 class="text-sangatbesar">Hazelnut Latte</h3>
-                        <div class="price-bar">
-                            <span class="slashed">Rp.22.000</span>
-                            <span class="price">Rp.10.000</span>
-                        </div>
-                        <div class="rating">
-                            <img src="assets/img/star.svg" alt="star_icon">
-                            <img src="assets/img/star.svg" alt="star_icon">
-                            <img src="assets/img/star.svg" alt="star_icon">
-                            <img src="assets/img/star.svg" alt="star_icon">
-                            <img src="assets/img/star.svg" alt="star_icon">
-                            <span>5.0</span>
-                        </div>
-                        <div class="baris recommendation"><span class="text-besar">200+ Review | </span><span
-                                class="text-besar">Recommendation</span><img src="assets/img/ThumbsUp.svg"
-                                alt="ThumbsUp_Icon"></div>
-                        <p>Cold brewing is a method of brewing that combines ground coffee and cool water and uses time
-                            instead of heat to extract the flavor. It is brewed in small batches and steeped for as long
-                            as 48 hours.</p>
-                        <form action="">
-                            <div class="baris quantity">
-                                <button class="increment text-besar">+</button>
-                                <input type="number" value="1" disabled>
-                                <button class="decrement text-besar">-</button>
-                            </div>
-                            <label for="size">Choose Size</label>
-                            <div class="choosesize">
-                                <div class="active">Regular</div>
-                                <div>Medium</div>
-                                <div>Large</div>
-                            </div>
-
-                            <label for="isIce">Hot / Ice</label>
-                            <div class="hotice">
-                                <div class="active">Hot</div>
-                                <div>Ice</div>
-                            </div>
-                        </form>
-                        <div class="action">
-                            <button>Buy</button>
-                            <button class="cart"><img src="assets/img/ShoppingCart-yellow.svg" alt="cart_icon"></button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -308,7 +265,7 @@
                     return parrent.appendChild(e)
                 }
 
-                function populateProductDetail(product = {}) {
+                function populateProductDetailImage(product = {}) {
                     product.image.forEach(
                         (link, index) => {
                             if (index === 0) {
@@ -321,7 +278,7 @@
                 }
 
                 const idProduct = new URLSearchParams(window.location.search).get('id')
-                populateProductDetail(products[idProduct])
+                populateProductDetailImage(products[idProduct])
 
                 $(`#product-gallery img`).on('mouseover',
                     (e) => {
@@ -329,6 +286,28 @@
                         $(e.target).addClass('active-image')
                     }
                 )
+                function generateDetailProduct(product) {
+                    if (product.discount > 0.0) {
+                        $("#product-detail").append(`<span class="flash-sale-label text-besar">Flash Sale</span>`)
+                    }
+                    $("#product-detail").append(`<h3 class="text-sangatbesar">${product.name}</h3>`)
+                    $("#product-detail").append(`<div class="price-bar"><span class="slashed">Rp.${product.price.toLocaleString("id-ID")},-</span><span class="price">Rp.${(product.price * product.discount).toLocaleString("id-ID")},-</span></div>`)
+                    $("#product-detail").append(`<div class="rating" id="product-rating"></div>`)
+                    for (let i = 0; i < product.rating; i++) {
+                        $("#product-detail #product-rating").append(`<img src="assets/img/star.svg" alt="star_icon">`)
+                    }
+                    $("#product-detail #product-rating").append(`<span>${product.rating}.0</span>`)
+                    $("#product-detail").append(`<div id="review"><span>${product.review} Review | Recommendation</span> <button id="recommend" class="button button-transparent"><img src="assets/img/ThumbsUp.svg" alt="Recommend_Icon"/></button></div>`)
+                    $("#product-detail").append(`<p>${product.desc}</p>`)
+                    $("#product-detail").append(`<form id="form-product"></form>`)
+                    $("#product-detail #form-product").append(`<div class="quantity"><button type="button" id="add" class="button button-border-primary">+</button><input type="number" id="quantity" name="quantity" min="0" max="${product.stok}" value="1" disabled required><button type="button" id="reduce" class="button button-primary">-</button></div>`)
+                    $("#product-detail #form-product").append(`<span class="text-besar tebal">Choose Size</span>`)
+                    $("#product-detail #form-product").append(`<div class="radio-form"><div class="button button-radio active"><input type="radio" name="size" id="reguler" value="reguler"><label for="reguler">Reguler</label></div><div class="button button-radio"><input type="radio" name="size" id="medium" value="medium"><label for="medium">Medium</label></div><div class="button button-radio"><input type="radio" name="size" id="large" value="large"><label for="large">Large</label></div></div>`)
+                    $("#product-detail #form-product").append(`<span class="text-besar tebal">Serving Hot or Ice</span>`)
+                    $("#product-detail #form-product").append(`<div class="radio-form"><div class="button button-radio active"><input type="radio" name="serving" id="hot" value="hot"><label for="hot">Hot</label></div><div class="button button-radio"><input type="radio" name="serving" id="ice" value="ice"><label for="ice">Ice</label></div></div>`)
+                    $("#product-detail #form-product").append(`<div class="action"><button class="button button-primary" id="buy">Buy</button><button class="button button-border-primary" id="cart"><img src="assets/img/ShoppingCart-yellow.svg" alt="cart_icon"> add to cart</button></div>`)
+                }
+                generateDetailProduct(products[idProduct])
             }
         )
 
