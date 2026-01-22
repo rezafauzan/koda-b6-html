@@ -306,6 +306,24 @@
                     $("#product-detail #form-product").append(`<span class="text-besar tebal">Serving Hot or Ice</span>`)
                     $("#product-detail #form-product").append(`<div class="radio-form"><div class="button button-radio active"><input type="radio" name="serving" id="hot" value="hot"><label for="hot">Hot</label></div><div class="button button-radio"><input type="radio" name="serving" id="ice" value="ice"><label for="ice">Ice</label></div></div>`)
                     $("#product-detail #form-product").append(`<div class="action"><button class="button button-primary" id="buy">Buy</button><button class="button button-border-primary" id="cart"><img src="assets/img/ShoppingCart-yellow.svg" alt="cart_icon"> add to cart</button></div>`)
+                    $('#add').on('click',
+                        () => {
+                            let quantity = $('#quantity').val()
+                            if (quantity < product.stock) {
+                                quantity++
+                                $('#quantity').val(quantity)
+                            }
+                        }
+                    )
+                    $('#reduce').on('click',
+                        () => {
+                            let quantity = $('#quantity').val()
+                            if (quantity > 1) {
+                                quantity--
+                                $('#quantity').val(quantity)
+                            }
+                        }
+                    )
                 }
                 generateDetailProduct(products[idProduct])
             }
