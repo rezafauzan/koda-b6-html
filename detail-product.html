@@ -278,7 +278,7 @@
                 }
 
                 const idProduct = new URLSearchParams(window.location.search).get('id')
-                if(idProduct === undefined){
+                if(idProduct === null){
                     window.location.href = 'product.html'
                 }
                 populateProductDetailImage(products[idProduct])
