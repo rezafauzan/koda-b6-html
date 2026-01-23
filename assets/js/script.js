@@ -29,6 +29,11 @@ ambilData("https://raw.githubusercontent.com/rezafauzan/koda-b6-html/refs/heads/
     data => { alertData = data }
 )
 
+let products = {}
+ambilData("https://raw.githubusercontent.com/rezafauzan/koda-b6-html/refs/heads/feat/product/assets/data/product.json").then(
+    data => { products = data }
+)
+
 // Section Auth Logic
 function validateLogin(email, password, alertElement) {
     if (window.localStorage.getItem('isLogin') !== null) {
@@ -210,7 +215,7 @@ function populateFavoriteProduct(products = [], containerId) {
     const favoriteProductContainer = document.getElementById(containerId)
     products.forEach(
         (product, index) => {
-            if(index < 4){
+            if (index < 4) {
                 const card = elementor('div', [['class', 'card body-overlay']], '', favoriteProductContainer)
                 const cardHeader = elementor('div', [['class', 'card-header']], '', card)
                 const cardHeaderImg = elementor('img', [['src', product.image[0]], ['alt', product.name]], '', cardHeader)
@@ -226,3 +231,15 @@ function populateFavoriteProduct(products = [], containerId) {
         }
     )
 }
+
+function addToCart(productId) {
+    let cart = []
+    if (window.localStorage.getItem('cart') !== null) {
+        cart = window.localStorage.getItem('cart')
+    }
+    cart.push(products[productId])
+    console.log(products)
+    window.localStorage.setItem('cart', JSON.stringify(cart))
+}
+
+addToCart(0)
