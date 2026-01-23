@@ -44,31 +44,35 @@
     </footer>
     <script src="assets/js/script.js"></script>
     <script>
-        $('#form-forgot-password').on('submit',
-            e => {
-                e.preventDefault()
-                const formData = Object.fromEntries(new FormData($('#form-forgot-password')[0]).entries())
-                if ($('#alert') !== null) {
-                    $('#alert').remove()
-                }
-
-                let users = []
-                if (window.localStorage.getItem('users') !== null) {
-                    users = JSON.parse(window.localStorage.getItem('users'))
-                }
-
-                const user = users.find(pengguna => pengguna.email === formData.email)
-                if (user) {
-                    if (!$('#alert-message-user-exist')[0]) {
-                        $('#form-forgot-password').before(`<div id="alert" class="show alert-success"><span id="alert-message-user-exist">${alertData.forgot_user_exist}</span></div>`)
+        if (window.localStorage.getItem('isLogin') === 'true') {
+            window.location.href = 'index.html'
+        } else {
+            $('#form-forgot-password').on('submit',
+                e => {
+                    e.preventDefault()
+                    const formData = Object.fromEntries(new FormData($('#form-forgot-password')[0]).entries())
+                    if ($('#alert') !== null) {
+                        $('#alert').remove()
                     }
-                }else{
-                    if (!$('#alert-message-user-not-exist')[0]) {
-                        $('#form-forgot-password').before(`<div id="alert" class="show alert-fatal"><span id="alert-message-user-not-exist">${alertData.forgot_user_not_exist}</span></div>`)
+
+                    let users = []
+                    if (window.localStorage.getItem('users') !== null) {
+                        users = JSON.parse(window.localStorage.getItem('users'))
+                    }
+
+                    const user = users.find(pengguna => pengguna.email === formData.email)
+                    if (user) {
+                        if (!$('#alert-message-user-exist')[0]) {
+                            $('#form-forgot-password').before(`<div id="alert" class="show alert-success"><span id="alert-message-user-exist">${alertData.forgot_user_exist}</span></div>`)
+                        }
+                    } else {
+                        if (!$('#alert-message-user-not-exist')[0]) {
+                            $('#form-forgot-password').before(`<div id="alert" class="show alert-fatal"><span id="alert-message-user-not-exist">${alertData.forgot_user_not_exist}</span></div>`)
+                        }
                     }
                 }
-            }
-        )
+            )
+        }
     </script>
 </body>
 

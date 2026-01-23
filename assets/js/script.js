@@ -241,5 +241,3 @@ function addToCart(productId) {
     console.log(products)
     window.localStorage.setItem('cart', JSON.stringify(cart))
 }
-
-addToCart(0)

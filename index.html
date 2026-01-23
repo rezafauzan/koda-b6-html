@@ -49,7 +49,8 @@
             </div>
             <div class="card-footer">
                 <div class="chat-input">
-                    <input type="text" name="chat-message" id="chat-message" class="input" placeholder="Masukan pesan anda">
+                    <input type="text" name="chat-message" id="chat-message" class="input"
+                        placeholder="Masukan pesan anda">
                     <button class="send button button-primary">
                         <img src="assets/img/arrow_next.svg" alt="ChatSend_Icon">
                     </button>
@@ -293,125 +294,126 @@
     </footer>
     <script src="assets/js/script.js"></script>
     <script>
-        $('#chat').on('click', 
-            ()=>{
-                $('.chat-float .card').toggleClass('show')
-            }
-        )
         if (window.localStorage.getItem('isLogin') !== null) {
+            $('header nav ul.right-navigation .member-sign-in').remove()
+            $('header nav ul.right-navigation .member-sign-up').remove()
             ambilData('https://raw.githubusercontent.com/rezafauzan/koda-b6-html/refs/heads/feat/product/assets/data/product.json').then(
                 products => {
                     populateFavoriteProduct(products, "favorite-product-container")
                 }
             )
+            $('#chat').on('click',
+                () => {
+                    $('.chat-float .card').toggleClass('show')
+                }
+            )
+            const testimoni = [
+                {
+                    "name": "Rizky Ananda",
+                    "proffesion": "Software Developer",
+                    "picture": "pexels-djordje-petrovic-590080-2102416.jpg",
+                    "review": "Tempatnya nyaman buat kerja lama, Wi-Fi stabil dan colokan banyak. Kopinya juga enak.",
+                    "rating": 5
+                },
+                {
+                    "name": "Ayu Lestari",
+                    "proffesion": "Mahasiswa",
+                    "picture": "pexels-m-rifki-kurniawan-633404448-19403094.jpg",
+                    "review": "Suka suasananya yang tenang, cocok buat ngerjain tugas. Harganya masih masuk akal.",
+                    "rating": 4
+                },
+                {
+                    "name": "Andi Pratama",
+                    "proffesion": "Freelancer",
+                    "picture": "pexels-punttim-52608.jpg",
+                    "review": "Kopi enak dan konsisten rasanya, cuma kadang agak rame di jam sibuk.",
+                    "rating": 4
+                },
+                {
+                    "name": "Siti Nurhaliza",
+                    "proffesion": "Content Creator",
+                    "picture": "pexels-firman-fatthul-154779494-27906780.jpg",
+                    "review": "Interior bagus buat foto dan bikin konten. Pelayanannya ramah.",
+                    "rating": 5
+                },
+                {
+                    "name": "Budi Santoso",
+                    "proffesion": "Karyawan Swasta",
+                    "picture": "pexels-jimmy-nilsson-masth-193596566-13474086.jpg",
+                    "review": "Kopinya oke, tapi menurut saya porsinya bisa ditambah sedikit.",
+                    "rating": 2
+                }
+            ]
+
+            let currentActive = 0
+            setInterval(
+                () => {
+                    $('#testimoni-next').click()
+                }, 4000
+            )
+            $("#tester-picture").attr({ src: "assets/img/" + testimoni[currentActive].picture, alt: `Review From : ${testimoni[currentActive].name}` })
+            $("#tester-name").text(testimoni[currentActive].name)
+            $("#tester-proffesion").text(testimoni[currentActive].proffesion)
+            $("#tester-review").text(testimoni[currentActive].review)
+            $("#tester-rating").html('')
+            for (let i = 0; i < testimoni[currentActive].rating; i++) {
+                $("#tester-rating").append('<img src="assets/img/star.svg" alt="star_icon">')
+            }
+            $("#tester-rating").append(`<span>${testimoni[currentActive].rating}</span>`)
+            $("#testimoni-indicator").html('')
+            for (let i = 0; i < testimoni.length; i++) {
+                $("#testimoni-indicator").append('<span></span>')
+            }
+            $(`#testimoni-indicator span:nth-child(${currentActive + 1})`).addClass('active')
+
+            $('#testimoni-prev').on('click',
+                () => {
+                    if (currentActive === 0) {
+                        currentActive = testimoni.length
+                    }
+                    currentActive--
+                    $("#tester-picture").attr({ src: "assets/img/" + testimoni[currentActive].picture, alt: `Review From : ${testimoni[currentActive].name}` })
+                    $("#tester-name").text(testimoni[currentActive].name)
+                    $("#tester-proffesion").text(testimoni[currentActive].proffesion)
+                    $("#tester-review").text(testimoni[currentActive].review)
+                    $("#tester-rating").html('')
+                    for (let i = 0; i < testimoni[currentActive].rating; i++) {
+                        $("#tester-rating").append('<img src="assets/img/star.svg" alt="star_icon">')
+                    }
+                    $("#tester-rating").append(`<span>${testimoni[currentActive].rating}</span>`)
+                    $("#testimoni-indicator").html('')
+                    for (let i = 0; i < testimoni.length; i++) {
+                        $("#testimoni-indicator").append('<span></span>')
+                    }
+                    $(`#testimoni-indicator span:nth-child(${currentActive + 1})`).addClass('active')
+                }
+            )
+
+            $('#testimoni-next').on('click',
+                () => {
+                    currentActive++
+                    if (currentActive === testimoni.length) {
+                        currentActive = 0
+                    }
+                    $("#tester-picture").attr({ src: "assets/img/" + testimoni[currentActive].picture, alt: `Review From : ${testimoni[currentActive].name}` })
+                    $("#tester-name").text(testimoni[currentActive].name)
+                    $("#tester-proffesion").text(testimoni[currentActive].proffesion)
+                    $("#tester-review").text(testimoni[currentActive].review)
+                    $("#tester-rating").html('')
+                    for (let i = 0; i < testimoni[currentActive].rating; i++) {
+                        $("#tester-rating").append('<img src="assets/img/star.svg" alt="star_icon">')
+                    }
+                    $("#tester-rating").append(`<span>${testimoni[currentActive].rating}</span>`)
+                    $("#testimoni-indicator").html('')
+                    for (let i = 0; i < testimoni.length; i++) {
+                        $("#testimoni-indicator").append('<span></span>')
+                    }
+                    $(`#testimoni-indicator span:nth-child(${currentActive + 1})`).addClass('active')
+                }
+            )
         } else {
             window.location.href = 'login.html'
         }
-
-        const testimoni = [
-            {
-                "name": "Rizky Ananda",
-                "proffesion": "Software Developer",
-                "picture": "pexels-djordje-petrovic-590080-2102416.jpg",
-                "review": "Tempatnya nyaman buat kerja lama, Wi-Fi stabil dan colokan banyak. Kopinya juga enak.",
-                "rating": 5
-            },
-            {
-                "name": "Ayu Lestari",
-                "proffesion": "Mahasiswa",
-                "picture": "pexels-m-rifki-kurniawan-633404448-19403094.jpg",
-                "review": "Suka suasananya yang tenang, cocok buat ngerjain tugas. Harganya masih masuk akal.",
-                "rating": 4
-            },
-            {
-                "name": "Andi Pratama",
-                "proffesion": "Freelancer",
-                "picture": "pexels-punttim-52608.jpg",
-                "review": "Kopi enak dan konsisten rasanya, cuma kadang agak rame di jam sibuk.",
-                "rating": 4
-            },
-            {
-                "name": "Siti Nurhaliza",
-                "proffesion": "Content Creator",
-                "picture": "pexels-firman-fatthul-154779494-27906780.jpg",
-                "review": "Interior bagus buat foto dan bikin konten. Pelayanannya ramah.",
-                "rating": 5
-            },
-            {
-                "name": "Budi Santoso",
-                "proffesion": "Karyawan Swasta",
-                "picture": "pexels-jimmy-nilsson-masth-193596566-13474086.jpg",
-                "review": "Kopinya oke, tapi menurut saya porsinya bisa ditambah sedikit.",
-                "rating": 2
-            }
-        ]
-
-        let currentActive = 0
-        setInterval(
-            ()=>{
-                $('#testimoni-next').click()
-            }, 4000
-        )
-        $("#tester-picture").attr({ src: "assets/img/" + testimoni[currentActive].picture, alt: `Review From : ${testimoni[currentActive].name}` })
-        $("#tester-name").text(testimoni[currentActive].name)
-        $("#tester-proffesion").text(testimoni[currentActive].proffesion)
-        $("#tester-review").text(testimoni[currentActive].review)
-        $("#tester-rating").html('')
-        for (let i = 0; i < testimoni[currentActive].rating; i++) {
-            $("#tester-rating").append('<img src="assets/img/star.svg" alt="star_icon">')
-        }
-        $("#tester-rating").append(`<span>${testimoni[currentActive].rating}</span>`)
-        $("#testimoni-indicator").html('')
-        for (let i = 0; i < testimoni.length; i++) {
-            $("#testimoni-indicator").append('<span></span>')
-        }
-        $(`#testimoni-indicator span:nth-child(${currentActive + 1})`).addClass('active')
-
-        $('#testimoni-prev').on('click',
-            () => {
-                if (currentActive === 0) {
-                    currentActive = testimoni.length
-                }
-                currentActive--
-                $("#tester-picture").attr({ src: "assets/img/" + testimoni[currentActive].picture, alt: `Review From : ${testimoni[currentActive].name}` })
-                $("#tester-name").text(testimoni[currentActive].name)
-                $("#tester-proffesion").text(testimoni[currentActive].proffesion)
-                $("#tester-review").text(testimoni[currentActive].review)
-                $("#tester-rating").html('')
-                for (let i = 0; i < testimoni[currentActive].rating; i++) {
-                    $("#tester-rating").append('<img src="assets/img/star.svg" alt="star_icon">')
-                }
-                $("#tester-rating").append(`<span>${testimoni[currentActive].rating}</span>`)
-                $("#testimoni-indicator").html('')
-                for (let i = 0; i < testimoni.length; i++) {
-                    $("#testimoni-indicator").append('<span></span>')
-                }
-                $(`#testimoni-indicator span:nth-child(${currentActive + 1})`).addClass('active')
-            }
-        )
-
-        $('#testimoni-next').on('click',
-            () => {
-                currentActive++
-                if (currentActive === testimoni.length) {
-                    currentActive = 0
-                }
-                $("#tester-picture").attr({ src: "assets/img/" + testimoni[currentActive].picture, alt: `Review From : ${testimoni[currentActive].name}` })
-                $("#tester-name").text(testimoni[currentActive].name)
-                $("#tester-proffesion").text(testimoni[currentActive].proffesion)
-                $("#tester-review").text(testimoni[currentActive].review)
-                $("#tester-rating").html('')
-                for (let i = 0; i < testimoni[currentActive].rating; i++) {
-                    $("#tester-rating").append('<img src="assets/img/star.svg" alt="star_icon">')
-                }
-                $("#tester-rating").append(`<span>${testimoni[currentActive].rating}</span>`)
-                $("#testimoni-indicator").html('')
-                for (let i = 0; i < testimoni.length; i++) {
-                    $("#testimoni-indicator").append('<span></span>')
-                }
-                $(`#testimoni-indicator span:nth-child(${currentActive + 1})`).addClass('active')
-            }
-        )
     </script>
 </body>
 

@@ -84,6 +84,9 @@
     </footer>
     <script src="assets/js/script.js"></script>
     <script>
+        if (window.localStorage.getItem('isLogin') === 'true') {
+            window.location.href = 'index.html'
+        } else {
         $('#show-password').on('click',
             () => {
                 toggleShowPassword('#show-password img', 'password')
@@ -108,7 +111,7 @@
                 const formData = Object.fromEntries(new FormData(formRegister[0]).entries())
                 registerValidation(formData)
             }
-        )
+        )}
     </script>
 </body>
 
