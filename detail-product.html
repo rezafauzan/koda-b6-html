@@ -278,7 +278,7 @@
                 }
 
                 const idProduct = new URLSearchParams(window.location.search).get('id')
-                if(idProduct === null){
+                if (idProduct === null) {
                     window.location.href = 'product.html'
                 }
                 populateProductDetailImage(products[idProduct])
@@ -290,10 +290,9 @@
                     }
                 )
                 function generateDetailProduct(product) {
-                    if(product.stock < 1){
+                    if (product.stock < 1) {
                         $("#product-detail").append(`<span class="flash-sale-label text-besar">Out of stock !</span>`)
-                    }
-                    if (product.discount > 0.0) {
+                    } else if (product.discount > 0.0) {
                         $("#product-detail").append(`<span class="flash-sale-label text-besar">Flash Sale</span>`)
                     }
                     $("#product-detail").append(`<h3 class="text-sangatbesar">${product.name}</h3>`)
@@ -311,7 +310,7 @@
                     $("#product-detail #form-product").append(`<div class="radio-form"><div class="button button-radio active"><input type="radio" name="size" id="reguler" value="reguler"><label for="reguler">Reguler</label></div><div class="button button-radio"><input type="radio" name="size" id="medium" value="medium"><label for="medium">Medium</label></div><div class="button button-radio"><input type="radio" name="size" id="large" value="large"><label for="large">Large</label></div></div>`)
                     $("#product-detail #form-product").append(`<span class="text-besar tebal">Serving Hot or Ice</span>`)
                     $("#product-detail #form-product").append(`<div class="radio-form"><div class="button button-radio active"><input type="radio" name="serving" id="hot" value="hot"><label for="hot">Hot</label></div><div class="button button-radio"><input type="radio" name="serving" id="ice" value="ice"><label for="ice">Ice</label></div></div>`)
-                    if(product.stock > 0){
+                    if (product.stock > 0) {
                         $("#product-detail #form-product").append(`<div class="action"><button class="button button-primary" id="buy">Buy</button><button class="button button-border-primary" id="cart"><img src="assets/img/ShoppingCart-yellow.svg" alt="cart_icon"> add to cart</button></div>`)
                     }
                     $('#add').on('click',
@@ -334,6 +333,26 @@
                     )
                 }
                 generateDetailProduct(products[idProduct])
+
+                function generateOtherProduct(products = []) {
+                    products.forEach(
+                        (product, index) => {
+                            const productCard = $(`<div class="card body-overlay"></div>`)
+                            const productCardHeader = $(`<div class="card-header"></div>`)
+                            productCardHeader.append(`<img  src="${product.image[0]}" alt="${product.name}" />`)
+                            const productCardBody = $(`<div class="card-body"></div>`)
+                            productCardBody.append(`<h3>${product.name}</h3>`)
+                            productCardBody.append(`<p>${product.desc}</p>`)
+                            productCardBody.append(`<div class="price-bar"><sup class="slashed">Rp.${product.price.toLocaleString()},-</sup><span>Rp.${(product.price * product.discount).toLocaleString()},-</span></div>`)
+                            productCardBody.append(`<div class="action"><a href="detail-product.html?id=${index}" class="button button-primary text-white">Buy</a><button class="button button-border-primary"><img src="assets/img/ShoppingCart-yellow.svg" alt="cart_icon" /></button></div>`)
+                            productCard.append(productCardHeader)
+                            productCard.append(productCardBody)
+                            $('#other-product-container').append(productCard)
+                        }
+                    )
+                }
+                
+                generateOtherProduct(products)
             }
         )
 
